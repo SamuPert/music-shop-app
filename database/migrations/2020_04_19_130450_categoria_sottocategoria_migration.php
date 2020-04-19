@@ -14,8 +14,10 @@ class CategoriaSottocategoriaMigration extends Migration
     public function up()
     {
         Schema::create('categoria_sottocategoria', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('id_categoria',11);
+            $table->id('id_sotto_categoria',11);
+            $table->foreign('id_categoria')->references('id_categoria')->on('categoria');
+            $table->foreign('id_sotto_categoria')->references('id_sotto_categoria')->on('sotto_categoria');
         });
     }
 
