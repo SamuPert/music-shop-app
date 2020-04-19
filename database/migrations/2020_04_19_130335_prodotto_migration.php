@@ -17,8 +17,8 @@ class ProdottoMigration extends Migration
             $table->id('id_prodotto');
             $table->string('nome_prodotto',20);
             $table->string('descrizione_breve',30);
-            $table->string('descrizione_estesa',30);
-            $table->binary('foto');
+            $table->string('descrizione_estesa',100);
+            $table->string('percorso_foto',255); // path image
             $table->float('prezzo',8,2);
         });
     }
