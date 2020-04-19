@@ -1,8 +1,10 @@
-<section>
+<section class="shadow">
     <div>
         <div class="row">
             <div class="col col-md-2 col-sm-2 col-2">
-                <img src="{{ asset("/img/logoSito.png") }}" class="image-fluid w-100 mt-2 ml-2"/>
+                <a href="/">
+                    <img src="{{ asset("/img/logoSito.png") }}" class="image-fluid w-100 mt-2 ml-2"/>
+                </a>
             </div>
             <div class="col col-md-10">
                 <section>
@@ -27,8 +29,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col d-none d-md-block">
-                            Carrello ecc..
+
+                        <!-- Third column -->
+                        <div class="col d-none d-md-block mt-2 mr-2">
+
+                            <a href="#" class="btn btn-primary float-right">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            </a>
+
                         </div>
                     </div>
                     <div class="row">
