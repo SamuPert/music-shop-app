@@ -14,8 +14,12 @@ class ProdottoSottocategoriaMigration extends Migration
     public function up()
     {
         Schema::create('prodotto_sottocategoria', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('id_prodotto',11);
+            $table->id('id_sotto_categoria',11);
+            $table->foreign('id_prodotto')->references('id_prodotto')->on('prodotto');
+            $table->foreign('id_sotto_categoria')->references('id_sotto_categoria')->on('sotto_categoria');
+            $table->primary('id_sotto_categoria');
+            $table->primary('id_prodotto');
         });
     }
 
