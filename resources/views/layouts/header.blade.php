@@ -1,4 +1,4 @@
-<div class="row shadow">
+<div class="row shadow m-0 w-100 custom-header-fixed">
     <div class="col col-md-2 col-sm-2 col-2">
         <a href="/">
             <img src="{{ asset("/img/logoSito.png") }}" class="show-on-desktop image-fluid h-100 mt-2 ml-2" style="max-height: 130px" />
