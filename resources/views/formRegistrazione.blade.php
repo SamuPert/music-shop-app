@@ -25,27 +25,32 @@
                     <div class="col"><input type="text" class="form-control" /></div>
                 </div>
                 <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Cognome</label></div>
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="cognome-input-field">Cognome</label></div>
                     <div class="col"><input type="text" class="form-control" /></div>
                 </div>
                 <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Luogo di Residenza</label></div>
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="luogo-input-field">Luogo di Residenza</label></div>
                     <div class="col"><input type="text" class="form-control" /></div>
                 </div>
                 <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Data di Nascita</label></div>
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="data-input-field">Data di Nascita</label></div>
                     <div class="col"><input class="form-control" type="date" /></div>
                 </div>
                 <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="dropdown-input-field">Occupazione</label></div>
-                    <div class="col-sm-4 input-column">
-                        <div class="dropdown"><button class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">Dropdown </button>
-                            <div role="menu" class="dropdown-menu"><a role="presentation" class="dropdown-item" href="#">First Item</a><a role="presentation" class="dropdown-item" href="#">Second Item</a><a role="presentation" class="dropdown-item" href="#">Third Item</a></div>
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="occupazione-input-field">Occupazione</label></div>
+                        <div>
+                            <select class="custom-select">
+                            <option selected>Seleziona Occupazione</option>
+                            <option value="1">Studente</option>
+                            <option value="2">Impiegato</option>
+                            <option value="3">Libero professionista</option>
+                            <option value="4">Operaio</option>
+                            <option value="6">Altro</option>
+                            </select>
                         </div>
-                    </div>
                 </div>
                 <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Username</label></div>
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="username-input-field">Username</label></div>
                     <div class="col"><input type="text" class="form-control" /></div>
                 </div>
                 <div class="form-row form-group">
