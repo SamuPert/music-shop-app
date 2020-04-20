@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col col-md-2 col-sm-2 col-2">
                 <a href="/">
-                    <img src="{{ asset("/img/logoSito.png") }}" class="d-none d-md-block d-lg-block image-fluid w-100 mt-2 ml-2" style="max-height: 130px" />
-                    <img src="{{ asset("/img/logoSitoMobile.png") }}" class="d-none d-sm-block d-md-none image-fluid w-100 mt-2 ml-2"  style="max-height: 130px" />
+                    <img src="{{ asset("/img/logoSito.png") }}" class="show-on-desktop image-fluid h-100 mt-2 ml-2" style="max-height: 130px" />
+                    <img src="{{ asset("/img/logoSitoMobile.png") }}" class="show-on-mobile image-fluid h-100 mt-2 ml-2"  style="max-height: 130px" />
                 </a>
             </div>
             <div class="col col-md-10">
@@ -51,7 +51,7 @@
                                         <span class="sr-only">Toggle navigation</span>
                                         <span class="navbar-toggler-icon"></span>
                                 </button>
-                                <nav class="navbar navbar-expand-md float-right float-md-left w-100">
+                                <nav class="navbar navbar-expand-md float-right float-md-left w-100 shadow">
                                 <div class="container-fluid ">
                                     <div class="collapse navbar-collapse" id="navcol-1">
 
