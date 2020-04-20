@@ -3,7 +3,8 @@
         <div class="row">
             <div class="col col-md-2 col-sm-2 col-2">
                 <a href="/">
-                    <img src="{{ asset("/img/logoSito.png") }}" class="image-fluid w-100 mt-2 ml-2" style="max-width: 130px" />
+                    <img src="{{ asset("/img/logoSito.png") }}" class="d-none d-md-block d-lg-block image-fluid w-100 mt-2 ml-2" style="max-height: 130px" />
+                    <img src="{{ asset("/img/logoSitoMobile.png") }}" class="d-none d-sm-block d-md-none image-fluid w-100 mt-2 ml-2"  style="max-height: 130px" />
                 </a>
             </div>
             <div class="col col-md-10">
