@@ -1,5 +1,6 @@
 <div class="row shadow m-0 w-100 custom-header-fixed">
     <div class="col col-md-2 col-sm-2 col-2">
+        <!-- First Column -->
         <a href="/">
             <img src="{{ asset("/img/logoSito.png") }}" class="show-on-desktop image-fluid h-100 mt-2 ml-2" style="max-height: 130px" />
             <img src="{{ asset("/img/logoSitoMobile.png") }}" class="show-on-mobile image-fluid h-100 mt-2 ml-2"  style="max-height: 70px" />
@@ -8,6 +9,7 @@
     <div class="col col-md-10">
         <section>
             <div class="row">
+                <!-- Second Column -->
                 <div class="col d-none d-md-block col-md-8 col-sm-12 ml-0 mr-0">
                     <div class="row">
                         <div class="col">
@@ -49,9 +51,9 @@
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="navbar-toggler-icon"></span>
                         </button>
-                        <nav class="navbar navbar-expand-md float-right float-md-left w-100 shadow">
+                        <nav class="navbar navbar-expand-md float-right float-md-left w-100 shadow rounded" style="padding: 0px; background-color: white;" >
                         <div class="container-fluid ">
-                            <div class="collapse navbar-collapse" id="navcol-1">
+                            <div class="collapse navbar-collapse" style="margin: .5rem 1rem;" id="navcol-1">
 
                                 <ul class="nav navbar-nav">
                                     <li class="nav-item">
