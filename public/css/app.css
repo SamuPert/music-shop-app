@@ -1,4 +1,26 @@
 @media screen and (min-width: 768px) {
+  .show-on-mobile,
+  .hide-on-desktop {
+    display: none !important;
+  }
+
+  .show-on-desktop,
+  .hide-on-mobile {
+    display: block !important;
+  }
+}
+
+.show-on-mobile,
+.hide-on-desktop {
+  display: block !important;
+}
+
+.show-on-desktop,
+.hide-on-mobile {
+  display: none !important;
+}
+
+@media screen and (min-width: 768px) {
   .menu-toggle {
     display: none !important;
   }
@@ -6,5 +28,28 @@
 
 .menu-toggle {
   display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .custom-header-fixed {
+    height: 130px !important;
+  }
+
+  .main-content {
+    margin-top: 160px !important;
+  }
+}
+
+.custom-header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000 !important;
+  background-color: white;
+  height: 100px;
+}
+
+.main-content {
+  margin-top: 130px;
 }
 

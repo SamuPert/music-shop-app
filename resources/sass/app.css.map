@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["menu-button.scss"],"names":[],"mappings":"AACA;EAEE;IAEE;;;AAIJ;EAEE","file":"app.css"}
+{"version":3,"sourceRoot":"","sources":["display_properties.scss","menu-button.scss"],"names":[],"mappings":"AACA;EAEE;IAEE;;;EAGF;IAEE;;;AAIJ;EAEE;;;AAGF;EAEE;;;ACpBF;EAEE;IAEE;;;AAIJ;EAEE","file":"app.css"}

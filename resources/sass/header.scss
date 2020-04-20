@@ -1,0 +1,29 @@
+
+@media screen and (min-width: 768px)
+{
+  .custom-header-fixed
+  {
+    height: $header-height-desktop !important;
+  }
+
+  .main-content
+  {
+    margin-top: $main-content-height-desktop !important;
+  }
+}
+
+.custom-header-fixed
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000 !important;
+  background-color: white;
+
+  height: $header-height-mobile;
+}
+
+.main-content
+{
+  margin-top: $main-content-height-mobile;
+}
