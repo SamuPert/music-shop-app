@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col col-md-2 col-sm-2 col-2">
                 <a href="/">
-                    <img src="{{ asset("/img/logoSito.png") }}" class="image-fluid w-100 mt-2 ml-2"/>
+                    <img src="{{ asset("/img/logoSito.png") }}" class="image-fluid w-100 mt-2 ml-2" style="max-width: 130px" />
                 </a>
             </div>
             <div class="col col-md-10">
@@ -13,13 +13,16 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="input-group mt-2 mb-2">
-                                        <div class="input-group-prepend"><select>
-                                                <optgroup label="This is a group">
-                                                    <option value="12" selected>This is item 1</option>
+                                        <div class="input-group-prepend">
+                                            <select class="custom-select" style="border-radius: .25rem 0 0 .25rem;">
+                                                <optgroup label="Categoria">
+                                                    <option value="12" selected>Tutte le categorie</option>
+                                                    <option value="13">This is item 2</option>
                                                     <option value="13">This is item 2</option>
                                                     <option value="14">This is item 3</option>
                                                 </optgroup>
-                                            </select></div>
+                                            </select>
+                                        </div>
                                         <input type="text"
                                                class="form-control"/>
                                         <div class="input-group-append">
