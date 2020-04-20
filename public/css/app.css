@@ -32,11 +32,11 @@
 
 @media screen and (min-width: 768px) {
   .custom-header-fixed {
-    height: 130px !important;
+    height: 150px !important;
   }
 
   .main-content {
-    margin-top: 160px !important;
+    margin-top: 180px !important;
   }
 }
 
@@ -51,5 +51,24 @@
 
 .main-content {
   margin-top: 130px;
+}
+
+@media screen and (max-width: 768px) {
+  .shadow-on-mobile {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  }
+}
+
+.dropdown .dropdown-menu {
+  transition: all 0.3s;
+  max-height: 0;
+  display: block;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.dropdown.show .dropdown-menu {
+  max-height: 200px;
+  opacity: 1;
 }
 

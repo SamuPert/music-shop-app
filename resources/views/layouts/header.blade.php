@@ -1,9 +1,9 @@
 <div class="row shadow m-0 w-100 custom-header-fixed">
     <div class="col col-md-2 col-sm-2 col-2">
         <!-- First Column -->
-        <a href="/">
-            <img src="{{ asset("/img/logoSito.png") }}" class="show-on-desktop image-fluid h-100 mt-2 ml-2" style="max-height: 130px" />
-            <img src="{{ asset("/img/logoSitoMobile.png") }}" class="show-on-mobile image-fluid h-100 mt-2 ml-2"  style="max-height: 70px" />
+        <a>
+            <img href="/" src="{{ asset("/img/logoSito.png") }}" class="show-on-desktop image-fluid h-100 mt-2 ml-2" style="max-height: 130px" />
+            <img href="/" src="{{ asset("/img/logoSitoMobile.png") }}" class="show-on-mobile image-fluid h-100 mt-2 ml-2"  style="max-height: 70px" />
         </a>
     </div>
     <div class="col col-md-10">
@@ -14,6 +14,16 @@
                     <div class="row">
                         <div class="col">
                             <div class="input-group mt-2 mb-2">
+                                <div class="input-group-prepend">
+                                    <select class="custom-select" style="border-radius: .25rem 0 0 .25rem;">
+                                        <optgroup label="Categoria">
+                                            <option value="12" selected>Tutte le categorie</option>
+                                            <option value="13">This is item 2</option>
+                                            <option value="13">This is item 2</option>
+                                            <option value="14">This is item 3</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
                                 <input type="text"
                                        class="form-control"/>
                                 <div class="input-group-append">
@@ -41,49 +51,57 @@
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="navbar-toggler-icon"></span>
                         </button>
-                        <nav class="navbar navbar-expand-md float-right float-md-left w-100 shadow rounded" style="padding: 0px; background-color: white;" >
+                        <nav class="navbar navbar-expand-md float-right float-md-left w-100 shadow-on-mobile rounded" style="padding: 0px; background-color: white;" >
                         <div class="container-fluid ">
                             <div class="collapse navbar-collapse" style="margin: .5rem 1rem;" id="navcol-1">
 
-                                <ul class="nav navbar-nav">
+                                <div class="nav navbar-nav">
                                     <li class="nav-item">
                                         <div class="row d-sm-block d-md-none mr-0 ml-0 w-100">
                                             <div class="input-group mt-2 mb-2">
-                                                <div class="input-group-prepend"><select>
-                                                        <optgroup label="This is a group">
-                                                            <option value="12" selected>This is item 1</option>
-                                                            <option value="13">This is item 2</option>
-                                                            <option value="14">This is item 3</option>
-                                                        </optgroup>
-                                                    </select></div>
                                                 <input
                                                     type="text" class="form-control"/>
                                                 <div class="input-group-append">
-                                                    <button class="btn btn-primary" type="button">Cerca</button>
+                                                    <button class="btn btn-primary" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
                                                 </div>
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="nav-item dropdown"><a data-toggle="dropdown"
-                                                                     aria-expanded="false"
-                                                                     class="dropdown-toggle nav-link" href="#">Dropdown </a>
-                                        <div role="menu" class="dropdown-menu"><a role="presentation"
-                                                                                  class="dropdown-item"
-                                                                                  href="#">First Item</a><a
-                                                role="presentation" class="dropdown-item" href="#">Second
-                                                Item</a><a role="presentation" class="dropdown-item" href="#">Third
-                                                Item</a></div>
-                                    </li>
-                                    <li class="nav-item dropdown"><a data-toggle="dropdown"
-                                                                     aria-expanded="false"
-                                                                     class="dropdown-toggle nav-link" href="#">Dropdown </a>
-                                        <div role="menu" class="dropdown-menu"><a role="presentation"
-                                                                                  class="dropdown-item"
-                                                                                  href="#">First Item</a><a
-                                                role="presentation" class="dropdown-item" href="#">Second
-                                                Item</a><a role="presentation" class="dropdown-item" href="#">Third
-                                                Item</a></div>
-                                    </li>
+
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                            Dropdown
+                                            <span class="caret"></span>
+                                        </button>
+                                        <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                            Dropdown
+                                            <span class="caret"></span>
+                                        </button>
+                                        <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                            Dropdown
+                                            <span class="caret"></span>
+                                        </button>
+                                        <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                        </div>
+                                    </div>
+
                                 </ul>
                             </div>
                         </div>
