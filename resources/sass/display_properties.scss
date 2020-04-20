@@ -14,10 +14,10 @@
 
 .show-on-mobile, .hide-on-desktop
 {
-  display: block;
+  display: block !important;
 }
 
 .show-on-desktop, .hide-on-mobile
 {
-  display: none;
+  display: none !important;
 }
