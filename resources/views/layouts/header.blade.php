@@ -14,16 +14,6 @@
                     <div class="row">
                         <div class="col">
                             <div class="input-group mt-2 mb-2">
-                                <div class="input-group-prepend">
-                                    <select class="custom-select" style="border-radius: .25rem 0 0 .25rem;">
-                                        <optgroup label="Categoria">
-                                            <option value="12" selected>Tutte le categorie</option>
-                                            <option value="13">This is item 2</option>
-                                            <option value="13">This is item 2</option>
-                                            <option value="14">This is item 3</option>
-                                        </optgroup>
-                                    </select>
-                                </div>
                                 <input type="text"
                                        class="form-control"/>
                                 <div class="input-group-append">
