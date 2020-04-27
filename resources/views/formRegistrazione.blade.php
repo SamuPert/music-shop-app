@@ -30,7 +30,7 @@
 
 <!--Modal: Login / Register Form-->
 <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog cascading-modal modal-xl"  role="document">
+    <div class="modal-dialog cascading-modal modal-lg"  role="document">
         <!--Content-->
         <div class="modal-content">
 
