@@ -35,21 +35,22 @@
 
                 <!-- Third column -->
 
-                <div class="col d-none d-md-block mt-2 mr-2" data-toggle="buttons">
+                <div class="col d-none d-md-block mt-2 mr-2" >
 
-                    <label class="col d-none d-md-block mt-2 mr-2">
-                        <a href="#panel2" class="btn btn-primary float-right modal-toggle" onclick='$("#modalLRForm").modal("show")'>
+                    <div class="float-right mt-2 ml-1">
+                        <a href="#panelRegistrati" class="btn btn-primary float-right modal-toggle" onclick='$("#modalLRForm").modal("show")'>
                             Registrati
                             <i class="fa fa-sign-in" aria-hidden="true"></i>
                         </a>
-                    </label>
+                    </div>
 
-                    <label class="col d-none d-md-block mt-2 mr-2">
-                        <a href="#panel1" class="btn btn btn-lightnp float-right modal-toggle" onclick='$("#modalLRForm").modal("show")'>
+                    <div class="float-right mt-2 ml-1">
+                        <a href="#panelAccedi" class="btn btn-light float-right modal-toggle" onclick='$("#modalLRForm").modal("show")'>
                             Accedi
                             <i class="fa fa-user-o" aria-hidden="true"></i>
                         </a>
-                    </label>
+                    </div>
+
                 </div>
 
 
@@ -112,8 +113,7 @@
                                             <a class="dropdown-item" href="#">Action</a>
                                         </div>
                                     </div>
-
-                                </ul>
+                                </div>
                             </div>
                         </div>
                     </nav>

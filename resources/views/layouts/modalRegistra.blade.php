@@ -9,11 +9,11 @@
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#panel1" role="tab">
+                        <a class="nav-link active" data-toggle="tab" href="#panelAccedi" role="tab">
                             Accedi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#panel2" role="tab">
+                        <a class="nav-link" data-toggle="tab" href="#panelRegistrati" role="tab">
                             Registrati</a>
                     </li>
                 </ul>
@@ -21,7 +21,7 @@
                 <!-- Tab panels -->
                 <div class="tab-content">
                     <!--Panel 1-->
-                    <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
+                    <div class="tab-pane fade in show active" id="panelAccedi" role="tabpanel">
 
                         <!--Body Login-->
                         <div class="modal-body mb-1">
@@ -42,7 +42,7 @@
                         <!--Footer-->
                         <div class="modal-footer">
                             <div class="options text-center text-md-right mt-1">
-                                <p><a href="#panel2" class="blue-text">Non hai un Account? Registrati.</a></p>
+                                <p><a href="#panelRegistrati" class="blue-text">Non hai un Account? Registrati.</a></p>
                                 <p><a href="#" class="blue-text">Dimenticato la Password? Clicca Qua.</a></p>
                             </div>
                             <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
@@ -52,7 +52,7 @@
                     <!--/.Panel 1-->
 
                     <!--Panel 2-->
-                    <div class="tab-pane fade" id="panel2" role="tabpanel">
+                    <div class="tab-pane fade" id="panelRegistrati" role="tabpanel">
 
                         <!--Body Register-->
                         <div class="modal-body mb-2">
@@ -110,7 +110,7 @@
                         <!--Footer-->
                         <div class="modal-footer">
                             <div class="options text-right">
-                                <p class="pt-1"><a href="#panel1" class="blue-text">Hai gia un account? Log In</a></p>
+                                <p class="pt-1"><a href="#panelAccedi" class="blue-text">Hai gia un account? Log In</a></p>
                             </div>
                             <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
                         </div>
