@@ -1,3 +1,4 @@
+@include('layouts.modalRegistra')
 <div class="row shadow m-0 w-100 custom-header-fixed">
     <div class="col col-md-2 col-sm-2 col-2">
         <!-- First Column -->
@@ -33,13 +34,25 @@
                 </div>
 
                 <!-- Third column -->
-                <div class="col d-none d-md-block mt-2 mr-2">
 
-                    <a href="#" class="btn btn-primary float-right">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                    </a>
+                <div class="col d-none d-md-block mt-2 mr-2" data-toggle="buttons">
 
+                    <label class="col d-none d-md-block mt-2 mr-2">
+                        <a href="#panel2" class="btn btn-primary float-right modal-toggle" onclick='$("#modalLRForm").modal("show")'>
+                            Registrati
+                            <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        </a>
+                    </label>
+
+                    <label class="col d-none d-md-block mt-2 mr-2">
+                        <a href="#panel1" class="btn btn btn-lightnp float-right modal-toggle" onclick='$("#modalLRForm").modal("show")'>
+                            Accedi
+                            <i class="fa fa-user-o" aria-hidden="true"></i>
+                        </a>
+                    </label>
                 </div>
+
+
             </div>
             <div class="row">
                 <div class="col pr-0">
