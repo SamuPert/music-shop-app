@@ -1,0 +1,9 @@
+.fixed-sidebar
+{
+  position: fixed;
+  top: 150px;
+  left: 0px;
+
+  width: 25%;
+  z-index: $z-index-sidebar;
+}

@@ -18,6 +18,7 @@
   top: 0;
   left: 0;
   background-color: white;
+  z-index: $z-index-header;
 
   height: $header-height-mobile;
 }
@@ -25,6 +26,7 @@
 .main-content
 {
   margin-top: $main-content-height-mobile;
+  z-index: $z-index-content;
 }
 
 @media screen and (max-width: 768px) {
