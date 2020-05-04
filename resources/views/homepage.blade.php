@@ -1,26 +1,20 @@
-<html xmlns:margin-left="http://www.w3.org/1999/xhtml">
-<body>
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html>
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Registrazione</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="{{ asset('/css/homepage.css') }}">
     <script src="https://use.fontawesome.com/523f3c3982.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/footer.css') }}">
 </head>
+
 <body>
 <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-    <div class="container"><a class="navbar-brand logo" href="#"><img onclick="document.location.href='/'" src="{{ asset("/img/logoSitoMobile.png") }}" style="height: 130px"/></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+    <div class="container"><a class="navbar-brand logo" href="#"><img src="{{ asset('/img/logoSitoMobile.png') }}" height="130px"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div
-            class="collapse navbar-collapse" id="navcol-1">
+                class="collapse navbar-collapse" id="navcol-1">
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item" role="presentation"><a class="nav-link active" href="#chisiamo">Chi siamo</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="#cosafacciamo">Cosa facciamo</a></li>
@@ -30,15 +24,15 @@
         </div>
     </div>
 </nav>
-
-<main class="landing-page mt-5">
-    <section id="chisiamo" class="clean-block clean-hero" style="background-image:url("/img/backgroud-information-page.jpg");color:rgba(0, 0, 0, 0.70);">
+<main id="chisiamo" class="landing-page mt-5 body-page">
+    <section class="clean-block clean-hero anchorable" style="background-image:url(&quot;/img/background-information-page.jpg&quot;);color:rgba(0, 0, 0, 0.70);">
         <div class="text">
             <h2>CHI SIAMO</h2>
-            <p>Music Shop è un'azzienda leader a livello nazionale in ambito musicale attiva dal 1970. Presenti in tutta italia con 20 negozi fisici offriamo i migiori esperti in grado di accogliere ogni esigenza sia di supporto all'acquisto che di assistenza.</p>
+            <p>Music Shop è un'azienda leader a livello nazionale in ambito musicale attiva dal 1970. Presenti in tutta italia con 20 negozi fisici offriamo i migiori esperti in grado di accogliere ogni esigenza sia di supporto all'acquisto che di assistenza.</p>
         </div>
     </section>
-    <section id="cosafacciamo" class="clean-block features">
+    <section class="clean-block features anchorable">
+        <a id="cosafacciamo" class="anchor"></a>
         <div class="container">
             <div class="block-heading">
                 <h1 class="text-info">Cosa facciamo</h1>
@@ -63,16 +57,17 @@
             </div>
         </div>
     </section>
-    <section id="catalogo" class="clean-block clean-info dark">
+    <section class="clean-block clean-info dark">
+        <a id="catalogo" class="anchor"></a>
         <div class="container">
             <div class="block-heading">
                 <h2 class="text-info">Catalogo Prodotti</h2>
                 <p>Per visualizzare i prodotti a nostra disposizione ti invitiamo a consultare il nostro catalogo digitale. All'interno di esso potrai trovare tutti i prodotti ordinabili online con consegna a domicilio o nei nostri punti vendita.</p>
-                <a class="btn btn-primary" href="#" role="button">Visita il nostro catalogo <i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a>
             </div>
         </div>
     </section>
-    <section id="contatti" class="clean-block about-us">
+    <section class="clean-block about-us anchorable">
+        <a id="contatti" class="anchor"></a>
         <div class="container mt-3">
             <form id="contactForm" style="padding:15px;" action="javascript:void();" method="post">
                 <div class="form-row" style="margin-left:0px;margin-right:0px;padding:10px;">
@@ -91,22 +86,17 @@
                             </div>
                         </div>
                         <div class="form-group"><label for="comments">Inserisci qui il tuo messaggio</label><textarea class="form-control" id="comments" name="Comments" placeholder="Scrivi qui..." rows="5"></textarea></div>
-                        <div class="form-group"><button class="btn btn-primary active btn-block" type="submit">Invia <i class="fa fa-chevron-circle-right"></i></button></div>
+                        <div class="form-group"><button class="btn btn-primary active btn-block" style="background-color:#303641;" type="submit">Invia <i class="fa fa-chevron-circle-right"></i></button></div>
                         <hr />
                     </div>
                 </div>
             </form>
         </div>
     </section>
-</main>
-<footer class="page-footer-copyright">
-    <p>© 2018 Copyright Text</p>
-</footer>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script src="{{ asset('js/app.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
 
+</main>
+@include('layouts.footer')
+<script src="{{ asset('/js/homepage.js') }}"></script>
 </body>
+
 </html>

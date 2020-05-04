@@ -1,11 +1,9 @@
-@import "variables";
-
 .footer-clean {
   margin-top: 50px;
   padding: 50px 0;
   background-color: #fff;
   color: #4b4c4d;
-  z-index: $z-index-footer;
+  z-index: 10;
 }
 
 .footer-clean h3 {
@@ -37,7 +35,7 @@
   text-align: center;
 }
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .footer-clean .item {
     text-align: center;
     padding-bottom: 20px;
@@ -70,13 +68,13 @@
   opacity: 0.9;
 }
 
-@media (max-width:991px) {
+@media (max-width: 991px) {
   .footer-clean .item.social > a {
     margin-top: 40px;
   }
 }
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .footer-clean .item.social > a {
     margin-top: 10px;
   }
@@ -88,3 +86,4 @@
   font-size: 13px;
   opacity: 0.6;
 }
+
