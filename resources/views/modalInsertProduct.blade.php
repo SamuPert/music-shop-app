@@ -1,55 +1,63 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <title>Inserisci Prodotto</title>
-</head>
-<body>
-<div class="modal fade" id="modalLRForm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog cascading-modal modal-xl"  role="document">
-        <!--Content-->
-        <div class="modal-content">
-            <div class="col-md-6" id="message">
-                    <fieldset>
-                        <legend> Inserisci il nuovo prodotto</legend>
-                                <div class="form-group has-feedback">
-                                    <label for="from_name">Nome Prodotto</label><br>
-                                    <input type="text" class="form-control" id="from_name" tabindex="-1" name="from_name" required placeholder="Yamaha" />
-                                </div>
-                            <br>
-                                <div class="form-group has-feedback">
-                                    <label for="for_descrizionebreve"></label>Descrizione Breve</label><br>
-                                    <input type="text" class="form-control" id="from_descrizione" name="from_descrizione" required placeholder="Archetto a 6 archi" />
-                                </div>
-                            <br>
-                                <label for="immagine">Inserisci l&#39;immagine del prodotto</label>
-                                    <div style="width: 200px;">
-                                        <div class="text-center"></div>
-                                        <div class="text-center mt-2"></div>
-                                    </div>
-                                <form>
-                                    <button class="btn btn-primary" type="submit">Carica</button>
-                                </form>
-                            <br>
-                                <div class="form-group">
-                                    <label for="comments">Descrizione Estesa</label><br>
-                                    <textarea class="form-control" id="comments" name="Comments" placeholder="Digita la tua descrizione" rows="5"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <button class="btn btn-primary btn-block" type="submit">Send <i class="fa fa-chevron-circle-right"></i></button>
-                                </div>
-                    </fieldset>
-                <!--Footer-->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        <div class="modal fade" id="modalInserisciProdotto" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog cascading-modal modal-lg"  role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <div class="col-md-12" id="message">
+                        <div style="text-align: center; font-size: 30px;">
+                            <b>Inserisci il nuovo prodotto</b>
+                        </div>
+                        <div class="form-group" id="nomeProdotto">
+                            <label for="from_name">Nome Prodotto</label>
+                            <input type="text" class="form-control" id="from_name" tabindex="-1" name="from_name" required placeholder="Ex. Yamaha" />
+                        </div>
+                        <div class="form-group has-feedback" id="descrzioneBreve">
+                            <label for="for_descrizionebreve"></label>Descrizione Breve</label>
+                            <input type="text" class="form-control" id="from_descrizione" name="from_descrizione" required placeholder="Ex. Archetto a 6 archi" />
+                        </div>
+                        <div class="form-group" id="immagineProdotto">
+                            <label for="immagine">Inserisci l&#39;immagine del prodotto</label>
+                            <form method="post" action="" enctype="multipart/form-data">
+                                <input type="file" name="upload1" id="upload1"  class="btn"/>
+                            </form>
+                        </div>
+                        <div class="form-group" id="descrizioneEstesa">
+                            <label for="comments">Descrizione Estesa</label>
+                            <textarea class="form-control" id="comments" name="Comments" placeholder="Digita la tua descrizione" rows="5"></textarea>
+                        </div>
+                       <div>
+                           <div class="form-row">
+                               <div class="col">
+                                   <label for="prezzo">Prezzo</label>
+                                   <input type="text" class="form-control" id="email" placeholder="Metti il prezzo" name="email">
+                               </div>
+                               <div class="col">
+                                   <label for="percentuale">Percentuale di Sconto</label>
+                                   <input type="number" class="form-control" placeholder="Metti una percentuale" name="pswd">
+                               </div>
+                           </div>
+                       </div>
+                        <br>
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-block" type="submit">Salva il prodotto <i class="fa fa-chevron-circle-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Chiudi</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-        <!--/.Content-->
-</div>
-</body>
-<script src="{{ asset('js/app.js') }}"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!--/.Content-->
 
-</html>
+
+    <a href="#modalInserisciProdotto" class="btn btn-primary float-right modal-toggle" onclick='$("#modalInserisciProdotto").modal("show")'>
+        Inserisci Prodotto <i class="fa fa-plus" aria-hidden="true"></i>
+    </a>
+@endsection
