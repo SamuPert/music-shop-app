@@ -1,9 +1,11 @@
 .footer-clean {
+  position: static;
+  width: 100%;
   margin-top: 50px;
   padding: 50px 0;
   background-color: #fff;
   color: #4b4c4d;
-  z-index: 10;
+  z-index: 2;
 }
 
 .footer-clean h3 {

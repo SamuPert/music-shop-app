@@ -37059,6 +37059,44 @@ $('.modal-toggle').click(function (e) {
   $('li > a[href="' + tab + '"]').tab("show");
 });
 
+window.toggleFiltriBar = function () {
+  var toggleIcon = $('#iconToggleFiltri');
+  var toggleDiv = $('#filtriInnerBar');
+
+  if (toggleDiv.hasClass('show')) {
+    toggleDiv.collapse('hide');
+    toggleIcon.removeClass('fa-chevron-up');
+    toggleIcon.addClass('fa-chevron-down');
+  } else {
+    toggleDiv.collapse('show');
+    toggleIcon.removeClass('fa-chevron-down');
+    toggleIcon.addClass('fa-chevron-up');
+  }
+};
+
+window.applyFilters = function () {
+  alert(1);
+};
+
+function registerRangeInputChange(id_range_input, id_html_value_output) {
+  // Read value on page load
+  $(id_html_value_output).html($(id_range_input).val()); // Read value on change
+
+  $(id_range_input).on('input', function () {
+    var current_value = $(this).val() + '';
+    var tmpOutput = '';
+
+    for (var i = current_value.length; i < 7; i++) {
+      tmpOutput += '&nbsp;';
+    }
+
+    $(id_html_value_output).html(tmpOutput + current_value);
+  });
+}
+
+registerRangeInputChange('#prezzoMaxInput', '#prezzoMaxValue');
+registerRangeInputChange('#prezzoMinInput', '#prezzoMinValue');
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -37076,11 +37114,13 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
  */
 
 try {
-  window.Popper = __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js")["default"];
   window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+  window.Popper = __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js")["default"];
 
   __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
-} catch (e) {}
+} catch (e) {
+  console.log(e);
+}
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the

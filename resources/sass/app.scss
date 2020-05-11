@@ -1,6 +1,9 @@
 @import "variables";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import '~font-awesome/css/font-awesome.min.css';
 
 @import "display_properties";
+@import "filtri-fixed-bar";
 @import "sidebar";
 @import "menu-button";
 @import "header";
