@@ -26,6 +26,10 @@ Route::get('/admin', function () {
     return view('adminPage');
 });
 
+Route::get('/onlineshop',function (){
+    return view('buyContacts');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
