@@ -170,3 +170,9 @@
   opacity: 0.6;
 }
 
+#editPersonal{
+    visibility: hidden;
+}
+#editAccess{
+    visibility: hidden;
+}
