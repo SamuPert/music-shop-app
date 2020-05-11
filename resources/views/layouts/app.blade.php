@@ -13,7 +13,13 @@
 </head>
 <body>
 
-@include('layouts.header')
+@if(     Request::is('admin/', '*') )
+    @include('layouts.header_admin')
+@elseif( Request::is('staff/', '*') )
+    @include('layouts.header_staff')
+@else
+    @include('layouts.header')
+@endif
 
 {{-- TODO: Visualizzare solo quando è necessario --}}
 @includeWhen( true , 'layouts.filtri-bar')
