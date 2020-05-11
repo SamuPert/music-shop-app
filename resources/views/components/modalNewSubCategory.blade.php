@@ -25,6 +25,9 @@
                     </select>
                 </div>
                 <br>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit">Salva la Sotto Categoria <i class="fa fa-chevron-circle-right"></i></button>
+                </div>
                 <!--Footer-->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Chiudi</button>
