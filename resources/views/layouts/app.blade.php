@@ -15,7 +15,8 @@
 
 @include('layouts.header')
 
-@yield('filtri-bar', View::make('layouts.filtri-bar'))
+{{-- TODO: Visualizzare solo quando è necessario --}}
+@includeWhen( true , 'layouts.filtri-bar')
 
 <div class="main-content">
     @yield('content')
