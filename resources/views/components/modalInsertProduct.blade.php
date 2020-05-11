@@ -1,4 +1,4 @@
-<div class="modal fade" id="modalInserisciProdotto" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalInserisciProdotto" role="dialog" aria-labelledby="myModalInsertProduct" aria-hidden="true">
     <div class="modal-dialog cascading-modal modal-lg"  role="document">
         <!--Content-->
         <div class="modal-content">

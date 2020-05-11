@@ -3,7 +3,8 @@
 @section('title','StaffPage')
 
 @section('content')
-@include('modalInsertProduct')
+@include('components.modalInsertProduct')
+@include('components.modalNewSubCategory')
 <!-- Start: 2 Rows 1+3 Columns -->
 <br>
 <div>
@@ -34,7 +35,7 @@
                 <p>Puoi inserire una nuova categoria nel catalogo.&nbsp;<br>Compila il modulo!</p><a class="learn-more" href="#">Apri modulo</a></div>
             <div class="col-md-6 col-lg-5 offset-lg-0">
                 <h3 class="name"><i class="fa fa-th-list"></i> Inserisci SottoCategoria</h3>
-                <p>Puoi inserire una nuova categoria nel catalogo.&nbsp;<br>Compila il modulo!</p><a class="learn-more" href="#">Apri modulo</a></div>
+                <p>Puoi inserire una nuova categoria nel catalogo.&nbsp;<br>Compila il modulo!</p><a class="learn-more" href="#modalNewSubCateogory" onclick='$("#modalNewSubCategory").modal("show")'>Apri modulo</a></div>
         </div>
     </div>
 </div>
