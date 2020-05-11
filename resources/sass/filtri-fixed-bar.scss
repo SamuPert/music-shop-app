@@ -1,0 +1,71 @@
+
+#filtriFixedBar
+{
+  position: fixed;
+  float: left;
+  width: 100%;
+  top: $header-height-mobile;
+  z-index: $z-index-fixed-bar;
+  margin-top: 1px;
+}
+
+#filtriInnerBar
+{
+  width: 100%;
+  background-color: white;
+
+}
+
+#filtriInnerBar > *
+{
+  float: left;
+  width: (100% / 2);
+  height: 80px;
+}
+
+.search-button-filtri
+{
+  width: 100% !important;
+}
+
+// ON DESKTOP
+@media screen and (min-width: 991px)
+{
+
+  #filtriFixedBar {
+    top: $header-height-desktop !important;
+  }
+
+  #filtriInnerBar > *
+  {
+    float: left;
+    width: (100% / 5);
+    height: 80px;
+  }
+
+  .search-button-filtri
+  {
+    width: (100% / 5) !important;
+  }
+}
+
+// ON TABLET
+@media screen and (min-width: 768px) and (max-width: 991px)
+{
+
+  #filtriFixedBar {
+    top: $header-height-desktop !important;
+  }
+
+  #filtriInnerBar > *
+  {
+    float: left;
+    width: (100% / 3);
+    height: 80px;
+  }
+
+  .search-button-filtri
+  {
+    width: (2 * (100% / 3)) !important;
+  }
+}

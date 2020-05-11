@@ -1,8 +1,10 @@
+
 .fixed-sidebar
 {
   position: fixed;
   top: 150px;
   left: 0px;
+  overflow:auto;
 
   width: 25%;
   z-index: $z-index-sidebar;
