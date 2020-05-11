@@ -15,9 +15,9 @@ class ProdottoMigration extends Migration
     {
         Schema::create('prodotto', function (Blueprint $table) {
             $table->id('id_prodotto');
-            $table->string('nome_prodotto',20);
-            $table->string('descrizione_breve',30);
-            $table->string('descrizione_estesa',100);
+            $table->string('nome_prodotto',75);
+            $table->string('descrizione_breve',75);
+            $table->string('descrizione_estesa',150);
             $table->string('percorso_foto',255); // path image
             $table->float('prezzo',8,2);
         });

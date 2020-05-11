@@ -15,8 +15,8 @@ class SottoCategoriaMigration extends Migration
     {
         Schema::create('sotto_categoria', function (Blueprint $table) {
             $table->id('id_sotto_categoria');
-            $table->string('nome_sotto_categoria',20);
-            $table->string('descrizione',50);
+            $table->string('nome_sotto_categoria',50);
+            $table->string('descrizione',150);
         });
     }
 

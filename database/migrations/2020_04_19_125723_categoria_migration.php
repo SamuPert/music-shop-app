@@ -16,7 +16,7 @@ class CategoriaMigration extends Migration
         Schema::create('categoria', function (Blueprint $table) {
             $table->id('id_categoria');
             $table->string('nome_categoria',30);
-            $table->string('descrizione_categoira',50);
+            $table->string('descrizione_categoria',50);
         });
     }
 
