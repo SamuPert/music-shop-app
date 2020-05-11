@@ -1,4 +1,4 @@
-@include('layouts.modalRegistra')
+@include('components.modalRegistra')
 <div class="row shadow m-0 w-100 custom-header-fixed">
     <div class="col col-md-2 col-sm-2 col-2">
         <!-- First Column -->
