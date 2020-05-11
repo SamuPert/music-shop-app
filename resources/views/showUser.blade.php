@@ -7,17 +7,18 @@
             for (i = 0; i < formelements.length; i++) {
                 formelements[i].disabled = true;
             }
-            document.getElementById(dataClass).style.visibility = "visible";
-            document.getElementById(idButton).style.visibility = "hidden";        }
+            document.getElementById(dataClass).style.display = "block";
+            document.getElementById(idButton).style.display = "none";        }
 
         function enable(dataClass,idbutton) {
             var formelements = document.getElementsByClassName(dataClass);
             for (i = 0; i < formelements.length; i++) {
                 formelements[i].disabled = false;
             }
-            document.getElementById(dataClass).style.visibility = "hidden";
-            document.getElementById(idbutton).style.visibility = "visible";
+            document.getElementById(dataClass).style.display = "none";
+            document.getElementById(idbutton).style.display = "block";
         }
+
     </script>
     <div class="container">
         <div class="row">
@@ -67,7 +68,11 @@
                         <input type="email" class="form-control dataAccess" disabled/>
                     </div>
                     <div class="form-group">
-                        <label>Password:</label>
+                        <label>Vecchia Password:</label>
+                        <input type="password" class="form-control dataAccess" disabled/>
+                    </div>
+                    <div class="form-group" id="editAccess">
+                        <label>Nuova Password:</label>
                         <input type="password" class="form-control dataAccess" disabled/>
                     </div>
                     <button class="btn btn-primary" id="dataAccess" type="button" onclick="enable('dataAccess','editAccess')">Modifica i dati di
