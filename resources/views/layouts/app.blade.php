@@ -13,9 +13,9 @@
 </head>
 <body>
 
-@if(     Request::is('admin/', '*') )
+@if(     Request::is('admin/*') )
     @include('layouts.header_admin')
-@elseif( Request::is('staff/', '*') )
+@elseif( Request::is('staff/*') )
     @include('layouts.header_staff')
 @else
     @include('layouts.header')

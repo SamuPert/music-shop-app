@@ -14,12 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('homepage');
+
     return view('home');
 });
 
-Route::get('/admin', function () {
+Route::get('/staff', function () {
     return view('adminStaff');
+});
+
+Route::get('/admin', function () {
+    return view('adminPage');
+});
+
+Route::get('/onlineshop',function (){
+    return view('buyContacts');
 });
 
 Auth::routes();
