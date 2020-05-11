@@ -1,4 +1,4 @@
-<div class="modal fade" id="modalInserisciProdotto" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalInserisciProdotto" role="dialog" aria-labelledby="myModalInsertProduct" aria-hidden="true">
     <div class="modal-dialog cascading-modal modal-lg"  role="document">
         <!--Content-->
         <div class="modal-content">
@@ -47,7 +47,7 @@
                                 <option value="3">France</option>
                                 <option value="3">Poland</option>
                                 <option value="3">Japan</option>
-                            </select>
+                            </select>//TODO: Mettere il controllo per la categoria e avere le sue sottocategorie
                         </div>
                         <div class="col">
                             <label for="percentuale">Selezione SottoCategoria</label>
