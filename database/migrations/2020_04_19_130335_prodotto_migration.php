@@ -18,8 +18,11 @@ class ProdottoMigration extends Migration
             $table->string('nome_prodotto',75);
             $table->string('descrizione_breve',75);
             $table->string('descrizione_estesa',150);
-            $table->string('percorso_foto',255); // path image
+            $table->string('percorso_foto',255); // path_image
             $table->float('prezzo',8,2);
+            $table->unsignedBigInteger('id_sotto_categoria');
+            $table->foreign('id_sotto_categoria')->references('id_sotto_categoria')->on('sotto_categoria');
+            $table->timestamps();
         });
     }
 

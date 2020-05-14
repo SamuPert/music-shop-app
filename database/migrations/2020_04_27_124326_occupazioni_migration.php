@@ -16,6 +16,8 @@ class OccupazioniMigration extends Migration
         Schema::create('occupazioni', function (Blueprint $table) {
             $table->id();
             $table->string('occupazione')->unique();
+
+            $table->timestamps();
         });
     }
 

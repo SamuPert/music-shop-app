@@ -17,6 +17,10 @@ class SottoCategoriaMigration extends Migration
             $table->id('id_sotto_categoria');
             $table->string('nome_sotto_categoria',50);
             $table->string('descrizione',150);
+            $table->string('percorso_foto',255); // path_image
+            $table->unsignedBigInteger('id_categoria');
+            $table->foreign('id_categoria')->references('id_categoria')->on('categoria');
+            $table->timestamps();
         });
     }
 
