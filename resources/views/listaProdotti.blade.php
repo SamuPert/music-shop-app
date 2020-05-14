@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Prodotti')
+
 @section('content')
 
 <div class="pl-5 pr-5">
@@ -19,7 +21,13 @@
                 <div class="card-body">
 
                     <h5 class="card-title">
-                        Ci sono {{ count($prodotti) }} prodotti
+                        @if(count($prodotti) == 0)
+                            Non c'è <i>nessun prodotto</i> in questa categoria.
+                        @elseif(count($prodotti) == 1)
+                            C'è <i>un solo prodotto</i>
+                        @else
+                            Ci sono <i>{{ count($prodotti) }} prodotti</i>
+                        @endif
                     </h5>
 
                     <div class="row p-3">
