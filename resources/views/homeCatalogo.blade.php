@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Catalogo')
+
 @section('content')
 
 <div class="pl-5 pr-5">

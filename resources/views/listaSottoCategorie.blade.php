@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Sotto categorie')
+
 @section('content')
 
 <div class="pl-5 pr-5">
@@ -18,7 +20,7 @@
                 <div class="card-body">
 
                     <h5 class="card-title">
-                        Catalogo - {{ $categoria->nome_categoria }}
+                        Catalogo categoria <i>{{ $categoria->nome_categoria }}</i>
                     </h5>
 
                     <div class="row p-3">
