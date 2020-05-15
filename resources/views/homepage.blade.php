@@ -76,7 +76,7 @@
                 <p>Per visualizzare i prodotti a nostra disposizione ti invitiamo a consultare il nostro catalogo
                     digitale. All'interno di esso potrai trovare tutti i prodotti ordinabili online con consegna a
                     domicilio o nei nostri punti vendita.</p>
-                <a href="home" class="btn  mt-4 btn-primary">
+                <a href="/catalogo" class="btn  mt-4 btn-primary">
                     Visualizza Catalogo
                     <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                 </a>
