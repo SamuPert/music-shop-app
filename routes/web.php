@@ -69,6 +69,9 @@ Route::get('/onlineshop',function (){
 Route::get('/homepage', function () {
     return view('homepage');
 });
+Route::get('/schedaprodotto', function () {
+    return view('schedaprodotto');
+});
 
 Auth::routes();
 
