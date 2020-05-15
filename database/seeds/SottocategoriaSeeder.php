@@ -16,97 +16,118 @@ class SottocategoriaSeeder extends Seeder
             'Chitarre' => [
                 [
                     'nome_sotto_categoria'        => 'Elettriche',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
                 [
                     'nome_sotto_categoria'        => 'Classiche',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
                 [
                     'nome_sotto_categoria'        => 'Acustiche',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
                 [
                     'nome_sotto_categoria'        => 'Semiacustiche',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
             ],
             'Bassi' => [
                 [
                     'nome_sotto_categoria'        => 'Elettrici',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
                 [
                     'nome_sotto_categoria'        => 'Acustici',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
                 [
                     'nome_sotto_categoria'        => 'Contrabbassi',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
             ],
             'Tastiere' => [
                 [
                     'nome_sotto_categoria'        => 'Workstation',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
                 [
                     'nome_sotto_categoria'        => 'Fisarmoniche',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
                 [
                     'nome_sotto_categoria'        => 'Pianoforti digitali',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
             ],
             'Batterie' => [
                 [
                     'nome_sotto_categoria'        => 'Acustiche',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
                 [
                     'nome_sotto_categoria'        => 'Elettroniche',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
                 [
                     'nome_sotto_categoria'        => 'Percussioni',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
             ],
             'Fiati' => [
                 [
                     'nome_sotto_categoria'        => 'Sax',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
                 [
                     'nome_sotto_categoria'        => 'Trombe',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
                 [
                     'nome_sotto_categoria'        => 'Flauti',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
                 [
                     'nome_sotto_categoria'        => 'Clarinetti',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
                 [
                     'nome_sotto_categoria'        => 'Altri strumenti a fiato',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
             ],
             'Attrezzature' => [
                 [
                     'nome_sotto_categoria'        => 'Amplificatori',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
                 [
                     'nome_sotto_categoria'        => 'Cavi e connettori',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
                 [
                     'nome_sotto_categoria'        => 'Supporti',
-                    'descrizione' => ''
+                    'descrizione'                 => '',
+                    'percorso_foto'               => ''
                 ],
             ]
         ];
@@ -116,13 +137,16 @@ class SottocategoriaSeeder extends Seeder
             $id_categoria = DB::table('categoria')->where('nome_categoria', $categoria)->first()->id_categoria;
             foreach ($dati_sottocategoria as $sottocategoria) {
 
-                DB::table('sotto_categoria')->insert($sottocategoria);
-                $id_sottocategoria = DB::getPdo()->lastInsertId();
+                $sottocategoria['id_categoria'] = $id_categoria;
 
-                DB::table('categoria_sottocategoria')->insert([
-                    'id_categoria' => $id_categoria,
-                    'id_sotto_categoria' => $id_sottocategoria
-                ]);
+                DB::table('sotto_categoria')->insert($sottocategoria);
+
+//                $id_sottocategoria = DB::getPdo()->lastInsertId();
+//
+//                DB::table('categoria_sottocategoria')->insert([
+//                    'id_categoria' => $id_categoria,
+//                    'id_sotto_categoria' => $id_sottocategoria
+//                ]);
             }
         }
     }

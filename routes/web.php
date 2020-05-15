@@ -1,5 +1,6 @@
 <?php
 
+use App\Categoria;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,46 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//// LISTA CATEGORIE
+//'/catalogo'
+//
+//// LISTA SOTTOCATEGORIE - id_categoria
+//'/catalogo/{id_categoria}'
+//
+//// LISTA PRODOTTI - id_sotto_categoria
+//'/catalogo/categoria/{id_sotto_categoria}'
+//
+//// VISUALIZZAZIONE PRODOTTO - id_prodotto
+//'/catalogo/prodotto/{id_prodotto}'
+
+// Route for /catalogo
+Route::prefix('catalogo')->group(function () {
+
+    // Route: /catalogo
+    Route::get('/', 'CatalogoController@lista_categorie')
+        ->name('catalogo');
+
+    // Route: /catalogo/{id_categoria}
+    Route::get('{id_categoria}', 'CategoriaController@lista_sotto_categorie')
+        ->where('id_categoria', '[0-9]+')
+        ->name('lista_sotto_categorie');
+
+    // Route: /catalogo/categoria/{id_sotto_categoria}
+    Route::get('categoria/{id_sotto_categoria}', 'SottoCategoriaController@lista_prodotti')
+        ->where('id', '[0-9]+')
+        ->name('lista_prodotti');
+
+    // Route: /catalogo/prodotto/{id_prodotto}
+    Route::get('prodotto/{id_prodotto}', 'ProdottoController@visualizza_prodotto')
+        ->where('id', '[0-9]+')
+        ->name('visualizza_prodotto');
+});
+
 Route::get('/', function () {
 
-    return view('home');
-});
+    return view('homepage');
+})->name('homepage');
+
 
 Route::get('/staff', function () {
     return view('adminStaff');
@@ -35,4 +72,4 @@ Route::get('/homepage', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('homeCata');

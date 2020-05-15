@@ -132,14 +132,13 @@ class ProdottoSeeder extends Seeder
         {
             foreach ( $sottocategorie as $sottocategoria => $prodotti)
             {
-                $id_sotto_categoria = DB::table('categoria_sottocategoria')
-                    ->join('categoria', 'categoria.id_categoria', '=', 'categoria_sottocategoria.id_categoria')
-                    ->join('sotto_categoria', 'sotto_categoria.id_sotto_categoria', '=', 'categoria_sottocategoria.id_sotto_categoria')
-                    ->select('users.*', 'contacts.phone', 'orders.price')
+                $id_sotto_categoria = DB::table('sotto_categoria')
+                    ->join('categoria', 'categoria.id_categoria', '=', 'sotto_categoria.id_categoria')
                     ->where('nome_categoria', $categoria)
                     ->where('nome_sotto_categoria', $sottocategoria)
-                    ->select('categoria_sottocategoria.*')
-                    ->first()->id_sotto_categoria;
+                    ->select('sotto_categoria.*')
+                    ->first()
+                    ->id_sotto_categoria;
 
                 foreach ($prodotti as $prodotto) {
 
@@ -147,14 +146,9 @@ class ProdottoSeeder extends Seeder
                         'nome_prodotto' => $prodotto,
                         'descrizione_breve' => '',
                         'descrizione_estesa' => '',
+                        'id_sotto_categoria' => $id_sotto_categoria,
                         'percorso_foto' => '',
                         'prezzo' => rand(200,2000),
-                    ]);
-                    $id_prodotto = DB::getPdo()->lastInsertId();
-
-                    DB::table('prodotto_sottocategoria')->insert([
-                        'id_prodotto' => $id_prodotto,
-                        'id_sotto_categoria' => $id_sotto_categoria
                     ]);
                 }
             }

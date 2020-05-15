@@ -22,7 +22,7 @@
 @endif
 
 {{-- TODO: Visualizzare solo quando è necessario --}}
-@includeWhen( true , 'layouts.filtri-bar')
+@includeWhen( false , 'layouts.filtri-bar')
 
 <div class="main-content">
     @yield('content')

@@ -1,3 +1,21 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+    function riempiSelect(){
+        var $select = $('#sub_category');
+        $select.find('option').remove();
+        if($('#root_category').val() != '#'){
+            $.getJSON( 'select.php', {
+                    root_category: $('#root_category').val()
+                }
+            )
+                .done(function( data ) {
+                    $.each( data, function( key, value ) {
+                        $('<option>').val(key).text(value).appendTo($select);
+                    });
+                });
+        }
+    }
+</script>
 <div class="modal fade" id="modalInserisciProdotto" role="dialog" aria-labelledby="myModalInsertProduct" aria-hidden="true">
     <div class="modal-dialog cascading-modal modal-lg"  role="document">
         <!--Content-->
@@ -40,18 +58,19 @@
                     <div class="form-row">
                         <div class="col">
                             <label for="prezzo">Selezione Categoria</label><br>
-                            <select class="mdb-select md-form" searchable="Search here..">
-                                <option value="" disabled selected>Choose your country</option>
-                                <option value="1">USA</option>
-                                <option value="2">Germany</option>
-                                <option value="3">France</option>
-                                <option value="3">Poland</option>
-                                <option value="3">Japan</option>
-                            </select>//TODO: Mettere il controllo per la categoria e avere le sue sottocategorie
+                            <select class="mdb-select md-form" name="root_category" id="root_category" onChange="riempiSelect();">
+                                <option value="#">Selezionare</option>
+                                <option value="Chitarre">Chitarre</option>
+                                <option value="Bassi">Bassi</option>
+                                <option value="Tastiere">Tastiere</option>
+                                <option value="Batterie">Batterie</option>
+                                <option value="Fiati">Fiati</option>
+                                <option value="Attrezzature">Attrezzature</option>
+                            </select>
                         </div>
                         <div class="col">
-                            <label for="percentuale">Selezione SottoCategoria</label>
-                            <input type="number" class="form-control" placeholder="Metti una percentuale" name="pswd">
+                            <label for="percentuale">Selezione SottoCategoria</label><br>
+                            <select name="sub_category" id="sub_category" class="mdb-select md-form"></select>
                         </div>
                     </div>
                 </div>

@@ -17,6 +17,7 @@ class RuoliMigration extends Migration
             $table->id();
             $table->string('nome')->unique();
             $table->string('descrizione')->nullable();
+            $table->timestamps();
         });
     }
 
