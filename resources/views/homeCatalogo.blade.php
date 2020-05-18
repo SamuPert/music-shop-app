@@ -4,7 +4,6 @@
 
 @section('content')
 
-    @php($prodotto= \App\Prodotto::all())
     <div class="pl-5 pr-5">
         <div class="row justify-content-center">
             <div class="col-md-12">
@@ -50,20 +49,20 @@
                         <div class="row">
                             <div class="col-lg-8 mx-auto">
                                 <!-- List group-->
-                                @foreach($prodotto as $prodotti)
+                                @foreach($prodotti as $prodotto)
                                     <ul class="list-group shadow">
                                         <!-- list group item-->
                                         <li class="list-group-item">
                                             <!-- Custom content-->
                                             <div class="media align-items-lg-center flex-column flex-lg-row p-3">
                                                 <div class="media-body order-2 order-lg-1">
-                                                    <h5 class="mt-0 font-weight-bold mb-2">{{$prodotti->nome_prodotto}}</h5>
+                                                    <h5 class="mt-0 font-weight-bold mb-2">{{$prodotto->nome_prodotto}}</h5>
                                                     <p class="font-italic text-muted mb-0 small">Ciao</p>
                                                     <div class="d-flex align-items-center justify-content-between mt-1">
-                                                        <h6 class="font-weight-bold my-2">{{$prodotti->prezzo}}€</h6>
+                                                        <h6 class="font-weight-bold my-2">{{$prodotto->prezzo}}€</h6>
                                                     </div>
                                                 </div>
-                                                <img src="{{$prodotti->percorso_foto != '' ? asset( $prodotti->percorso_foto ) : 'https://via.placeholder.com/300x200.png' }}" alt="Generic placeholder image"
+                                                <img src="{{$prodotto->percorso_foto != '' ? asset( $prodotto->percorso_foto ) : 'https://via.placeholder.com/300x200.png' }}" alt="Generic placeholder image"
                                                      width="200" class="ml-lg-5 order-1 order-lg-2">
 
                                             </div> <!-- End -->
@@ -72,6 +71,8 @@
                                 @endforeach
                             </div>
                         </div>
+                        <br>
+                        <p>Pagina {{ $prodotti->currentPage() }} di {{ $prodotti->lastPage() }} -- Prossima  <a href="{{ $prodotti->nextPageUrl() }}"> pagina </a></p>
                     </div>
                 </div>
             </div>
