@@ -65,7 +65,7 @@
                             <label for="prezzo">Selezione Categoria</label><br>
                             <select class="mdb-select md-form" name="root_category" id="root_category" onChange="riempiSelect();">
                                 @foreach($categoria as $cat)
-                                    <option value="{{ $cat->nome_categoria }}"><h5>{{ $cat->nogithme_categoria }}</h5></option>
+                                    <option value="{{ $cat->nome_categoria }}"><h5>{{ $cat->nome_categoria }}</h5></option>
                                 @endforeach
                             </select>
 
