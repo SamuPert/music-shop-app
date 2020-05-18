@@ -16,6 +16,7 @@
         }
     }
 </script>
+@php( $categoria = \App\Categoria::all())
 <div class="modal fade" id="modalInserisciProdotto" role="dialog" aria-labelledby="myModalInsertProduct" aria-hidden="true">
     <div class="modal-dialog cascading-modal modal-lg"  role="document">
         <!--Content-->
@@ -46,31 +47,34 @@
                     <div class="form-row">
                         <div class="col">
                             <label for="prezzo">Prezzo</label>
-                            <input type="text" class="form-control" id="email" placeholder="Metti il prezzo" name="email">
+                            <input type="text" class="form-control" id="prezzo" placeholder="Metti il prezzo" name="prezzo">
                         </div>
                         <div class="col">
                             <label for="percentuale">Percentuale di Sconto</label>
-                            <input type="number" class="form-control" placeholder="Metti una percentuale" name="pswd">
+                            <div class="percentInput">
+                                <input type="number" name="number" class="form-control">
+                                <span>%</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <br>
                 <div>
                     <div class="form-row">
                         <div class="col">
                             <label for="prezzo">Selezione Categoria</label><br>
                             <select class="mdb-select md-form" name="root_category" id="root_category" onChange="riempiSelect();">
-                                <option value="#">Selezionare</option>
-                                <option value="Chitarre">Chitarre</option>
-                                <option value="Bassi">Bassi</option>
-                                <option value="Tastiere">Tastiere</option>
-                                <option value="Batterie">Batterie</option>
-                                <option value="Fiati">Fiati</option>
-                                <option value="Attrezzature">Attrezzature</option>
+                                @foreach($categoria as $cat)
+                                    <option value="{{ $cat->nome_categoria }}"><h5>{{ $cat->nome_categoria }}</h5></option>
+                                @endforeach
                             </select>
+
                         </div>
                         <div class="col">
-                            <label for="percentuale">Selezione SottoCategoria</label><br>
-                            <select name="sub_category" id="sub_category" class="mdb-select md-form"></select>
+                            <label for="percentuale">Selezione Sotto Categoria</label><br>
+                            <select name="sub_category" id="sub_category" class="mdb-select md-form">
+                                <option value="#" disabled selected>Selezionare</option>
+                            </select>
                         </div>
                     </div>
                 </div>
