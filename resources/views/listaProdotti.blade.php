@@ -40,7 +40,7 @@
                                 <div class="card-body text-center">
                                     <h5 class="card-title">{{ $prodotto->nome_prodotto }}</h5>
                                     <h6 class="card-subtitle mb-0 text-muted">{{ $prodotto->prezzo }}€</h6>
-                                    <a href="{{ route('lista_prodotti', ['id_sotto_categoria' => $sotto_categoria->id_sotto_categoria]) }}" class="stretched-link"></a>
+                                    <a href="{{ route('schedaprodotto', ['id_prodotto' => $prodotto->id_prodotto]) }}" class="stretched-link"></a>
                                 </div>
                             </div>
                         </div>

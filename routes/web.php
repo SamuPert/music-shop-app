@@ -46,7 +46,7 @@ Route::prefix('catalogo')->group(function () {
     // Route: /catalogo/prodotto/{id_prodotto}
     Route::get('prodotto/{id_prodotto}', 'ProdottoController@visualizza_prodotto')
         ->where('id', '[0-9]+')
-        ->name('visualizza_prodotto');
+        ->name('schedaprodotto');
 });
 
 Route::get('/', function () {
@@ -68,9 +68,6 @@ Route::get('/onlineshop',function (){
 });
 Route::get('/homepage', function () {
     return view('homepage');
-});
-Route::get('/schedaprodotto', function () {
-    return view('schedaprodotto');
 });
 
 Auth::routes();

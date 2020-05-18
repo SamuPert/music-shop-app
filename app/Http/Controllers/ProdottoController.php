@@ -10,18 +10,10 @@ class ProdottoController extends Controller
 
     public function visualizza_prodotto($id_prodotto)
     {
-        return "<b> TODO: Implementa ProdottoController::visualizza_prodotto </b>";
+        $prodotto = Prodotto::findOrFail($id_prodotto);
 
+        return view('schedaprodotto', compact('prodotto'));
 
-        // Visualizza prodotto
-        $prodotto = Prodotto::find($id_prodotto);
-
-        if($prodotto == null)
-        {
-            // Prodotto non trovato
-            dd("Prodotto non trovato");
-            return "";
-        }
 
     }
 }

@@ -19,6 +19,13 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .col-mobile {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
 .show-on-mobile,
 .hide-on-desktop {
   display: block;

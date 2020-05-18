@@ -1,25 +1,24 @@
+@media screen and (min-width: 768px) {
+    .show-on-mobile, .hide-on-desktop {
+        display: none !important;
+    }
 
-@media screen and (min-width: 768px)
-{
-  .show-on-mobile, .hide-on-desktop
-  {
-    display: none !important;
-  }
-
-  .show-on-desktop, .hide-on-mobile
-  {
-    display: block !important;
-  }
-
-
+    .show-on-desktop, .hide-on-mobile {
+        display: block !important;
+    }
 }
 
-.show-on-mobile, .hide-on-desktop
-{
-  display: block;
+@media screen and (max-width: 768px){
+    .col-mobile {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
 
-.show-on-desktop, .hide-on-mobile
-{
-  display: none;
+.show-on-mobile, .hide-on-desktop {
+    display: block;
+}
+
+.show-on-desktop, .hide-on-mobile {
+    display: none;
 }
