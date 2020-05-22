@@ -83,4 +83,14 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    protected function createStaff(array $data, $auth_level=3)
+    {
+        return User::create([
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+            'username' => $data['username'],
+            'password' => Hash::make($data['password']),
+        ]);
+    }
 }

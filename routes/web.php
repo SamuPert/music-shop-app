@@ -49,6 +49,7 @@ Route::prefix('catalogo')->group(function () {
         ->name('schedaprodotto');
 });
 
+
 Route::get('/', function () {
 
     return view('homepage');
@@ -59,7 +60,7 @@ Route::get('/staff', function () {
     return view('adminStaff');
 });
 
-Route::get('/admin', function () {
+Route::get('/admin', 'AdminController@admin_controller', function () {
     return view('adminPage');
 });
 
