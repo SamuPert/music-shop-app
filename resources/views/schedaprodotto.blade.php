@@ -10,7 +10,7 @@
                 <div data-ride="carousel" class="carousel slide" id="carousel-1">
                     <div role="listbox" class="carousel-inner">
                         <div class="carousel-item active"><img class="w-100 d-block"
-                                                               src="{{ $prodotto->percorso_foto != '' ? asset( $prodotto->percorso_foto ):'https://via.placeholder.com/300x200.png' }}"
+                                                               src="{{ $prodotti->percorso_foto != '' ? asset( $prodotti->percorso_foto ):'https://via.placeholder.com/300x200.png' }}"
                                                                alt="Slide Image"/></div>
                     </div>
                     <div><a href="#carousel-1" role="button" data-slide="prev" class="carousel-control-prev"><span
@@ -27,13 +27,13 @@
                 </div>
             </div>
             <div class="col col-mobile">
-                <h1 clas mt-5>{{$prodotto->nome_prodotto}}</h1>
+                <h1 clas mt-5>{{$prodotti->nome_prodotto}}</h1>
                 <p>Categoria (Non so come inserisla con la join</p>
                 <hr/>
                 <h6>Descrizione Prodotto:</h6>
                 <p>Inserire qui descrizione prodotto</p>
                 <h6>Prezzo Prodotto:</h6>
-                <p>{{$prodotto->prezzo}} €</p>
+                <p>{{$prodotti->prezzo}} €</p>
                 <p>Paragraph</p><label>Seleziona quantità: <select>
                         <optgroup label="This is a group">
                             <option value="12" selected>1</option>
