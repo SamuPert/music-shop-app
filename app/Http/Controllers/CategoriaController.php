@@ -15,13 +15,15 @@ class CategoriaController extends Controller
         // Lista sotto categorie per categoria
         $categoria = Categoria::findOrFail($id_categoria);
         $sotto_categorie = Sottocategoria::where('id_categoria', $id_categoria)->get();
+
+
         $prodotti = DB::table('prodotto')
-            ->join('sotto_categoria', function ($join) use ($id_categoria) {
-                $join->on('prodotto.id_sotto_categoria', '=', 'sotto_categoria.id_sotto_categoria')
-                    ->where('id_categoria', $id_categoria)
-                    ->select('prodotto.*');
-            })
+            ->join('sotto_categoria', 'prodotto.id_sotto_categoria', '=', 'sotto_categoria.id_sotto_categoria')
+            ->select('prodotto.*')
+            ->where('sotto_categoria.id_categoria', '=', $id_categoria)
+            ->orderBy('prodotto.nome_prodotto')
             ->paginate(5);
+
         return view('listaSottoCategorie', compact(['categoria', 'sotto_categorie', 'prodotti']));
     }
 }
