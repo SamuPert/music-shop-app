@@ -24,7 +24,7 @@
                             <td>{{$utenti->first_name}}</td>
                             <td>{{$utenti->last_name}}</td>
                             <td>{{$utenti->username}}</td>
-                            <td><input id="checkbox1" type="checkbox" />     <i class="fa fa-trash"></i></td>
+                            <td><input id="{{$utenti->id}}" type="checkbox" />     <i class="fa fa-trash"></i></td>
                         </tr>
                             @endforeach
                         </tbody>
