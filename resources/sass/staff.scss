@@ -1,3 +1,13 @@
-.percentInput { position:relative; display: inline-block; }
-.percentInput span { position: absolute; top:2px; right: 4px; line-height:100%; vertical-align: middle; }
+.percentInput { position:relative; }
 .num_percent { width:30px; text-align: left; padding-right: 15px; }
+
+.percentInput span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+
+.page-item.active .page-link {
+  z-index: 0;
+}

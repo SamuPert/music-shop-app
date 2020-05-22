@@ -7,6 +7,7 @@
     <title>Home - Brand</title>
     <link rel="stylesheet" href="{{ asset('/css/homepage.css') }}">
     <script src="https://use.fontawesome.com/523f3c3982.js"></script>
+    <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
     <link rel="stylesheet" href="{{ asset('/css/footer.css') }}">
 </head>
 

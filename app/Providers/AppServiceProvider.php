@@ -14,8 +14,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $layouts = [
+            'layouts/app',
+            'components/modalInsertProduct'
+        ];
+
         // Inject in every request to "views/layouts/app.blade.php" the category data.
-        view()->composer('layouts/app', function ($view) {
+        view()->composer($layouts, function ($view) {
             $listaCategorie = Categoria::select('id_categoria', 'nome_categoria')->orderBy('nome_categoria')->get();
             $view->with('listaCategorie', $listaCategorie);
         });

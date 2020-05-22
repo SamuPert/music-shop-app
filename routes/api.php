@@ -17,3 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/findByCategory/', function (Request $request) {
+
+    $id_categoria = $request->input('id_categoria', -1);
+
+    $result = \App\Sottocategoria::where('id_categoria' , $id_categoria)
+        ->select('id_sotto_categoria as id', "nome_sotto_categoria as sotto_categoria")->get();
+
+    return $result;
+
+});
+
