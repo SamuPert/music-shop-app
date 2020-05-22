@@ -10,9 +10,8 @@ class ProdottoController extends Controller
 
     public function visualizza_prodotto($id_prodotto)
     {
-        $prodotto = Prodotto::findOrFail($id_prodotto);
-
-        return view('schedaprodotto', compact('prodotto'));
+        $prodotti = Prodotto::findOrFail($id_prodotto);
+        return view('schedaprodotto', compact('prodotti'));
 
 
     }

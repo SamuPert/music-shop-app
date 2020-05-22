@@ -65,7 +65,7 @@
                                                 </div>
                                                 <img src="{{$prodotto->percorso_foto != '' ? asset( $prodotto->percorso_foto ) : 'https://via.placeholder.com/300x200.png' }}" alt="Generic placeholder image"
                                                      width="200" class="ml-lg-5 order-1 order-lg-2">
-
+                                                <a href="{{ route('visualizza_prodotto', ['id_prodotto' => $prodotto->id_prodotto]) }}" class="stretched-link"></a>
                                             </div> <!-- End -->
                                         </li> <!-- End -->
                                     </ul>

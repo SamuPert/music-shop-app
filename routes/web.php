@@ -46,7 +46,7 @@ Route::prefix('catalogo')->group(function () {
     // Route: /catalogo/prodotto/{id_prodotto}
     Route::get('prodotto/{id_prodotto}', 'ProdottoController@visualizza_prodotto')
         ->where('id', '[0-9]+')
-        ->name('schedaprodotto');
+        ->name('visualizza_prodotto');
 });
 
 
