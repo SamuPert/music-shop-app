@@ -18,15 +18,15 @@
                 </div>
                 <div class="col-sm-4 col-md-3 item">
                     <h3>Contatti</h3>
-                    <p class="text-justify"> Puoi contattarci al numero <a href="tel:+39 071 893241">+39 071893241</a>, tramite la nostra form di contatto <a href="#">cliccando qui</a> oppure utilizzando i nostri canali social
+                    <p class="text-justify" style="margin-bottom: 0px"> Puoi contattarci al numero <a href="tel:+39 071 893241">+39 071893241</a>, tramite la nostra form di contatto <a href="#">cliccando qui</a> oppure utilizzando i nostri canali social
                     </p>
-                    <div class="row item social d-flex justify-content-center footer-social">
+                    <p class="row item social d-flex justify-content-center footer-social">
                         <a href="https://www.instagram.com/"><i class="fa fa-instagram mt-0"></i></a>
                         <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
                         <a href="mailto:info_FAKE@musicshop.it"><i class="fa fa-at"></i></a>
-                    </div>
+                    </p>
+                    <p style="text-align: center"><a href="privacypolicy">PRIVACY POLICY</a></p>
                 </div>
-
                 <div class="col-sm-4 col-md-3 footer-map container-fluid">
                     <h3>
                         La nostra sede
