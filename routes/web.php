@@ -60,9 +60,7 @@ Route::get('/staff', function () {
     return view('adminStaff');
 });
 
-Route::get('/admin', 'AdminController@admin_controller', function () {
-    return view('adminPage');
-});
+Route::get('/admin', 'AdminController@admin_controller');
 
 Route::get('/onlineshop',function (){
     return view('buyContacts');

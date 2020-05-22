@@ -10,19 +10,19 @@
 
                 <div class="form-group" id="nomeStaff">
                     <label for="for_name">Nome</label>
-                    <input type="text" class="form-control" id="for_name_staff" tabindex="-1" name="for_name_staff" required placeholder="Mario" />
+                    <input type="text" class="form-control" id="for_name_staff" tabindex="-1" name="first_name" required placeholder="Mario" />
                 </div>
                 <div class="form-group has-feedback" id="cognomeStaff">
                     <label for="for_cognomeStaff"></label>Cognome</label>
-                    <input type="text" class="form-control" id="for_cognome" name="for_cognome" required placeholder="Rossi" />
+                    <input type="text" class="form-control" id="for_cognome" name="last_name" required placeholder="Rossi" />
                 </div>
                 <div class="form-group" id="username">
                     <label for="Username">Username</label>
-                    <input type="text" class="form-control" id="for_username" name="for_username" required placeholder="mario_rossi" />
+                    <input type="text" class="form-control" id="for_username" name="username" required placeholder="mario_rossi" />
                 </div>
-                <div class="form-group" id="descrizioneEstesa">
+                <div class="form-group" id="password">
                     <label for="Password">Password</label>
-                    <input type="password" class="form-control" id="pass" name="pass" placeholder="Digita la password per l'utente staff"/>
+                    <input type="password" class="form-control" id="pass" name="password" placeholder="Digita la password per l'utente staff"/>
                 </div>
                 <br>
                 <div class="form-group">

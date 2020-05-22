@@ -8,7 +8,7 @@
                 </div>
                 <br>
                 <div class="form-group" id="nomeSottoCateogria">
-                    <label for="from_name">Nome Prodotto</label>
+                    <label for="from_name">Nome Categoria</label>
                     <input type="text" class="form-control" id="from_name" tabindex="-1" name="from_name" required placeholder="Chitarra Elettrica" />
                 </div>
                 <div class="form-group has-feedback" id="descrzioneBreveSottoCategoria">
@@ -18,7 +18,9 @@
                 <div class="form-group has-feedback" id="selectCategoriaForSub">
                     <label for="prezzo">Selezione Categoria</label><br>
                     <select  class="custom-select mdb-select md-form" name="categoria" id="select_categoria">
-
+                        @foreach( $listaCategorie as $categoria )
+                            <option value="{{$categoria->id_categoria}}">{{$categoria->nome_categoria}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <br>
