@@ -1,87 +1,77 @@
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript">
-    function riempiSelect(){
-        var $select = $('#sub_category');
-        $select.find('option').remove();
-        if($('#root_category').val() != '#'){
-            $.getJSON( 'select.php', {
-                    root_category: $('#root_category').val()
-                }
-            )
-                .done(function( data ) {
-                    $.each( data, function( key, value ) {
-                        $('<option>').val(key).text(value).appendTo($select);
-                    });
-                });
-        }
-    }
-</script>
-@php( $categoria = \App\Categoria::all())
 <div class="modal fade" id="modalInserisciProdotto" role="dialog" aria-labelledby="myModalInsertProduct" aria-hidden="true">
     <div class="modal-dialog cascading-modal modal-lg"  role="document">
         <!--Content-->
-        <div class="modal-content">
-            <div class="col-md-12" id="message">
-                <div style="text-align: center; font-size: 30px;">
-                    <b>Inserisci il nuovo prodotto</b>
-                </div>
-                <div class="form-group" id="nomeProdotto">
-                    <label for="from_name">Nome Prodotto</label>
-                    <input type="text" class="form-control" id="from_name" tabindex="-1" name="from_name" required placeholder="Ex. Yamaha" />
-                </div>
-                <div class="form-group has-feedback" id="descrzioneBreve">
-                    <label for="for_descrizionebreve"></label>Descrizione Breve</label>
-                    <input type="text" class="form-control" id="from_descrizione" name="from_descrizione" required placeholder="Ex. Archetto a 6 archi" />
-                </div>
-                <div class="form-group" id="immagineProdotto">
-                    <label for="immagine">Inserisci l&#39;immagine del prodotto</label>
-                    <form method="post" action="" enctype="multipart/form-data">
-                        <input type="file" name="upload1" id="upload1"  class="btn"/>
-                    </form>
-                </div>
-                <div class="form-group" id="descrizioneEstesa">
-                    <label for="comments">Descrizione Estesa</label>
-                    <textarea class="form-control" id="comments" name="Comments" placeholder="Digita la tua descrizione" rows="5"></textarea>
-                </div>
-                <div>
-                    <div class="form-row">
-                        <div class="col">
-                            <label for="prezzo">Prezzo</label>
-                            <input type="text" class="form-control" id="prezzo" placeholder="Metti il prezzo" name="prezzo">
+        <div class="modal-content pt-2">
+            <div style="text-align: center; font-size: 30px;">
+                <b>Inserisci il nuovo prodotto</b>
+            </div>
+            <div class="col-md-12 pl-5 pr-5 pt-2" id="message">
+                <form action="" enctype="multipart/form-data">
+                    <div class="form-group" id="nomeProdotto">
+                        <label for="form_name">Nome Prodotto</label>
+                        <input type="text" class="form-control" id="form_name" tabindex="-1" name="form_name" required placeholder="Ex. Yamaha" />
+                    </div>
+                    <div class="form-group has-feedback" id="descrzioneBreve">
+                        <label for="form_descrizione">Descrizione Breve</label>
+                        <input type="text" class="form-control" id="form_descrizione" name="form_descrizione" required placeholder="Ex. Archetto a 6 archi" />
+                    </div>
+                    <div class="form-group" id="immagineProdotto">
+                        <label for="inputFileImmagine">Immagine del prodotto</label>
+                        <div class="input-group mb-3">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputFileImmagine">
+                                <label class="custom-file-label" for="inputFileImmagine">Scegli l&#39;immagine del prodotto</label>
+                            </div>
                         </div>
-                        <div class="col">
-                            <label for="percentuale">Percentuale di Sconto</label>
-                            <div class="percentInput">
-                                <input type="number" name="number" class="form-control">
-                                <span>%</span>
+
+                    </div>
+                    <div class="form-group" id="descrizioneEstesa">
+                        <label for="comments">Descrizione Estesa</label>
+                        <textarea class="form-control" id="comments" name="Comments" placeholder="Digita la tua descrizione" rows="5"></textarea>
+                    </div>
+                    <div>
+                        <div class="form-row">
+                            <div class="col">
+                                <label for="prezzo">Prezzo</label>
+                                <div class="percentInput">
+                                    <input type="number" name="prezzo" class="form-control">
+                                    <span class="input-group-text" id="percentuale_sign">€</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label for="percentuale">Percentuale di Sconto</label>
+                                <div class="percentInput">
+                                    <input type="number" name="percentuale" class="form-control">
+                                    <span class="input-group-text" id="percentuale_sign">%</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <br>
-                <div>
-                    <div class="form-row">
-                        <div class="col">
-                            <label for="prezzo">Selezione Categoria</label><br>
-                            <select class="mdb-select md-form" name="root_category" id="root_category" onChange="riempiSelect();">
-                                @foreach($categoria as $cat)
-                                    <option value="{{ $cat->nome_categoria }}"><h5>{{ $cat->nome_categoria }}</h5></option>
-                                @endforeach
-                            </select>
+                    <br>
+                    <div>
+                        <div class="form-row">
+                            <div class="col">
+                                <label for="prezzo">Selezione Categoria</label><br>
+                                <select  class="custom-select mdb-select md-form" name="categoria" id="select_categoria" onChange="riempiSelectByCategoria('#select_categoria','#select_sotto_categoria');">
+                                    @foreach( $listaCategorie as $categoria )
+                                        <option value="{{$categoria->id_categoria}}">{{$categoria->nome_categoria}}</option>
+                                    @endforeach
+                                </select>
 
-                        </div>
-                        <div class="col">
-                            <label for="percentuale">Selezione Sotto Categoria</label><br>
-                            <select name="sub_category" id="sub_category" class="mdb-select md-form">
-                                <option value="#" disabled selected>Selezionare</option>
-                            </select>
+                            </div>
+                            <div class="col">
+                                <label for="percentuale">Selezione Sotto Categoria</label><br>
+                                <select  class="custom-select mdb-select md-form" name="sotto_categoria" id="select_sotto_categoria" >
+                                    <option value="#" disabled selected>Selezionare</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <br>
-                <div class="form-group">
-                    <button class="btn btn-primary btn-block" type="submit">Salva il prodotto <i class="fa fa-chevron-circle-right"></i></button>
-                </div>
+                    <br>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit">Salva il prodotto <i class="fa fa-chevron-circle-right"></i></button>
+                    </div>
+                </form>
             </div>
 
             <!--Footer-->
@@ -92,6 +82,11 @@
     </div>
 </div>
 
-<!--/.Content-->
+@push('onload_scripts')
+
+riempiSelectByCategoria('#select_categoria','#select_sotto_categoria');
+
+@endpush
+
 
 
