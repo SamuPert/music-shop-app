@@ -11,8 +11,12 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('homepage') }}">Home</a></li>
                         <li class="breadcrumb-item"><a href="{{ route('catalogo') }}">Catalogo</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('lista_sotto_categorie', ['id_categoria'=> $categoria->id_categoria ]) }}">{{ $categoria->nome_categoria }}</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('lista_prodotti', ['id_sotto_categoria'=> $sotto_categoria->id_sotto_categoria ]) }}">{{ $sotto_categoria->nome_sotto_categoria }}</a></li>
+                        <li class="breadcrumb-item"><a
+                                href="{{ route('lista_sotto_categorie', ['id_categoria'=> $categoria->id_categoria ]) }}">{{ $categoria->nome_categoria }}</a>
+                        </li>
+                        <li class="breadcrumb-item"><a
+                                href="{{ route('lista_prodotti', ['id_sotto_categoria'=> $sotto_categoria->id_sotto_categoria ]) }}">{{ $sotto_categoria->nome_sotto_categoria }}</a>
+                        </li>
                         <li class="breadcrumb-item active" aria-current="page">{{ $prodotti->nome_prodotto }}</li>
                     </ol>
                 </nav>
@@ -28,8 +32,10 @@
                                                                                    src="{{ $prodotti->percorso_foto != '' ? asset( $prodotti->percorso_foto ):'https://via.placeholder.com/300x200.png' }}"
                                                                                    alt="Slide Image"/></div>
                                         </div>
-                                        <div><a href="#carousel-1" role="button" data-slide="prev" class="carousel-control-prev"><span
-                                                    aria-hidden="true" class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a
+                                        <div><a href="#carousel-1" role="button" data-slide="prev"
+                                                class="carousel-control-prev"><span
+                                                    aria-hidden="true" class="carousel-control-prev-icon"></span><span
+                                                    class="sr-only">Previous</span></a><a
                                                 href="#carousel-1" role="button" data-slide="next"
                                                 class="carousel-control-next"><span aria-hidden="true"
                                                                                     class="carousel-control-next-icon"></span><span
@@ -46,20 +52,22 @@
                                     <p>Categoria (Non so come inserisla con la join</p>
                                     <hr/>
                                     <h6>Descrizione Prodotto:</h6>
-                                    <p>Inserire qui descrizione prodotto</p>
+                                    <p>{{$prodotti->descrizione_estesa}}</p>
                                     <h6>Prezzo Prodotto:</h6>
                                     <p>{{$prodotti->prezzo}} €</p>
                                     <p>Paragraph</p><label>Seleziona quantità: 
                                         <select>
                                             <optgroup label="This is a group">
-                                                <option value="12" selected>1</option>
-                                                <option value="13">2</option>
-                                                <option value="14">3</option>
-                                                <option value="14">4</option>
-                                                <option value="14">5</option>
+                                                <option value="1" selected>1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
                                             </optgroup>
                                         </select>
                                     </label>
+                                    <p>Stima Prezzo Totale:</p>
+                                    <p id="totlaprice"></p>
                                 </div>
                             </div>
                         </div>
