@@ -28,38 +28,44 @@
                                                                                    src="{{ $prodotti->percorso_foto != '' ? asset( $prodotti->percorso_foto ):'https://via.placeholder.com/300x200.png' }}"
                                                                                    alt="Slide Image"/></div>
                                         </div>
-                                        <div><a href="#carousel-1" role="button" data-slide="prev" class="carousel-control-prev"><span
-                                                    aria-hidden="true" class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a
-                                                href="#carousel-1" role="button" data-slide="next"
-                                                class="carousel-control-next"><span aria-hidden="true"
-                                                                                    class="carousel-control-next-icon"></span><span
-                                                    class="sr-only">Next</span></a></div>
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
-                                            <li data-target="#carousel-1" data-slide-to="1"></li>
-                                            <li data-target="#carousel-1" data-slide-to="2"></li>
-                                        </ol>
                                     </div>
                                 </div>
                                 <div class="col col-mobile">
                                     <h1 clas mt-5>{{$prodotti->nome_prodotto}}</h1>
-                                    <p>Categoria (Non so come inserisla con la join</p>
+                                    <p>{{ $categoria->nome_categoria }} {{ $sotto_categoria->nome_sotto_categoria }}</p>
                                     <hr/>
+                                    <br>
                                     <h6>Descrizione Prodotto:</h6>
-                                    <p>Inserire qui descrizione prodotto</p>
-                                    <h6>Prezzo Prodotto:</h6>
-                                    <p>{{$prodotti->prezzo}} €</p>
-                                    <p>Paragraph</p><label>Seleziona quantità: 
-                                        <select>
-                                            <optgroup label="This is a group">
-                                                <option value="12" selected>1</option>
-                                                <option value="13">2</option>
-                                                <option value="14">3</option>
-                                                <option value="14">4</option>
-                                                <option value="14">5</option>
-                                            </optgroup>
-                                        </select>
-                                    </label>
+                                      <p>{{ $prodotti->descrizione_estesa }}</p>
+                                    <br>
+                                    <h6>Seleziona Quantità: </h6>
+                                        <div class="row justify-content-between">
+                                            <div class="col-4">
+                                                <select class="custom-select mdb-select md-form" id="select_quantita" style="width: 100px" >
+                                                    <optgroup label="Seleziona">
+                                                        <option value="1" selected>1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                            <div class="col-4">
+                                                <h4 class="float-right" id="prezzo">{{$prodotti->prezzo}} €</h4>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <hr>
+                                    <div class="row justify-content-between">
+                                        <div class="col-4">
+                                            <h5>Totale:</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <h2 class="float-right" id="tot_prezzo"> €</h2>
+                                        </div>
+                                    </div>
+                                    </h6>
                                 </div>
                             </div>
                         </div>
