@@ -13,7 +13,7 @@ class ProdottoController extends Controller
     public function visualizza_prodotto($id_prodotto)
     {
         $prodotti = Prodotto::findOrFail($id_prodotto);
-        $sotto_categoria = Sottocategoria::findOrFail($prodotti->id_prodotto);
+        $sotto_categoria = Sottocategoria::findOrFail($prodotti->id_sotto_categoria);
         $categoria = Categoria::findOrFail($sotto_categoria->id_categoria);
 
 
