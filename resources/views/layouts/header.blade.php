@@ -1,4 +1,5 @@
 @include('components.modalRegistra')
+
 <div class="row shadow m-0 w-100 custom-header-fixed">
     <div class="col col-md-2 col-sm-2 col-2">
         <!-- First Column -->
@@ -37,16 +38,7 @@
 
                     <div class="float-right mt-1 ml-1">
                     @auth
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="float-left">
-                            <button type="submit" class="btn btn-outline-danger float-right">
-                                Logout
-                                <i class="fa fa-sign-out" aria-hidden="true"></i>
-                            </button>
-                            {{ csrf_field() }}
-                        </form>
-                        <div class="card float-left p-2">
-                            Logged in as Mario Rossi
-                        </div>
+                        @include('components.loggedInUser')
                     @endauth
                     </div>
 
