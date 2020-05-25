@@ -38,24 +38,22 @@
                                     <h1 clas mt-5>{{$prodotti->nome_prodotto}}</h1>
                                     <p>{{ $categoria->nome_categoria }} {{ $sotto_categoria->nome_sotto_categoria }}</p>
                                     <hr/>
-                                    <br>
                                     <h6>Descrizione Prodotto:</h6>
                                     <p>{{$prodotti->descrizione_estesa}}</p>
-                                    <h6>Prezzo Prodotto:</h6>
-                                    <p>{{$prodotti->prezzo}} €</p>
-                                    <p>Paragraph</p><label>Seleziona quantità: 
-                                        <select>
-                                            <optgroup label="This is a group">
-                                                <option value="1" selected>1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </optgroup>
-                                        </select>
-                                    </label>
-                                    <p>Stima Prezzo Totale:</p>
-                                    <p id="totlaprice"></p>
+                                    <p>Prezzo: <span id="price">{{$prodotti->prezzo}}</span>€</p>
+                                    <div class="form-group form-inline">
+                                        <label for="selectquantity" class="mr-3">Seleziona quantità: </label>
+                                        <select class="form-control personal" id="selectquantity">
+                                                <optgroup label="This is a group">
+                                                    <option value="1" selected>1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </optgroup>
+                                            </select>
+                                    </div>
+                                    <p>Stima Prezzo Totale: <span id="totlaprice">{{$prodotti->prezzo}}</span>€</p>
                                 </div>
                             </div>
                         </div>
@@ -65,3 +63,11 @@
         </div>
     </div>
 @endsection
+
+@push('onload_scripts')
+    $("#selectquantity").on("change", function () {
+    var prezzo=$("#price").text();
+    var quantita=$("#selectquantity").val();
+    $("#totlaprice").text(prezzo*quantita);
+    })
+@endpush
