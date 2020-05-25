@@ -11,3 +11,12 @@
 @import "staff";
 @import "loading-div";
 
+
+.errors_div
+{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 10000;
+  padding: 30px;
+}

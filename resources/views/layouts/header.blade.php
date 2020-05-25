@@ -35,19 +35,36 @@
 
                 <div class="col d-none d-md-block mt-2 mr-2" >
 
-                    <div class="float-right mt-2 ml-1">
-                        <a href="#panelRegistrati" class="btn btn-primary float-right modal-toggle" onclick='$("#modalLRForm").modal("show")'>
-                            Registrati
-                            <i class="fa fa-sign-in" aria-hidden="true"></i>
-                        </a>
+                    <div class="float-right mt-1 ml-1">
+                    @auth
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                            <button type="submit" class="btn btn-outline-danger float-right">
+                                Logout
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                            </button>
+                            {{ csrf_field() }}
+                        </form>
+                    @endauth
                     </div>
 
-                    <div class="float-right mt-2 ml-1">
-                        <a href="#panelAccedi" class="btn btn-light float-right modal-toggle" onclick='$("#modalLRForm").modal("show")'>
-                            Accedi
-                            <i class="fa fa-user-o" aria-hidden="true"></i>
-                        </a>
-                    </div>
+
+                    @guest
+                        <div class="float-right mt-1 ml-1">
+                            <a href="#panelRegistrati" class="btn btn-primary float-right modal-toggle" onclick='$("#modalLRForm").modal("show")'>
+                                Registrati
+                                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                        <div class="float-right mt-1 ml-1">
+                            <a href="#panelAccedi" class="btn btn-light float-right modal-toggle" onclick='$("#modalLRForm").modal("show")'>
+                                Accedi
+                                <i class="fa fa-user-o" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                    @endguest
+
 
                 </div>
 

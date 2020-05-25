@@ -25,18 +25,20 @@
 
                         <!--Body Login-->
                         <div class="modal-body mb-1">
-                            <form class="login"><div style="text-align: center;"><img src="{{ asset("/img/logoSitoMobile.png") }}" style="max-height: 130px" /></div><br>
+                            <form class="login" action="{{ route('login') }}" method="POST">
+                                <div style="text-align: center;"><img src="{{ asset("/img/logoSitoMobile.png") }}" style="max-height: 130px" /></div><br>
                                 <div class="form-row form-group">
                                     <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Username</label></div>
-                                    <div class="col"><input type="text" class="form-control" /></div>
+                                    <div class="col"><input type="text" name="username" class="form-control" /></div>
                                 </div>
                                 <div class="form-row form-group">
                                     <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Password</label></div>
-                                    <div class="col"><input type="password" class="form-control" /></div>
+                                    <div class="col"><input type="password" name="password" class="form-control" /></div>
                                 </div>
                                 <div class="text-center mt-2">
                                     <button class="btn btn-info">Accedi</button>
                                 </div>
+                                @csrf
                             </form>
                         </div>
                         <!--Footer-->

@@ -92,7 +92,51 @@ window.endLoading = () => {
     $('#loading-div').removeClass('loading');
 }
 
-
+// Display loading on Ajax requests
+$(document).on({
+    ajaxStart: function() { startLoading(); },
+    ajaxStop: function() { endLoading() }
+});
 
 registerRangeInputChange('#prezzoMaxInput', '#prezzoMaxValue');
 registerRangeInputChange('#prezzoMinInput', '#prezzoMinValue');
+
+$('.toast').toast({
+    animation: true,
+    autohide:  false
+});
+
+
+
+
+
+// show loading image
+$('.image_loading').hide();
+$('.image_loading').parent().children('.loader_image').show();
+
+$(".image_loading").one("load", function() {
+    $(this).parent().children('.loader_image').hide();
+    $(this).show();
+}).each(function() {
+    if(this.complete) {
+        // $(this).load(); // For jQuery < 3.0
+        $(this).trigger('load'); // For jQuery >= 3.0
+    }
+});
+
+
+
+// On clock on enable-edit button, removes disabled attribute from input
+$('.enable-edit').click(function (e) {
+    e.preventDefault();
+    let this_form = $(this).parent();
+
+    this_form.find( "input" ).prop("disabled", false);
+    this_form.find( "textarea" ).prop("disabled", false);
+});
+
+
+
+
+
+//

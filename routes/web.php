@@ -26,6 +26,11 @@ use Illuminate\Support\Facades\Route;
 //// VISUALIZZAZIONE PRODOTTO - id_prodotto
 //'/catalogo/prodotto/{id_prodotto}'
 
+// Route: /prodotti/gestione
+Route::get('/prodotti/gestione', 'ProdottoController@gestione_prodotti')
+->name('gestione_prodotti');
+
+
 // Route for /catalogo
 Route::prefix('catalogo')->group(function () {
 

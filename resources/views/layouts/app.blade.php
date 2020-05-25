@@ -31,16 +31,9 @@
 
 @include('layouts.footer')
 
-<div id="loading-div" class="">
-    <div class="sk-chase">
-        <div class="sk-chase-dot"></div>
-        <div class="sk-chase-dot"></div>
-        <div class="sk-chase-dot"></div>
-        <div class="sk-chase-dot"></div>
-        <div class="sk-chase-dot"></div>
-        <div class="sk-chase-dot"></div>
-    </div>
-</div>
+@include('layouts.loading_div')
+
+@include('layouts.error_display')
 
 
 <!-- APP JS -->

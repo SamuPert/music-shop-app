@@ -10,10 +10,15 @@
                 <p class="text-center">Hai eseguito il login da Utente Staff,queste sono le funzionalità a tua disposizione.</p>
             </div>
             <div class="float-right col-md-3">
-                <a href="#panelLogout" class="btn btn-light float-right modal-toggle">
-                    Logout
-                    <i class="fa fa-sign-out" aria-hidden="true"></i>
-                </a>
+                @auth
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        <button type="submit" class="btn btn-outline-danger float-right">
+                            Logout
+                            <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        </button>
+                        {{ csrf_field() }}
+                    </form>
+                @endauth
             </div>
         </div>
     </div>
