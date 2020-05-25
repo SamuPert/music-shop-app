@@ -11,13 +11,7 @@
             </div>
             <div class="float-right col-md-3">
                 @auth
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                        <button type="submit" class="btn btn-outline-danger float-right">
-                            Logout
-                            <i class="fa fa-sign-out" aria-hidden="true"></i>
-                        </button>
-                        {{ csrf_field() }}
-                    </form>
+                    @include('components.loggedInUser')
                 @endauth
             </div>
         </div>
