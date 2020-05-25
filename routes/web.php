@@ -51,8 +51,9 @@ Route::prefix('catalogo')->group(function () {
     // Route: /catalogo/prodotto/{id_prodotto}
     Route::get('prodotto/{id_prodotto}', 'ProdottoController@visualizza_prodotto')
         ->where('id', '[0-9]+')
-        ->name('schedaprodotto');
+        ->name('visualizza_prodotto');
 });
+
 
 Route::get('/', function () {
 
@@ -64,9 +65,7 @@ Route::get('/staff', function () {
     return view('adminStaff');
 });
 
-Route::get('/admin', function () {
-    return view('adminPage');
-});
+Route::get('/admin', 'AdminController@admin_controller');
 
 Route::get('/onlineshop',function (){
     return view('buyContacts');

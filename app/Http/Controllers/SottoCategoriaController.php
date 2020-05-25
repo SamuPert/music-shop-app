@@ -14,7 +14,8 @@ class SottoCategoriaController extends Controller
         // Lista sotto categorie per categoria
         $sotto_categoria = Sottocategoria::findOrFail($id_sotto_categoria);
         $categoria = Categoria::findOrFail($sotto_categoria->id_categoria);
-        $prodotti = Prodotto::where('id_sotto_categoria', $id_sotto_categoria)->get();
+        $prodotti = Prodotto::where('id_sotto_categoria', $id_sotto_categoria)
+        ->paginate(5);
 
         return view('listaProdotti', compact(['categoria', 'sotto_categoria', 'prodotti']));
     }

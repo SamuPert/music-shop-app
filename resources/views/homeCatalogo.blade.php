@@ -65,7 +65,7 @@
                                                 </div>
                                                 <img src="{{$prodotto->percorso_foto != '' ? asset( $prodotto->percorso_foto ) : 'https://via.placeholder.com/300x200.png' }}" alt="Generic placeholder image"
                                                      width="200" class="ml-lg-5 order-1 order-lg-2">
-
+                                                <a href="{{ route('visualizza_prodotto', ['id_prodotto' => $prodotto->id_prodotto]) }}" class="stretched-link"></a>
                                             </div> <!-- End -->
                                         </li> <!-- End -->
                                     </ul>
@@ -73,18 +73,6 @@
                             </div>
                         </div>
                         {{ $prodotti->links() }}
-{{--                        <nav aria-label="Page navigation example">--}}
-{{--                            <ul class="pagination">--}}
-{{--                                <li class="page-item"><a class="page-link" href="{{ $prodotti->previousPageUrl() }}">Previous</a></li>--}}
-{{--                                <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
-{{--                                <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
-{{--                                @if($prodotti->hasMorePages())--}}
-{{--                                    <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
-{{--                                @endif--}}
-{{--                                <li class="page-item"><a class="page-link" href="{{ $prodotti->nextPageUrl() }}">Next</a></li>--}}
-{{--                            </ul>--}}
-{{--                        </nav>--}}
-{{--                        <p>Pagina {{ $prodotti->currentPage() }} di {{ $prodotti->lastPage() }} -- Prossima  <a href="{{ $prodotti->nextPageUrl() }}"> pagina </a></p>--}}
                     </div>
                 </div>
             </div>

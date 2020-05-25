@@ -53,34 +53,15 @@ class RegisterController extends Controller
             'first_name' => ['required', 'string', 'max:32'],
             'last_name' => ['required', 'string', 'max:32'],
             'auth_level' => ['exists:ruoli,id'],
-            'location' => ['required', 'string', 'max:64'],
-            'birth_date' => ['required', 'date'],
-            'occupation' => ['required', 'exists:occupazioni,occupazione'],
+            'location' => ['string', 'max:64'],
+            'birth_date' => [ 'date'],
+            'occupation' => [ 'exists:occupazioni,occupazione'],
             'username' => ['required', 'string', 'max:32', 'unique:users,username'],
 
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
+            'email' => [ 'string', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\User
-     */
-    protected function create(array $data, $auth_level=2)
-    {
-        return User::create([
-            'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
-            'auth_level' => $auth_level,
-            'location' => $data['location'],
-            'birth_date' => $data['birth_date'],
-            'occupation' => $data['occupation'],
-            'username' => $data['username'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
-    }
+
 }
