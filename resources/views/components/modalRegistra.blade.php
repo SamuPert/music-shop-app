@@ -36,7 +36,7 @@
                                     <div class="col"><input type="password" name="password" class="form-control" /></div>
                                 </div>
                                 <div class="text-center mt-2">
-                                    <button class="btn btn-info">Accedi</button>
+                                    <button class="btn btn-primary">Accedi</button>
                                 </div>
                                 @csrf
                             </form>

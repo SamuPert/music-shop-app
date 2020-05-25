@@ -21,4 +21,11 @@ class ProdottoController extends Controller
 
 
     }
+
+    public function gestione_prodotti()
+    {
+        $prodotti = Prodotto::paginate(3);
+
+        return view('gestioneProdotti', compact('prodotti'));
+    }
 }

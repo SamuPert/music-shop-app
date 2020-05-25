@@ -1,4 +1,7 @@
 require('./bootstrap');
+require('./modifica-prodotto');
+require('./filtri');
+require('./loading-bar');
 
 let rootUrl = '';
 
@@ -7,27 +10,6 @@ $('.modal-toggle').click(function(e){
     $('li > a[href="' + tab + '"]').tab("show");
 });
 
-window.toggleFiltriBar = () =>
-{
-    let toggleIcon = $('#iconToggleFiltri');
-    let toggleDiv = $('#filtriInnerBar');
-
-    if( toggleDiv.hasClass('show') )
-    {
-        toggleDiv.collapse('hide');
-        toggleIcon.removeClass('fa-chevron-up');
-        toggleIcon.addClass('fa-chevron-down');
-    }else{
-        toggleDiv.collapse('show');
-        toggleIcon.removeClass('fa-chevron-down');
-        toggleIcon.addClass('fa-chevron-up');
-    }
-}
-
-window.applyFilters = () =>
-{
-    alert(1);
-}
 
 
 window.riempiSelectByCategoria = (categoriaId, sottocategoriaId) => {
@@ -38,7 +20,7 @@ window.riempiSelectByCategoria = (categoriaId, sottocategoriaId) => {
 
     if(selectValue != undefined && selectValue != '#'){
         startLoading();
-        axios.post(rootUrl + '/api/findByCategory/',
+        return axios.post(rootUrl + '/api/findByCategory/',
             {
                 'id_categoria': selectValue
             }
@@ -59,6 +41,8 @@ window.riempiSelectByCategoria = (categoriaId, sottocategoriaId) => {
             endLoading();
         });
     }
+
+    return undefined;
 };
 
 
@@ -83,20 +67,6 @@ function registerRangeInputChange(id_range_input, id_html_value_output)
 
 }
 
-// Loading bar
-window.startLoading = () => {
-    $('#loading-div').addClass('loading');
-}
-
-window.endLoading = () => {
-    $('#loading-div').removeClass('loading');
-}
-
-// Display loading on Ajax requests
-$(document).on({
-    ajaxStart: function() { startLoading(); },
-    ajaxStop: function() { endLoading() }
-});
 
 registerRangeInputChange('#prezzoMaxInput', '#prezzoMaxValue');
 registerRangeInputChange('#prezzoMinInput', '#prezzoMinValue');
@@ -110,30 +80,6 @@ $('.toast').toast({
 
 
 
-// show loading image
-$('.image_loading').hide();
-$('.image_loading').parent().children('.loader_image').show();
-
-$(".image_loading").one("load", function() {
-    $(this).parent().children('.loader_image').hide();
-    $(this).show();
-}).each(function() {
-    if(this.complete) {
-        // $(this).load(); // For jQuery < 3.0
-        $(this).trigger('load'); // For jQuery >= 3.0
-    }
-});
-
-
-
-// On clock on enable-edit button, removes disabled attribute from input
-$('.enable-edit').click(function (e) {
-    e.preventDefault();
-    let this_form = $(this).parent();
-
-    this_form.find( "input" ).prop("disabled", false);
-    this_form.find( "textarea" ).prop("disabled", false);
-});
 
 
 
