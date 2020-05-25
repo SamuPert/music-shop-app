@@ -21,7 +21,12 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = self::CATALOGO;
+
+
+    public const CATALOGO = '/catalogo';
+
+
 
     /**
      * Define your route model bindings, pattern filters, etc.

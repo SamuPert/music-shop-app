@@ -18,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
             'layouts/app',
             'components/modalInsertProduct',
             'components/modalNewSubCategory',
+            'gestioneProdotti',
         ];
 
         // Inject in every request to "views/layouts/app.blade.php" the category data.

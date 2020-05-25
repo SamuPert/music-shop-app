@@ -20,6 +20,7 @@ class ProdottoMigration extends Migration
             $table->string('descrizione_estesa',150);
             $table->string('percorso_foto',255); // path_image
             $table->float('prezzo',8,2);
+            $table->float('sconto',8,2)->default(0);
             $table->unsignedBigInteger('id_sotto_categoria');
             $table->foreign('id_sotto_categoria')->references('id_sotto_categoria')->on('sotto_categoria');
             $table->timestamps();

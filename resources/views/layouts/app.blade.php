@@ -39,9 +39,9 @@
 <!-- APP JS -->
 <script src="{{ asset('js/app.js') }}"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+(function() {
     @stack('onload_scripts')
-});
+})();
 </script>
 
 </body>

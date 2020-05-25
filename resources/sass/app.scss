@@ -20,3 +20,13 @@
   z-index: 10000;
   padding: 30px;
 }
+
+.no-pointer-events
+{
+  pointer-events: none;
+}
+
+.disable-edit
+{
+  display: none;
+}
