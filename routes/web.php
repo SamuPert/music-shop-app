@@ -82,9 +82,6 @@ Route::prefix('admin')->group(function () {
 });
 
 
-Route::get('/admin', 'AdminController@admin_controller')
-    ->name('admin_controller');
-
 
 Route::get('/onlineshop',function (){
     return view('buyContacts');
