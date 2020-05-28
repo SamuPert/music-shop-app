@@ -54,6 +54,8 @@ Route::prefix('catalogo')->group(function () {
         ->name('visualizza_prodotto');
 });
 
+Route::get('/utentiStaff/gestione', 'AdminController@gestione_staff')
+    ->name('gestione_staff');
 
 Route::get('/', function () {
 
@@ -65,7 +67,8 @@ Route::get('/staff', function () {
     return view('adminStaff');
 });
 
-Route::get('/admin', 'AdminController@admin_controller');
+Route::get('/admin', 'AdminController@admin_controller')
+    ->name('admin_controller');
 
 Route::get('/onlineshop',function (){
     return view('buyContacts');
