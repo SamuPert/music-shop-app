@@ -4,6 +4,7 @@
 
 @section('content')
 @include('components.modalInsertProduct')
+@include('components.modalInsertCategory')
 @include('components.modalNewSubCategory')
     <!-- Start: 2 Rows 1+3 Columns -->
     <br>
