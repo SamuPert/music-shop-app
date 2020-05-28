@@ -20,4 +20,15 @@ class AdminController extends Controller
 
         return view('adminPage', compact(['utente', 'utenteRegistrato']));
     }
+    public function gestione_staff()
+    {
+        // Lista utenti con auth_level 3 (staff)
+        $utente = User::all()->where('auth_level',3);
+        $utenteRegistrato = User::all()->where('auth_level',2);
+
+
+
+
+        return view('gestioneStaff', compact(['utente', 'utenteRegistrato']));
+    }
 }

@@ -41,6 +41,9 @@
                                     <h6>Descrizione Prodotto:</h6>
                                     <p>{{$prodotti->descrizione_estesa}}</p>
                                     <p>Prezzo: <span id="price">{{$prodotti->prezzo}}</span>€</p>
+                                    <div class="d-flex align-items-center justify-content-between mt-1">
+                                        <h6 class="font-weight-bold my-2" class="prezzo_scontato" >Prezzo Scontato: {{$prodotti->prezzo-($prodotti->prezzo*$prodotti->sconto)/100}}€</h6>
+                                    </div>
                                     <div class="form-group form-inline">
                                         <label for="selectquantity" class="mr-3">Seleziona quantità: </label>
                                         <select class="form-control personal" id="selectquantity">

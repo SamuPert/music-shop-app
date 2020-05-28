@@ -8,12 +8,12 @@
                 </div>
                 <br>
                 <div class="form-group" id="nomeSottoCateogria">
-                    <label for="from_name">Nome Categoria</label>
-                    <input type="text" class="form-control" id="from_name" tabindex="-1" name="from_name" required placeholder="Chitarra Elettrica" />
+                    <label for="for_name">Nome Categoria</label>
+                    <input type="text" class="form-control" id="for_name" tabindex="-1" name="for_name" required placeholder="Chitarra Elettrica" />
                 </div>
                 <div class="form-group has-feedback" id="descrzioneBreveSottoCategoria">
                     <label for="for_descrizionebreve"></label>Descrizione </label>
-                    <input type="text" class="form-control" id="from_descrizione" name="from_descrizione" required placeholder="Descrivi la sotto categoria" />
+                    <textarea class="form-control" id="descrizione" name="descrizione" placeholder="Digita la tua descrizione" rows="5" required placeholder="Descrivi la sotto categoria" ></textarea>
                 </div>
                 <div class="form-group has-feedback" id="selectCategoriaForSub">
                     <label for="prezzo">Selezione Categoria</label><br>
