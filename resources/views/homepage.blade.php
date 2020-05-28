@@ -77,7 +77,7 @@
                 <p>Per visualizzare i prodotti a nostra disposizione ti invitiamo a consultare il nostro catalogo
                     digitale. All'interno di esso potrai trovare tutti i prodotti ordinabili online con consegna a
                     domicilio o nei nostri punti vendita.</p>
-                <a href="/catalogo" class="btn  mt-4 btn-primary">
+                <a href="{{route('catalogo')}}" class="btn  mt-4 btn-primary">
                     Visualizza Catalogo
                     <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                 </a>
@@ -146,9 +146,15 @@
             </form>
         </div>
     </section>
-
+    <footer class="text-muted">
+        <div class="container">
+            <p class="float-right">
+                <a href="#">Torna in Cima</a>
+            </p>
+            <p>Sito sviluppato da MusicShop S.P.A. tutti i diritti sono riservati. <a href="{{route('privacypolicy')}}">PRIVACY POLICY</a></p>
+        </div>
+    </footer>
 </main>
-@include('layouts.footer')
 <script src="{{ asset('/js/homepage.js') }}"></script>
 </body>
 

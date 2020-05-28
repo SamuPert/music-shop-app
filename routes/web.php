@@ -73,9 +73,10 @@ Route::get('/onlineshop',function (){
 Route::get('/homepage', function () {
     return view('homepage');
 });
+
 Route::get('/privacypolicy', function () {
     return view('privacypolicy');
-});
+})->name('privacypolicy');
 
 Auth::routes();
 
