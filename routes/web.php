@@ -1,6 +1,7 @@
 <?php
 
 use App\Categoria;
+use App\Prodotto;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,10 +27,11 @@ use Illuminate\Support\Facades\Route;
 //// VISUALIZZAZIONE PRODOTTO - id_prodotto
 //'/catalogo/prodotto/{id_prodotto}'
 
-// Route: /prodotti/gestione
-Route::get('/prodotti/gestione', 'ProdottoController@gestione_prodotti')
-->name('gestione_prodotti');
 
+Route::get('/', function () {
+
+    return view('homepage');
+})->name('homepage');
 
 // Route for /catalogo
 Route::prefix('catalogo')->group(function () {
@@ -55,24 +57,34 @@ Route::prefix('catalogo')->group(function () {
 });
 
 
-Route::get('/', function () {
 
-    return view('homepage');
-})->name('homepage');
+// Route: /prodotti/gestione
+Route::get('/prodotti/gestione', 'ProdottoController@gestione_prodotti')
+    ->name('gestione_prodotti');
 
 
-Route::get('/staff', function () {
-    return view('adminStaff');
+// Route for /staff
+Route::prefix('staff')->group(function () {
+
+    Route::get('/', 'StaffController@homepage')
+        ->name('staff.homepage');
+
 });
 
-Route::get('/admin', 'AdminController@admin_controller');
+
+// Route for /admin
+Route::prefix('admin')->group(function () {
+
+    Route::get('/', 'AdminController@homepage')
+        ->name('admin.homepage');
+
+});
+
 
 Route::get('/onlineshop',function (){
     return view('buyContacts');
 });
-Route::get('/homepage', function () {
-    return view('homepage');
-});
+
 Route::get('/privacypolicy', function () {
     return view('privacypolicy');
 });

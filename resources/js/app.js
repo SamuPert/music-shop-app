@@ -3,14 +3,10 @@ require('./modifica-prodotto');
 require('./filtri');
 require('./loading-bar');
 
-let rootUrl = '';
-
 $('.modal-toggle').click(function(e){
     var tab = e.target.hash;
     $('li > a[href="' + tab + '"]').tab("show");
 });
-
-
 
 window.riempiSelectByCategoria = (categoriaId, sottocategoriaId) => {
     let select__categoria = $(categoriaId);
@@ -18,7 +14,7 @@ window.riempiSelectByCategoria = (categoriaId, sottocategoriaId) => {
     let selectValue = select__categoria.val();
 
 
-    if(selectValue != undefined && selectValue != '#'){
+    if(selectValue !== undefined && selectValue !== '#'){
         startLoading();
         return axios.post(rootUrl + '/api/findByCategory/',
             {
@@ -46,8 +42,7 @@ window.riempiSelectByCategoria = (categoriaId, sottocategoriaId) => {
 };
 
 
-function registerRangeInputChange(id_range_input, id_html_value_output)
-{
+function registerRangeInputChange(id_range_input, id_html_value_output) {
     // Read value on page load
     $(id_html_value_output).html($(id_range_input).val());
 
@@ -66,7 +61,6 @@ function registerRangeInputChange(id_range_input, id_html_value_output)
     });
 
 }
-
 
 registerRangeInputChange('#prezzoMaxInput', '#prezzoMaxValue');
 registerRangeInputChange('#prezzoMinInput', '#prezzoMinValue');

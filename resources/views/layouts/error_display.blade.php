@@ -1,5 +1,3 @@
-@if($errors->any())
-
 <div class="errors_div" aria-live="polite" aria-atomic="true">
 
     @foreach ($errors->all() as $error)
@@ -51,6 +49,5 @@
 
 </div>
 
-@endif
 
 
