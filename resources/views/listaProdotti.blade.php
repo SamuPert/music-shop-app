@@ -43,8 +43,13 @@
                                                 <h5 class="mt-0 font-weight-bold mb-2">{{$prodotto->nome_prodotto}}</h5>
                                                 <p class="font-italic text-muted mb-0 small">{{$prodotto->descrizione_breve}}</p>
                                                 <div class="d-flex align-items-center justify-content-between mt-1">
-                                                    <h6 class="font-weight-bold my-2">{{$prodotto->prezzo}}€</h6>
+                                                    <h6 class="font-weight-bold my-2">Prezzo: {{$prodotto->prezzo}}€</h6>
                                                 </div>
+                                                    @auth()
+                                                <div class="d-flex align-items-center justify-content-between mt-1">
+                                                    <h6 class="font-weight-bold my-2" class="prezzo_scontato" >Prezzo Scontato: {{$prodotto->prezzo-($prodotto->prezzo*$prodotto->sconto)/100}}€</h6>
+                                                </div>
+                                                    @endauth
                                             </div>
                                             <img src="{{$prodotto->percorso_foto != '' ? asset( $prodotto->percorso_foto ) : 'https://via.placeholder.com/300x200.png' }}" alt="Generic placeholder image"
                                                  width="200" class="ml-lg-5 order-1 order-lg-2">
