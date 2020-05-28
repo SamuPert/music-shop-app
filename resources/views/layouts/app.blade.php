@@ -37,10 +37,15 @@
 
 
 <!-- APP JS -->
+<script>
+    // Set rootUrl for API
+    window.rootUrl = '{{ route('homepage') }}';
+</script>
 <script src="{{ asset('js/app.js') }}"></script>
 <script>
 (function() {
     @stack('onload_scripts')
+
 })();
 </script>
 

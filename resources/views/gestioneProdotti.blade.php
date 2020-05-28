@@ -38,7 +38,7 @@
                                 <ul class="list-group shadow">
                                     @foreach($prodotti as $prodotto)
                                         <!-- list group item-->
-                                        <li class="list-group-item">
+                                        <li class="list-group-item" id="list_item_prodotto_{{ $prodotto->id_prodotto }}">
                                             <!-- Custom content-->
                                             <div class="media flex-column flex-lg-row p-3">
                                                 <div class="media-body order-2 order-lg-1 mr-4">
@@ -94,7 +94,7 @@
                                                         <div class="form-group mb-1">
                                                             <label class="mb-0" for="immagine_prodotto_{{ $prodotto->id_prodotto }}">Immagine Prodotto</label>
                                                             <div class="custom-file">
-                                                                <input disabled type="file" name="immagine_prodotto" class="custom-file-input" id="immagine_prodotto_{{ $prodotto->id_prodotto }}">
+                                                                <input disabled type="file" name="immagine_prodotto" class="custom-file-input" lang="it" id="immagine_prodotto_{{ $prodotto->id_prodotto }}">
                                                                 <label class="custom-file-label" for="customFile">Choose file</label>
                                                             </div>
                                                         </div>
@@ -133,6 +133,7 @@
 @foreach($prodotti as $prodotto)
     riempiSelectByCategoria('#select_categoria_{{ $prodotto->id_prodotto }}','#select_sotto_categoria_{{ $prodotto->id_prodotto }}')
     .then(() => { $('#select_sotto_categoria_{{ $prodotto->id_prodotto }}').val( {{ $prodotto->id_sotto_categoria }} ); });
+
 @endforeach
 
 @endpush
