@@ -10,11 +10,12 @@
     <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
 
     <!-- APP CSS -->
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
 
-@if(     Request::is('admin/*') )
+@if( Request::is('admin/*') )
     @include('layouts.header_admin')
 @elseif( Request::is('staff/*') )
     @include('layouts.header_staff')
@@ -22,8 +23,8 @@
     @include('layouts.header')
 @endif
 
-{{-- TODO: Visualizzare solo quando è necessario --}}
-@includeWhen( false , 'layouts.filtri-bar')
+
+@includeWhen(  request()->route()->getName() == 'catalogo' || request()->route()->getName() == 'lista_sotto_categorie' || request()->route()->getName() == 'lista_prodotti', 'layouts.filtri-bar')
 
 <div class="main-content">
     @yield('content')

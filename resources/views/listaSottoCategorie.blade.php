@@ -11,7 +11,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('homepage') }}">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('catalogo') }}">Catalogo</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('catalogo', request()->except('page') ) }}">Catalogo</a></li>
                     <li class="breadcrumb-item active" aria-current="page">{{ $categoria->nome_categoria }}</li>
                 </ol>
             </nav>
@@ -32,7 +32,7 @@
                                         src="{{ $sotto_categoria->percorso_foto != '' ? asset( $sotto_categoria->percorso_foto ) : 'https://via.placeholder.com/300x200.png' }}" alt="Card image cap">
                                 <div class="card-body text-center">
                                     <h5 class="card-title m-0">{{ $sotto_categoria->nome_sotto_categoria }}</h5>
-                                    <a href="{{ route('lista_prodotti', ['id_sotto_categoria' => $sotto_categoria->id_sotto_categoria]) }}" class="stretched-link"></a>
+                                    <a href="{{ route('lista_prodotti', array_merge( request()->except('page'),['id_sotto_categoria' => $sotto_categoria->id_sotto_categoria])) }}" class="stretched-link"></a>
                                 </div>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                     <h5 class="card-title">
                         I nostri prodotti
                     </h5>
-                    {{ $prodotti->links() }}
+                    {{ $prodotti->appends(request()->except('page'))->links() }}
                     <div class="row">
                         <div class="col-lg-8 mx-auto">
                             <!-- List group-->
@@ -71,7 +71,7 @@
                             @endforeach
                         </div>
                     </div>
-                    {{ $prodotti->links() }}
+                    {{ $prodotti->appends(request()->except('page'))->links() }}
                 </div>
             </div>
         </div>

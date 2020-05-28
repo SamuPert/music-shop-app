@@ -32,7 +32,7 @@
                                             alt="Card image cap">
                                         <div class="card-body text-center">
                                             <h5 class="card-title m-0">{{ $categoria->nome_categoria }}</h5>
-                                            <a href="{{ route('lista_sotto_categorie', ['id_categoria' => $categoria->id_categoria]) }}"
+                                            <a href="{{ route('lista_sotto_categorie', array_merge( request()->except('page'), ['id_categoria' => $categoria->id_categoria] )) }}"
                                                class="stretched-link"></a>
                                         </div>
                                     </div>
@@ -46,7 +46,7 @@
                         <h5 class="card-title">
                             I nostri prodotti
                         </h5>
-                        {{ $prodotti->links() }}
+                        {{ $prodotti->appends(request()->except('page'))->links() }}
                         <div class="row" style="margin-bottom: 20px;">
                             <div class="col-lg-8 mx-auto">
                                 <!-- List group-->
@@ -72,7 +72,7 @@
                                 @endforeach
                             </div>
                         </div>
-                        {{ $prodotti->links() }}
+                        {{ $prodotti->appends(request()->except('page'))->links() }}
                     </div>
                 </div>
             </div>

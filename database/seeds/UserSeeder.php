@@ -14,12 +14,12 @@ class UserSeeder extends Seeder
     {
 
 //        ADMIN:
-//            username: admin_admin
-//            password: admin_admin
+//            username: adminadmin
+//            password: adminadmin
 //
 //        STAFF:
-//            username: staff_staff
-//            password: staff_staff
+//            username: staffstaff
+//            password: staffstaff
 //        oppure
 //            username: staff.nome.cognome
 //            password: staff.nome.cognome
@@ -49,8 +49,8 @@ class UserSeeder extends Seeder
             'occupation' => Arr::random($occupazioni),
             'email' => $faker->email,
 
-            'username' => 'admin_admin',
-            'password' => Hash::make( 'admin_admin' ),
+            'username' => 'adminadmin',
+            'password' => Hash::make( 'adminadmin' ),
         ]);
 
         // STAFF
@@ -65,10 +65,10 @@ class UserSeeder extends Seeder
             'occupation' => Arr::random($occupazioni),
             'email' => $faker->email,
 
-            'username' => 'staff_staff',
-            'password' => Hash::make( 'staff_staff' ),
+            'username' => 'staffstaff',
+            'password' => Hash::make( 'staffstaff' ),
         ]);
-        for ($j = 0; $j < 3; $j++) {
+        for ($j = 0; $j < 2; $j++) {
             $first_name = $faker->firstName;
             $lastname = $faker->lastName;
 
@@ -86,8 +86,24 @@ class UserSeeder extends Seeder
             ]);
         }
 
+        $first_name = $faker->firstName;
+        $lastname = $faker->lastName;
+
+        array_push($utenti, [
+            'first_name' => $first_name,
+            'last_name' => $lastname,
+            'auth_level' => DB::table('ruoli')->where('nome', 'Utente')->first()->id,
+            'location' => $faker->address,
+            'birth_date' => $faker->dateTimeBetween($startDate = '-60 years', $endDate = '-20 years') ,
+            'occupation' => Arr::random($occupazioni),
+            'email' => $faker->email,
+
+            'username' => "useruser",
+            'password' => Hash::make( "useruser" )
+        ]);
+
         // Utenti generici
-        for ($i = 0; $i < 10; $i++)
+        for ($i = 0; $i < 4; $i++)
         {
             $first_name = $faker->firstName;
             $lastname = $faker->lastName;

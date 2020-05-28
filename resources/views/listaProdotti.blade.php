@@ -11,8 +11,8 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('homepage') }}">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('catalogo') }}">Catalogo</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('lista_sotto_categorie', ['id_categoria'=> $categoria->id_categoria ]) }}">{{ $categoria->nome_categoria }}</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('catalogo', request()->except('page') ) }}">Catalogo</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('lista_sotto_categorie', array_merge( request()->except('page'),['id_categoria'=> $categoria->id_categoria ])) }}">{{ $categoria->nome_categoria }}</a></li>
                     <li class="breadcrumb-item active" aria-current="page">{{ $sotto_categoria->nome_sotto_categoria }}</li>
                 </ol>
             </nav>
@@ -29,7 +29,7 @@
                             Ci sono <i>{{ count($prodotti) }} prodotti</i>
                         @endif
                     </h5>
-                    {{ $prodotti->links() }}
+                    {{ $prodotti->appends(request()->except('page'))->links() }}
                     <div class="row">
                         <div class="col-lg-8 mx-auto">
                             <!-- List group-->
@@ -55,7 +55,7 @@
                             @endforeach
                         </div>
                     </div>
-                    {{ $prodotti->links() }}
+                    {{ $prodotti->appends(request()->except('page'))->links() }}
 
                 </div>
             </div>
