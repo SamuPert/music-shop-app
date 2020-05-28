@@ -1,7 +1,9 @@
 require('./bootstrap');
 require('./modifica-prodotto');
+require('./modifica-staff');
 require('./filtri');
 require('./loading-bar');
+
 
 $('.modal-toggle').click(function(e){
     var tab = e.target.hash;

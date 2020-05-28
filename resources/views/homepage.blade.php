@@ -20,11 +20,11 @@
         <div
             class="collapse navbar-collapse" id="navcol-1">
             <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item" role="presentation"><a class="nav-link active" href="#chisiamo">Chi siamo</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="#cosafacciamo">Cosa facciamo</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="#catalogo">Catalogo</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="#dovesiamo">Dove siamo</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="#contatti">Contatti</a></li>
+                <li class="nav-item" role="presentation"><button class="btn btn-link"  onclick="scrollsection('#chisiamo')">Chi siamo</button></li>
+                <li class="nav-item" role="presentation"><button class="btn btn-link"  onclick="scrollsection('#cosafacciamo')">Cosa facciamo</button></li>
+                <li class="nav-item" role="presentation"><button class="btn btn-link"  onclick="scrollsection('#catalogo')">Catalogo</button></li>
+                <li class="nav-item" role="presentation"><button class="btn btn-link"  onclick="scrollsection('#dovesiamo')">Dove siamo</button></li>
+                <li class="nav-item" role="presentation"><button class="btn btn-link" onclick="scrollsection('#contatti')">Contatti</button></li>
             </ul>
         </div>
     </div>
@@ -149,7 +149,7 @@
     <footer class="text-muted">
         <div class="container">
             <p class="float-right">
-                <a href="#">Torna in Cima</a>
+                <button class="btn btn-link" onclick="window.scrollTo({top: 0,behavior: 'smooth'});"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
             </p>
             <p>Sito sviluppato da MusicShop S.P.A. tutti i diritti sono riservati. <a href="{{route('privacypolicy')}}">PRIVACY POLICY</a></p>
         </div>
@@ -158,4 +158,9 @@
 <script src="{{ asset('/js/homepage.js') }}"></script>
 </body>
 
+<script type="text/javascript">
+    function scrollsection(sezione) {
+        window.scrollTo({top: $(sezione).offset().top,behavior: 'smooth'});
+    }
+</script>
 </html>

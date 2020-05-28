@@ -38,6 +38,16 @@ class AppServiceProvider extends ServiceProvider
             $user = \Illuminate\Support\Facades\Auth::user();
             $view->with('user', $user);
         });
+
+
+        $layout_registrazione = [
+            'components/modalRegistra'
+        ];
+        // Inject in every request to "views/layouts/app.blade.php" the category data.
+        view()->composer($layout_header, function ($view) {
+
+            $view->with('user', $user);
+        });
     }
 
     /**

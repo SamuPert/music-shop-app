@@ -60,27 +60,28 @@
                         <div class="modal-body mb-2">
                             <div class="row register-form">
                                 <div class="col-md-10 offset-md-1">
-                                    <form class="register"><div style="text-align: center;"><img src="{{ asset("/img/logoSitoMobile.png") }}"  style="max-height: 130px" /></div><br>
+                                    <form class="register" action="{{route('registrazione')}}" method="post"><div style="text-align: center;"><img src="{{ asset("/img/logoSitoMobile.png") }}"  style="max-height: 130px" /></div><br>
+                                        @csrf
                                         <div class="form-row form-group">
                                             <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Name </label></div>
-                                            <div class="col"><input type="text" class="form-control" /></div>
+                                            <div class="col"><input type="text" name="first_name" class="form-control" /></div>
                                         </div>
                                         <div class="form-row form-group">
                                             <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Cognome</label></div>
-                                            <div class="col"><input type="text" class="form-control" /></div>
+                                            <div class="col"><input type="text" name="last_name" class="form-control" /></div>
                                         </div>
                                         <div class="form-row form-group">
                                             <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Luogo di Residenza</label></div>
-                                            <div class="col"><input type="text" class="form-control" /></div>
+                                            <div class="col"><input type="text"  name="location" class="form-control" /></div>
                                         </div>
                                         <div class="form-row form-group">
                                             <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Data di Nascita</label></div>
-                                            <div class="col"><input class="form-control" type="date" /></div>
+                                            <div class="col"><input  name="birth_date" class="form-control" type="date" /></div>
                                         </div>
                                         <div class="form-row form-group">
                                             <div class="col-sm-4 label-column"><label class="col-form-label" for="dropdown-input-field">Occupazione</label></div>
-                                            <div class="col"><select class="custom-select"><option value="" selected disabled hidden>Seleziona Occupazione</option>
-                                                    <option value="1">Studente</option>
+                                            <div class="col"><select name="occupation" class="custom-select">
+                                                    <option value="1" selected>Studente</option>
                                                     <option value="2">Operaio</option>
                                                     <option value="3">Impiegato</option>
                                                     <option value="4">Libero Professionista</option>
@@ -89,19 +90,19 @@
                                         </div>
                                         <div class="form-row form-group">
                                             <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Username</label></div>
-                                            <div class="col"><input type="text" class="form-control" /></div>
+                                            <div class="col"><input type="text" name="username" class="form-control" /></div>
                                         </div>
                                         <div class="form-row form-group">
                                             <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Email</label></div>
-                                            <div class="col"><input type="email" class="form-control" /></div>
+                                            <div class="col"><input type="email" name="email" class="form-control" /></div>
                                         </div>
                                         <div class="form-row form-group">
                                             <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Password</label></div>
-                                            <div class="col"><input type="password" class="form-control" /></div>
+                                            <div class="col"><input type="password"  name="password" class="form-control" /></div>
                                         </div>
                                         <div class="form-row form-group">
                                             <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Ripeti Password</label></div>
-                                            <div class="col"><input type="password" class="form-control" /></div>
+                                            <div class="col"><input type="password" name="password_confirmation" class="form-control" /></div>
                                         </div>
                                         <div class="text-center mt-2">
                                             <button class="btn btn-info">Registrati</button>
