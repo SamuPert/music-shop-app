@@ -25,7 +25,7 @@
                         <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
                         <a href="mailto:info_FAKE@musicshop.it"><i class="fa fa-at"></i></a>
                     </p>
-                    <p style="text-align: center"><a href="privacypolicy">PRIVACY POLICY</a></p>
+                    <p style="text-align: center"><a href="{{route('privacypolicy')}}">PRIVACY POLICY</a></p>
                 </div>
                 <div class="col-sm-4 col-md-3 footer-map container-fluid">
                     <h3>
