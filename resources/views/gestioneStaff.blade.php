@@ -46,14 +46,18 @@
                                     <form action="">
                                     @foreach($utente as $utenti)
                                         <tr>
-                                            <th scope="row">{{$utenti->id}}</th>
-                                            <td>{{$utenti->first_name}}</td>
-                                            <td>{{$utenti->last_name}}</td>
+                                            <td>{{$utenti->id}}</td>
+                                            <td>
+                                                <input type="text" class="form-control" id="id_utente_{{$utenti->id}}" placeholder="Inserisci un Nome" name="nome_utente" disabled value="{{$utenti->first_name}}">
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control" id="id_utente_{{$utenti->id}}" placeholder="Inserisci un Cognome" name="nome_utente" disabled value="{{$utenti->last_name}}">
+                                            </td>
                                             <td>
                                                 <button id="{{$utenti->id}}"   class="btn btn-outline-danger" type="submit">Elimina Utente  <i class="fa fa-trash"></i></button>
-                                                <button id="{{$utenti->id}}"   class="btn btn-outline-info enable-edit" type="submit">Abilita Modifica Utente   <i class="fa fa-user" aria-hidden="true"></i></button>
-                                                <button class="btn btn-outline-danger disable-edit mt-2">Annulla</button>
-                                                <input type="submit" class="btn btn-primary modifica-submit-button no-pointer-events float-right mt-2" disabled value="Modifica Utente">
+                                                <button id="{{$utenti->id}}"   class="btn btn-outline-info enable-edit-staff" type="submit">Abilita Modifica Utente   <i class="fa fa-user" aria-hidden="true"></i></button>
+                                                <button class="btn btn-outline-danger disable-edit-staff mt-2" hidden>Annulla</button>
+                                                <input type="submit" class="btn btn-primary modifica-staff-submit-button no-pointer-events float-right mt-2" disabled value="Modifica Utente">
                                             </td>
                                         </tr>
                                     @endforeach
@@ -63,9 +67,6 @@
                                 <br>
                             </div>
                         </form>
-
-
-
                     </div>
             </div>
         </div>
