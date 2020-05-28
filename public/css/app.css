@@ -438,3 +438,11 @@
   padding: 30px;
 }
 
+.no-pointer-events {
+  pointer-events: none;
+}
+
+.disable-edit {
+  display: none;
+}
+
