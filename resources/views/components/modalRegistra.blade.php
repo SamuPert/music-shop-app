@@ -81,11 +81,14 @@
                                         <div class="form-row form-group">
                                             <div class="col-sm-4 label-column"><label class="col-form-label" for="dropdown-input-field">Occupazione</label></div>
                                             <div class="col"><select name="occupation" class="custom-select">
-                                                    <option value="1" selected>Studente</option>
-                                                    <option value="2">Operaio</option>
-                                                    <option value="3">Impiegato</option>
-                                                    <option value="4">Libero Professionista</option>
-                                                    <option value="5">Altro</option></select>
+                                                @for($i=0; $i < count($datiOccupazione); $i++)
+                                                <option value="{{$datiOccupazione[$i]->occupazione}}"
+                                                @if($i === 0)
+                                                    selected
+                                                @endif
+                                                >{{$datiOccupazione[$i]->occupazione}}</option>
+                                                @endfor
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="form-row form-group">

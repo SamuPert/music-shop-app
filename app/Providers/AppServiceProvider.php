@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Categoria;
+use App\Occupazione;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -44,9 +45,9 @@ class AppServiceProvider extends ServiceProvider
             'components/modalRegistra'
         ];
         // Inject in every request to "views/layouts/app.blade.php" the category data.
-        view()->composer($layout_header, function ($view) {
-
-            $view->with('user', $user);
+        view()->composer($layout_registrazione, function ($view) {
+            $datiOccupazione = Occupazione::select('id','occupazione')->orderBy('occupazione')->get();
+            $view->with('datiOccupazione', $datiOccupazione);
         });
     }
 
