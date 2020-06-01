@@ -79,7 +79,7 @@ class RegisterController extends Controller
             return redirect()->route('catalogo')->with('messages',[['title'=>'Registrazione fallita','type'=>'error','message'=>'Non è stato possibile registrare l\'utente']]);
         }
         Auth::login($user);
-        return redirect()->route('catalogo')-with('messages',[['title'=>'Registrazione effettuata','type'=>'success','message'=>'Utente registrato correttamente'],['title'=>'Log-in Effettuato','type'=>'success','message'=>'Log-in effettuato correttamente']]);
+        return redirect()->route('catalogo')->with('messages',[['title'=>'Registrazione effettuata','type'=>'success','message'=>'Utente registrato correttamente'],['title'=>'Log-in Effettuato','type'=>'success','message'=>'Log-in effettuato correttamente']]);
     }
 
 }

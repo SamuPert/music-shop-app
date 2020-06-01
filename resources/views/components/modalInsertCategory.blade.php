@@ -5,19 +5,23 @@
             <div class="col-md-12" id="message">
                 <div style="text-align: center; font-size: 30px;">
                     <b>Inserisci la nuova categoria</b>
+
                 </div>
-                    <div class="form-group has-feedback" id="nomeCategoria">
+                <form action="{{route('insertNuovaCategoria')}}" method="post">
+                    @csrf
+                <div class="form-group has-feedback" id="nomeCategoria">
                     <label for="for_nomecategoria">Nome Categoria</label>
-                    <input type="text" class="form-control" id="from_nome" name="from_nome" required placeholder="Ex. Chitarre" />
-                    </div>
+                    <input type="text" class="form-control" id="from_nome" name="nome_categoria" required placeholder="Ex. Chitarre" />
+                </div>
                 <div class="form-group" id="descrizioneCategoria">
                     <label for="comments">Descrizione Categoria</label>
-                    <textarea class="form-control" id="comments" name="Comments" placeholder="Digita la tua descrizione" rows="5"></textarea>
+                    <textarea class="form-control" id="comments" name="descrizione_categoria" placeholder="Digita la tua descrizione" rows="5"></textarea>
                 </div>
                 <br>
                 <div class="form-group">
                     <button class="btn btn-primary btn-block" type="submit">Salva la categoria <i class="fa fa-chevron-circle-right"></i></button>
                 </div>
+                </form>
             </div>
 
             <!--Footer-->

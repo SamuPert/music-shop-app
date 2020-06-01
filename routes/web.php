@@ -95,4 +95,6 @@ Auth::routes();
 
 Route::post('/registrazione', 'Auth\\RegisterController@registerUser')->name('registrazione');
 Route::post('/registrazioneStaff', 'Auth\\RegisterStaffController@registerStaff')->name('registrazioneStaff');
+Route::post('/insertNuovaCategoria', 'CategoriaController@insertCategory')->name('insertNuovaCategoria');
+Route::post('/insertNuovaSubCategoria', 'SottoCategoriaController@insertNuovaSubCategory')->name('insertNuovaSubCategoria');
 // Route::get('/home', 'HomeController@index')->name('homeCata');
