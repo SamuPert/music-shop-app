@@ -94,6 +94,5 @@ Route::get('/privacypolicy', function () {
 Auth::routes();
 
 Route::post('/registrazione', 'Auth\\RegisterController@registerUser')->name('registrazione');
-
-
+Route::post('/registrazioneStaff', 'Auth\\RegisterStaffController@registerStaff')->name('registrazioneStaff');
 // Route::get('/home', 'HomeController@index')->name('homeCata');
