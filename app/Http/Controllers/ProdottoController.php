@@ -28,4 +28,14 @@ class ProdottoController extends Controller
 
         return view('gestioneProdotti', compact('prodotti'));
     }
+
+    public function insertNewProduct(Request $request)
+    {
+        $inputdata=array_merge($request->all());
+        $prodotto = Prodotto::create($inputdata);
+        if ($prodotto === null) {
+            return redirect()->route('staff.homepage')->with('messages',[['title'=>'Registrazione fallita','type'=>'error','message'=>'Non è stato possibile registrare questa categoria']]);
+        }
+        return redirect()->route('staff.homepage')->with('messages',[['title'=>'Registrazione effettuata','type'=>'success','message'=>'Categoria registrata correttamente']]);
+    }
 }

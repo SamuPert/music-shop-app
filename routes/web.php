@@ -97,4 +97,5 @@ Route::post('/registrazione', 'Auth\\RegisterController@registerUser')->name('re
 Route::post('/registrazioneStaff', 'Auth\\RegisterStaffController@registerStaff')->name('registrazioneStaff');
 Route::post('/insertNuovaCategoria', 'CategoriaController@insertCategory')->name('insertNuovaCategoria');
 Route::post('/insertNuovaSubCategoria', 'SottoCategoriaController@insertNuovaSubCategory')->name('insertNuovaSubCategoria');
+Route::post('/insertNewProduct', 'ProdottoController@insertNewProduct')->name('insertNewProduct');
 // Route::get('/home', 'HomeController@index')->name('homeCata');
