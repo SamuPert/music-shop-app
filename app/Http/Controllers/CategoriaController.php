@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class CategoriaController extends Controller
 {
@@ -29,13 +30,14 @@ class CategoriaController extends Controller
 
         return view('listaSottoCategorie', compact(['categoria', 'sotto_categorie', 'prodotti']));
     }
+
     public function insertCategory(Request $request)
     {
-        $inputdata=array_merge($request->all());
-        $categoria = Categoria::create($inputdata);
+        $inputdataCategoria=array_merge($request->all());
+        $categoria = Categoria::createCat($inputdataCategoria);
         if ($categoria === null) {
-            return redirect()->route('staff.homepage')->with('messages',[['title'=>'Registrazione fallita','type'=>'error','message'=>'Non è stato possibile registrare questa categoria']]);
+            return redirect()->route('staff.homepage')->with('messages',[['title'=>'Aggiunta della Categoria fallita','type'=>'error','message'=>'Non è stato possibile registrare questa categoria']]);
         }
-        return redirect()->route('staff.homepage')->with('messages',[['title'=>'Registrazione effettuata','type'=>'success','message'=>'Categoria registrato correttamente'],['title'=>'Log-in Effettuato','type'=>'success','message'=>'Log-in effettuato correttamente']]);
+        return redirect()->route('staff.homepage')->with('messages',[['title'=>'Aggiunta Categoria','type'=>'success','message'=>'Categoria registrato correttamente'],['title'=>'Log-in Effettuato','type'=>'success','message'=>'Log-in effettuato correttamente']]);
     }
 }

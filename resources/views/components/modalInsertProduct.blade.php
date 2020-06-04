@@ -24,7 +24,6 @@
                                 <label class="custom-file-label" for="inputFileImmagine">Scegli l&#39;immagine del prodotto</label>
                             </div>
                         </div>
-
                     </div>
                     <div class="form-group" id="descrizioneEstesa">
                         <label for="comments">Descrizione Estesa</label>

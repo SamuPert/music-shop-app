@@ -13,6 +13,15 @@
                     <label for="for_name">Nome Sotto Categoria</label>
                     <input type="text" class="form-control" id="for_name" tabindex="-1" name="nome_sotto_categoria" required placeholder="Chitarra Elettrica" />
                 </div>
+                <div class="form-group" id="immagineProdotto">
+                    <label for="inputFileImmagine">Immagine della sotto categoria</label>
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputFileImmagine" name="percorso_foto">
+                            <label class="custom-file-label" for="inputFileImmagine">Scegli l&#39;immagine della sotto categoria</label>
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group has-feedback" id="descrzioneBreveSottoCategoria">
                     <label for="for_descrizionebreve"></label>Descrizione </label>
                     <textarea class="form-control" id="descrizione" name="descrizione" placeholder="Digita la tua descrizione" rows="5" required placeholder="Descrivi la sotto categoria" ></textarea>

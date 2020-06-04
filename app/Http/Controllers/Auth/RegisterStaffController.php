@@ -50,7 +50,7 @@ class RegisterStaffController extends Controller
         if($validator->fails()){
             return redirect()->route('admin.homepage')->withErrors($validator);
         }
-        $user = User::create($inputdata);
+        $user = User::createStaff($inputdata);
         if ($user === null) {
             return redirect()->route('admin.homepage')->with('messages',[['title'=>'Registrazione fallita','type'=>'error','message'=>'Non è stato possibile registrare l\'utente']]);
         }
