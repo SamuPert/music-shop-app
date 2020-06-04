@@ -46,9 +46,11 @@
                                                     <h6 class="font-weight-bold my-2">Prezzo: {{$prodotto->prezzo}}€</h6>
                                                 </div>
                                                     @auth()
-                                                <div class="d-flex align-items-center justify-content-between mt-1">
-                                                    <h6 class="font-weight-bold my-2" class="prezzo_scontato" >Prezzo Scontato: {{$prodotto->prezzo-($prodotto->prezzo*$prodotto->sconto)/100}}€</h6>
-                                                </div>
+                                                        @if($user->auth_level === 2)
+                                                            <div class="d-flex align-items-center justify-content-between mt-1">
+                                                                <h6 class="font-weight-bold my-2" class="prezzo_scontato" >Prezzo Scontato: {{$prodotto->prezzo-($prodotto->prezzo*$prodotto->sconto)/100}}€</h6>
+                                                            </div>
+                                                        @endif
                                                     @endauth
                                             </div>
                                             <img src="{{$prodotto->percorso_foto != '' ? asset( $prodotto->percorso_foto ) : 'https://via.placeholder.com/300x200.png' }}" alt="Generic placeholder image"

@@ -49,6 +49,18 @@ class AppServiceProvider extends ServiceProvider
             $datiOccupazione = Occupazione::select('id','occupazione')->orderBy('occupazione')->get();
             $view->with('datiOccupazione', $datiOccupazione);
         });
+
+        $layout_catalogo = [
+            'homeCatalogo',
+            'listaProdotti',
+            'listaSottoCategorie',
+            'schedaprodotto'
+        ];
+
+        view()->composer($layout_catalogo, function ($view) {
+            $user = \Illuminate\Support\Facades\Auth::user();
+            $view->with('user', $user);
+        });
     }
 
     /**
