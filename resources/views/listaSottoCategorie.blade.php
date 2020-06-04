@@ -58,16 +58,19 @@
                                             <div class="media-body order-2 order-lg-1">
                                                 <h5 class="mt-0 font-weight-bold mb-2">{{$prodotto->nome_prodotto}}</h5>
                                                 <p class="font-italic text-muted mb-0 small">{{$prodotto->descrizione_breve}}</p>
-                                                <div class="d-flex align-items-center justify-content-between mt-1">
-                                                    <h6 class="font-weight-bold my-2">Prezzo: {{$prodotto->prezzo}}€</h6>
-                                                </div>
                                                 @auth()
                                                     @if($user->auth_level === 2)
                                                         <div class="d-flex align-items-center justify-content-between mt-1">
-                                                            <h6 class="font-weight-bold my-2" class="prezzo_scontato" >Prezzo Scontato: {{$prodotto->prezzo-($prodotto->prezzo*$prodotto->sconto)/100}}€</h6>
+                                                            <h6 class="font-weight-bold my-2"><s>Prezzo: {{$prodotto->prezzo}}€</s></h6>
+                                                            <h6 class="font-weight-bold my-2 " style="color: #FF0000">Prezzo Scontato: {{$prodotto->prezzo-($prodotto->prezzo*$prodotto->sconto)/100}}€</h6>
                                                         </div>
+                                                    @elseif($user->auth_level === 3 || $user->auth_level === 4)
+                                                        <h6 class="font-weight-bold my-2">Prezzo: {{$prodotto->prezzo}}€</h6>
                                                     @endif
                                                 @endauth
+                                                @guest()
+                                                    <h6 class="font-weight-bold my-2">Prezzo: {{$prodotto->prezzo}}€</h6>
+                                                @endguest
                                             </div>
                                             <img src="{{$prodotto->percorso_foto != '' ? asset( $prodotto->percorso_foto ) : 'https://via.placeholder.com/300x200.png' }}" alt="Generic placeholder image"
                                                  width="200" class="ml-lg-5 order-1 order-lg-2">
