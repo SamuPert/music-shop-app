@@ -82,9 +82,9 @@ Route::prefix('admin')->group(function () {
 
 });
 
-Route::get('/areaPersonale',function (){
+Route::get('/modificaProfilo',function (){
     return view('showUser');
-})->name('areaPersonale');
+})->name('modificaProfilo');
 
 
 Route::get('/onlineshop',function (){
@@ -95,9 +95,6 @@ Route::get('/privacypolicy', function () {
     return view('privacypolicy');
 })->name('privacypolicy');
 
-Route::get('/showuser',function (){
-    return view('/showUser');
-})->name('myaccount');
 
 
 Auth::routes();
