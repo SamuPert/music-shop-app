@@ -18,15 +18,16 @@
                                     <select class="custom-select" style="border-radius: .25rem 0 0 .25rem;">
                                         <option value="*" selected>Tutte le categorie</option>
                                         @foreach( $listaCategorie as $categoria )
-                                        <option value="{{$categoria->id_categoria}}">{{$categoria->nome_categoria}}</option>
+                                            <option
+                                                value="{{$categoria->id_categoria}}">{{$categoria->nome_categoria}}</option>
                                         @endforeach
                                     </select>
                                 </div>
-                                <input type="text"
-                                       class="form-control"/>
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button">Cerca</button>
-                                </div>
+                                    <input type="text"
+                                           class="form-control"/>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="submit">Cerca</button>
+                                    </div>
                             </div>
                         </div>
                     </div>

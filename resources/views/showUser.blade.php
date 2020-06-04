@@ -47,10 +47,10 @@
                             <input type="text" class="form-control personal" disabled/>
                         </div>
                     </div>
-                    <button class="btn btn-primary" id="personal" type="button" onclick="enable('personal','editPersonal')">Modifica i
+                    <button class="btn btn-primary" id="personal" style="display: block;" type="button" onclick="enable('personal','editPersonal')">Modifica i
                         dati personali
                     </button>
-                    <div class="btn-group" id="editPersonal"  role="group" aria-label="Basic example">
+                    <div class="btn-group" id="editPersonal"  role="group" style="display: none;" aria-label="Basic example">
                         <button type="button" class="btn btn-secondary" onclick="disable('personal','editPersonal')">Annulla</button>
                         <button type="button" class="btn btn-secondary">Conferma</button>
                     </div>
@@ -68,18 +68,15 @@
                         <input type="email" class="form-control dataAccess" disabled/>
                     </div>
                     <div class="form-group">
-                        <label>Vecchia Password:</label>
-                        <input type="password" class="form-control dataAccess" disabled/>
-                    </div>
-                    <div class="form-group" id="editAccess">
                         <label>Nuova Password:</label>
                         <input type="password" class="form-control dataAccess" disabled/>
                     </div>
-                    <button class="btn btn-primary" id="dataAccess" type="button" onclick="enable('dataAccess','editAccess')">Modifica i dati di
-                        accesso
+
+                    <button class="btn btn-primary" id="dataAccess" style="display: block;" type="button" onclick="enable('dataAccess','editDataAccess')">Modifica i
+                        dati personali
                     </button>
-                    <div class="btn-group" id="editAccess" style="visibility: hidden" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-secondary" onclick="disable('dataAccess','editAccess')">Annulla</button>
+                    <div class="btn-group" id="editDataAccess"  role="group" style="display: none;" aria-label="Basic example">
+                        <button type="button" class="btn btn-secondary" onclick="disable('dataAccess','editDataAccess')">Annulla</button>
                         <button type="button" class="btn btn-secondary">Conferma</button>
                     </div>
                 </form>
