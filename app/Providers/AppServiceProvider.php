@@ -54,7 +54,8 @@ class AppServiceProvider extends ServiceProvider
             'homeCatalogo',
             'listaProdotti',
             'listaSottoCategorie',
-            'schedaprodotto'
+            'schedaprodotto',
+            'showUser'
         ];
 
         view()->composer($layout_catalogo, function ($view) {

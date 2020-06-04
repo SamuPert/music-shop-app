@@ -3,8 +3,9 @@
         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Benvenuto, {{$user->first_name}}
         </button>
+
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <form id="modifica_form">
+            <form id="modifica_form" action="{{route('areaPersonale')}}">
                 <button type="submit" class="dropdown-item" style="width: 100%; padding: 3px 20px; text-align: left;">Modifica Profilo</button>
             </form>
             @if($user->auth_level === 3)

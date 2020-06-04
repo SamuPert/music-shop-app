@@ -28,23 +28,23 @@
                     <div class="edituserdata">
                         <div class="form-group">
                             <label for="nome">Nome:</label>
-                            <input type="text" class="form-control personal" disabled/>
+                            <input type="text" class="form-control personal"  disabled value="{{$user->first_name}}"/>
                         </div>
                         <div class="form-group">
                             <label>Cognome:</label>
-                            <input type="text" class="form-control personal" disabled/>
+                            <input type="text" class="form-control personal" disabled value="{{$user->last_name}}"/>
                         </div>
                         <div class="form-group">
                             <label>Luogo di Residenza</label>
-                            <input type="text" class="form-control personal" disabled/>
+                            <input type="text" class="form-control personal" disabled value="{{$user->location}}"/>
                         </div>
                         <div class="form-group">
                             <label>Data di Nascita: </label>
-                            <input type="date" class="form-control personal" disabled/>
+                            <input type="date" class="form-control personal" disabled value="{{$user->birth_date}}"/>
                         </div>
                         <div class="form-group">
                             <label>Occupazione: </label>
-                            <input type="text" class="form-control personal" disabled/>
+                            <input type="text" class="form-control personal" disabled  value="{{$user->occupation}}"/>
                         </div>
                     </div>
                     <button class="btn btn-primary" id="personal" type="button" onclick="enable('personal','editPersonal')">Modifica i
@@ -61,11 +61,11 @@
                 <form>
                     <div class="form-group">
                         <label>Username: </label>
-                        <input type="text" class="form-control " disabled/>
+                        <input type="text" class="form-control " disabled  value="{{$user->username}}"/>
                     </div>
                     <div class="form-group">
                         <label>E-mail:</label>
-                        <input type="email" class="form-control dataAccess" disabled/>
+                        <input type="email" class="form-control dataAccess" disabled  value="{{$user->email}}"/>
                     </div>
                     <div class="form-group">
                         <label>Vecchia Password:</label>

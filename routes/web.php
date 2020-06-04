@@ -81,6 +81,9 @@ Route::prefix('admin')->group(function () {
 
 });
 
+Route::get('/areaPersonale',function (){
+    return view('showUser');
+})->name('areaPersonale');
 
 
 Route::get('/onlineshop',function (){
