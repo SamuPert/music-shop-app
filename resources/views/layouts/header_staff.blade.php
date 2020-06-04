@@ -7,12 +7,30 @@
         <div class="row">
             <div class="col-md-9" style="text-align: center">
                 <h2 class="text-center">Funzionalità Staff </h2>
-                <p class="text-center">Hai eseguito il login da Utente Staff,queste sono le funzionalità a tua disposizione.</p>
+                <p class="text-center">Hai eseguito il login da Utente Staff, queste sono le funzionalità a tua disposizione.</p>
             </div>
             <div class="float-right col-md-3">
-                @auth
-                    @include('components.loggedInUser')
-                @endauth
+                <ul class="nav navbar-nav navbar-right">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Benvenuto, {{$user->first_name}}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <form id="modifica_form">
+                                <button type="submit" class="dropdown-item" style="width: 100%; padding: 3px 20px; text-align: left;">Modifica Profilo</button>
+                            </form>
+
+                            <form id="back_form" action="{{ route('catalogo') }}"  >
+                                <button type="submit" class="dropdown-item" style="width: 100%; padding: 3px 20px; text-align: left;">Torna al Catalogo</button>
+                            </form>
+                            <div class="dropdown-divider"></div>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                <button type="submit" class="btn btn-link btn-logout" style="width: 100%; padding: 3px 20px; text-align: left;">Logout</button>
+                                {{ csrf_field() }}
+                            </form>
+                        </div>
+                    </div>
+                </ul>
             </div>
         </div>
     </div>
