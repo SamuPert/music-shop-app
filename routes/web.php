@@ -3,6 +3,7 @@
 use App\Categoria;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -93,6 +94,11 @@ Route::get('/onlineshop',function (){
 Route::get('/privacypolicy', function () {
     return view('privacypolicy');
 })->name('privacypolicy');
+
+Route::get('/showuser',function (){
+    return view('/showUser');
+})->name('myaccount');
+
 
 Auth::routes();
 
