@@ -18,7 +18,7 @@ window.riempiSelectByCategoria = (categoriaId, sottocategoriaId) => {
 
     if(selectValue !== undefined && selectValue !== '#'){
         startLoading();
-        return axios.post(rootUrl + '/api/findByCategory/',
+        return axios.post(rootUrl + '/api/findByCategory',
             {
                 'id_categoria': selectValue
             }

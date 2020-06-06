@@ -14,7 +14,7 @@ class OccupazioniMigration extends Migration
     public function up()
     {
         Schema::create('occupazioni', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('occupazione')->unique();
 
             $table->timestamps();

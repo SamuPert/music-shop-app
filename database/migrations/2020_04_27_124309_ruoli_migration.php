@@ -14,7 +14,7 @@ class RuoliMigration extends Migration
     public function up()
     {
         Schema::create('ruoli', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('nome')->unique();
             $table->string('descrizione')->nullable();
             $table->timestamps();

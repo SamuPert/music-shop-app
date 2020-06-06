@@ -15,7 +15,7 @@ class AdminAuthMiddleware
      */
     public function handle($request, Closure $next)
     {
-        // Non è autenticato o non STAFF
+        // Non è autenticato o non ADMIN
         if( $request->user() == null || $request->user()->auth_level != 4 )
         {
             $messages = [

@@ -46,12 +46,12 @@ class User extends Authenticatable
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data, $auth_level=2)
+    public static function createUser(array $data)
     {
         return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
-            'auth_level' => $auth_level,
+            'auth_level' => 2,
             'location' => $data['location'],
             'birth_date' => $data['birth_date'],
             'occupation' => $data['occupation'],

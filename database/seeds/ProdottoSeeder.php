@@ -390,6 +390,7 @@ class ProdottoSeeder extends Seeder
                         'id_sotto_categoria' => $id_sotto_categoria,
                         'percorso_foto' => $dati_prodotto['percorso_foto'],
                         'prezzo' => rand(200, 2000),
+                        'sconto' => rand(1, 10) * 5,
                     ]);
                 }
             }
