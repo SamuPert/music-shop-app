@@ -27,7 +27,6 @@
                         </div>
 
 
-                        <form method="POST" action="">
                             <div class="col-md-12" id="message">
                                 <div style="text-align: left; font-size: 35px;">
                                     <b>Elimina o Modifica Utente Staff</b>
@@ -43,7 +42,6 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <form action="">
                                     @foreach($utente as $utenti)
                                         <tr>
                                             <td>{{$utenti->id}}</td>
@@ -54,19 +52,19 @@
                                                 <input type="text" class="form-control" id="id_utente_{{$utenti->id}}" placeholder="Inserisci un Cognome" name="nome_utente" disabled value="{{$utenti->last_name}}">
                                             </td>
                                             <td>
-                                                <button id="{{$utenti->id}}"   class="btn btn-outline-danger" type="submit">Elimina Utente  <i class="fa fa-trash"></i></button>
+                                                <form action="{{'removeMember'}}" method="get">
+                                                    <button id="{{$utenti->id}}" name="{{$utenti->id}}"  class="btn btn-outline-danger" type="submit">Elimina Utente  <i class="fa fa-trash"></i></button>
+                                                </form>
                                                 <button id="{{$utenti->id}}"   class="btn btn-outline-info enable-edit-staff" type="submit">Abilita Modifica Utente   <i class="fa fa-user" aria-hidden="true"></i></button>
                                                 <button class="btn btn-outline-danger disable-edit-staff mt-2" hidden>Annulla</button>
                                                 <input type="submit" class="btn btn-primary modifica-staff-submit-button no-pointer-events float-right mt-2" disabled value="Modifica Utente">
                                             </td>
                                         </tr>
                                     @endforeach
-                                    </form>
                                     </tbody>
                                 </table>
                                 <br>
                             </div>
-                        </form>
                     </div>
             </div>
         </div>

@@ -3,6 +3,7 @@
 use App\Categoria;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -81,6 +82,9 @@ Route::prefix('admin')->group(function () {
 
 });
 
+Route::get('/modificaProfilo',function (){
+    return view('showUser');
+})->name('modificaProfilo');
 
 
 Route::get('/onlineshop',function (){
@@ -91,9 +95,14 @@ Route::get('/privacypolicy', function () {
     return view('privacypolicy');
 })->name('privacypolicy');
 
+
+
 Auth::routes();
 
 Route::post('/registrazione', 'Auth\\RegisterController@registerUser')->name('registrazione');
-
-
+Route::post('/registrazioneStaff', 'Auth\\RegisterStaffController@registerStaff')->name('registrazioneStaff');
+Route::post('/insertNuovaCategoria', 'CategoriaController@insertCategory')->name('insertNuovaCategoria');
+Route::post('/insertNuovaSubCategoria', 'SottoCategoriaController@insertNuovaSubCategory')->name('insertNuovaSubCategoria');
+Route::post('/insertNewProduct', 'ProdottoController@insertNewProduct')->name('insertNewProduct');
+Route::get('/eliminaUtente', 'AdminController@removeMember')->name('removeMember');
 // Route::get('/home', 'HomeController@index')->name('homeCata');

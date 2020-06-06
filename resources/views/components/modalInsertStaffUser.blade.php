@@ -2,7 +2,8 @@
     <div class="modal-dialog cascading-modal modal-lg"  role="document">
         <!--Content-->
         <div class="modal-content">
-            <form method="POST" action="">
+            <form action="{{route('registrazioneStaff')}}" method="post">
+                @csrf
             <div class="col-md-12" id="message">
                 <div style="text-align: center; font-size: 30px;">
                     <b>Inserisci il nuovo Utente Staff</b>

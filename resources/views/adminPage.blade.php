@@ -6,6 +6,7 @@
 @include('components.modalInsertStaffUser')
 @include('components.modalDeletUserStaff')
 @include('components.modalDeleteUserRegistered')
+@include('layouts.header_admin')
 
 <br>
 <div>

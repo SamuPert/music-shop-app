@@ -14,11 +14,11 @@ class ProdottoMigration extends Migration
     public function up()
     {
         Schema::create('prodotto', function (Blueprint $table) {
-            $table->increments('id_prodotto');
+            $table->id('id_prodotto');
             $table->string('nome_prodotto',75);
-            $table->string('descrizione_breve',750);
+            $table->string('descrizione_breve',1500);
             $table->string('descrizione_estesa',1500);
-            $table->string('percorso_foto',255); // path_image
+            $table->string('percorso_foto',255)->nullable(); // path_image
             $table->float('prezzo',8,2);
             $table->float('sconto',8,2)->default(0);
             $table->unsignedBigInteger('id_sotto_categoria');

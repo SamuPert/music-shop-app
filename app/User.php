@@ -61,14 +61,14 @@ class User extends Authenticatable
         ]);
     }
 
-    protected function createStaff(array $data, $auth_level=3)
+    protected function createStaff(array $data)
     {
         return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'username' => $data['username'],
             'password' => Hash::make($data['password']),
-            'auth_level' => $auth_level,
+            'auth_level'=>3,
         ]);
     }
 

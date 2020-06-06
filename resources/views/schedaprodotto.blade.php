@@ -40,14 +40,23 @@
                                     <hr/>
                                     <h6>Descrizione Prodotto:</h6>
                                     <p>{{$prodotti->descrizione_estesa}}</p>
-                                    <p>Prezzo: <span id="price">{{$prodotti->prezzo}}</span>€</p>
-                                    <div class="d-flex align-items-center justify-content-between mt-1">
-                                        <h6 class="font-weight-bold my-2" class="prezzo_scontato" >Prezzo Scontato: {{$prodotti->prezzo-($prodotti->prezzo*$prodotti->sconto)/100}}€</h6>
-                                    </div>
+                                    @auth()
+                                        @if($user->auth_level === 2)
+                                            <div class="d-flex align-items-center justify-content-between mt-1">
+                                                <h6 class="font-weight-bold my-2"><s>Prezzo: {{$prodotti->prezzo}}€</s></h6>
+                                                <h6 class="font-weight-bold my-2 " style="color: #FF0000">Prezzo Scontato: <span id="price"> {{$prodotti->prezzo-($prodotti->prezzo*$prodotti->sconto)/100}}</span>€</h6>
+                                            </div>
+                                        @elseif($user->auth_level === 3 || $user->auth_level === 4)
+                                            <h6 class="font-weight-bold my-2">Prezzo: <span id="price">{{$prodotti->prezzo}}</span>€</h6>
+                                        @endif
+                                    @endauth
+                                    @guest()
+                                        <h6 class="font-weight-bold my-2">Prezzo: <span id="price">{{$prodotti->prezzo}}</span>€</h6>
+                                    @endguest
                                     <div class="form-group form-inline">
                                         <label for="selectquantity" class="mr-3">Seleziona quantità: </label>
                                         <select class="form-control personal" id="selectquantity">
-                                                <optgroup label="This is a group">
+                                                <optgroup label="Seleziona quantità">
                                                     <option value="1" selected>1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
@@ -56,7 +65,20 @@
                                                 </optgroup>
                                             </select>
                                     </div>
-                                    <p>Stima Prezzo Totale: <span id="totlaprice">{{$prodotti->prezzo}}</span>€</p>
+                                    <hr/>
+                                    <div class="d-flex align-items-center justify-content-between mt-1">
+                                        <p>Prezzo Totale:</p>
+                                        @auth()
+                                            @if($user->auth_level === 2)
+                                                <h4 class="font-weight-bold my-2 "><span id="totlaprice"> {{$prodotti->prezzo-($prodotti->prezzo*$prodotti->sconto)/100}}</span>€</h4>
+                                            @elseif($user->auth_level === 3 || $user->auth_level === 4)
+                                                <h4 class="font-weight-bold my-2"><span id="totlaprice">{{$prodotti->prezzo}}</span>€</h4>
+                                            @endif
+                                        @endauth
+                                        @guest()
+                                            <h4 class="font-weight-bold my-2"><span id="totlaprice">{{$prodotti->prezzo}}</span>€</h4>
+                                        @endguest
+                                    </div>
                                 </div>
                             </div>
                         </div>

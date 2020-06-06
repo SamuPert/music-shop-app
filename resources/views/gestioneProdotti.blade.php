@@ -12,8 +12,7 @@
 
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('homepage') }}">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('catalogo') }}">Catalogo</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('staff.homepage') }}">Area Personale</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Gestione prodotti</li>
                     </ol>
                 </nav>
@@ -105,6 +104,7 @@
                                                         <button class="btn btn-outline-danger disable-edit mt-2">
                                                             Annulla
                                                         </button>
+                                                        <input type="submit" class="btn btn-outline-danger modifica-submit-button no-pointer-events float-right mt-2" disabled value="Elimina prodotto">
                                                         <input type="submit" class="btn btn-primary modifica-submit-button no-pointer-events float-right mt-2" disabled value="Modifica prodotto">
                                                     </form>
                                                 </div>
