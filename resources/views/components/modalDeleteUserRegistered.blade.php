@@ -24,15 +24,17 @@
                                 <td>{{$utenti->first_name}}</td>
                                 <td>{{$utenti->last_name}}</td>
                                 <td>{{$utenti->username}}</td>
-                                <td><input id="{{$utenti->id}}" type="checkbox" />     <i class="fa fa-trash"></i></td>
+                                <td><form action="{{route('gestioneStaff', [$utenti->id])}}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button id="{{$utenti->id}}" name="{{$utenti->id}}"  class="btn btn-outline-danger" type="submit">Elimina Utente  <i class="fa fa-trash"></i></button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
                     <br>
-                    <div class="form-group">
-                        <button class="btn btn-primary btn-block" type="submit">Elimina Utente <i class="fa fa-chevron-circle-right"></i></button>
-                    </div>
                 </div>
             </form>
             <!--Footer-->

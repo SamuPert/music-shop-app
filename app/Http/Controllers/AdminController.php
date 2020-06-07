@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Middleware\AdminAuthMiddleware;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class AdminController extends Controller
@@ -28,14 +29,22 @@ class AdminController extends Controller
         $utenteRegistrato = User::all()->where('auth_level',2);
 
         return view('gestioneStaff', compact(['utente', 'utenteRegistrato']));
+
     }
 
     // delete user
-    public function removeMember(Request $request)
+    public function removeUser(Request $request, $id)
     {
-        $user = User::where('id', $request);
-        $user->delete();
+        $utente = User::find( $id);
+        $utenteLevel = $utente->auth_level;
+        $utente->delete();
 
-        return view('admin.homepage' , compact('username'));
-    }
+        if($utenteLevel==3){
+            return redirect()->action('AdminController@gestione_staff');
+        }else{
+            return redirect()->action('AdminController@homepage');
+        }
+
+        }
+
 }

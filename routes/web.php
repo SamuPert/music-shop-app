@@ -104,5 +104,6 @@ Route::post('/registrazioneStaff', 'Auth\\RegisterStaffController@registerStaff'
 Route::post('/insertNuovaCategoria', 'CategoriaController@insertCategory')->name('insertNuovaCategoria');
 Route::post('/insertNuovaSubCategoria', 'SottoCategoriaController@insertNuovaSubCategory')->name('insertNuovaSubCategoria');
 Route::post('/insertNewProduct', 'ProdottoController@insertNewProduct')->name('insertNewProduct');
-Route::get('/eliminaUtente', 'AdminController@removeMember')->name('removeMember');
+Route::delete('/eliminaUtenteStaff/{id}', 'AdminController@removeUser')->name('removeStaff');
+Route::delete('/eliminaUtenteRegistrato/{id}', 'AdminController@removeUSer')->name('gestioneStaff');
 // Route::get('/home', 'HomeController@index')->name('homeCata');

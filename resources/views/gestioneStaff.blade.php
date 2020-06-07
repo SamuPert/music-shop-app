@@ -46,13 +46,15 @@
                                         <tr>
                                             <td>{{$utenti->id}}</td>
                                             <td>
-                                                <input type="text" class="form-control" id="id_utente_{{$utenti->id}}" placeholder="Inserisci un Nome" name="nome_utente" disabled value="{{$utenti->first_name}}">
+                                                <input type="text" class="form-control" id="id_utente_nome{{$utenti->id}}" placeholder="Inserisci un Nome" name="nome_utente" disabled value="{{$utenti->first_name}}">
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="id_utente_{{$utenti->id}}" placeholder="Inserisci un Cognome" name="nome_utente" disabled value="{{$utenti->last_name}}">
+                                                <input type="text" class="form-control" id="id_utente_cognome_{{$utenti->id}}" placeholder="Inserisci un Cognome" name="nome_utente" disabled value="{{$utenti->last_name}}">
                                             </td>
                                             <td>
-                                                <form action="{{'removeMember'}}" method="get">
+                                                <form action="{{route('removeStaff', [$utenti->id])}}" method="post">
+                                                    @csrf
+                                                    @method('delete')
                                                     <button id="{{$utenti->id}}" name="{{$utenti->id}}"  class="btn btn-outline-danger" type="submit">Elimina Utente  <i class="fa fa-trash"></i></button>
                                                 </form>
                                                 <button id="{{$utenti->id}}"   class="btn btn-outline-info enable-edit-staff" type="submit">Abilita Modifica Utente   <i class="fa fa-user" aria-hidden="true"></i></button>
