@@ -45,6 +45,6 @@ class AdminController extends Controller
             return redirect()->action('AdminController@homepage');
         }
 
-        }
+    }
 
 }

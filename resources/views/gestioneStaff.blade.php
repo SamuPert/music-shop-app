@@ -52,7 +52,7 @@
                                                 <input type="text" class="form-control" id="id_utente_cognome_{{$utenti->id}}" placeholder="Inserisci un Cognome" name="nome_utente" disabled value="{{$utenti->last_name}}">
                                             </td>
                                             <td>
-                                                <form action="{{route('removeStaff', [$utenti->id])}}" method="post">
+                                                <form action="{{route('removeUser', [$utenti->id])}}" method="post">
                                                     @csrf
                                                     @method('delete')
                                                     <button id="{{$utenti->id}}" name="{{$utenti->id}}"  class="btn btn-outline-danger" type="submit">Elimina Utente  <i class="fa fa-trash"></i></button>

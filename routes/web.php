@@ -105,5 +105,6 @@ Route::post('/insertNuovaCategoria', 'CategoriaController@insertCategory')->name
 Route::post('/insertNuovaSubCategoria', 'SottoCategoriaController@insertNuovaSubCategory')->name('insertNuovaSubCategoria');
 Route::post('/insertNewProduct', 'ProdottoController@insertNewProduct')->name('insertNewProduct');
 Route::delete('/eliminaUtenteStaff/{id}', 'AdminController@removeUser')->name('removeStaff');
-Route::delete('/eliminaUtenteRegistrato/{id}', 'AdminController@removeUSer')->name('gestioneStaff');
+Route::delete('/eliminaUtenteRegistrato/{id}', 'AdminController@removeUser')->name('removeUser');
+Route::delete('/eliminaProdotto/{id_prodotto}', 'ProdottoController@removeProdotto')->name('removeProdotto');
 // Route::get('/home', 'HomeController@index')->name('homeCata');

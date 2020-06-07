@@ -104,8 +104,12 @@
                                                         <button class="btn btn-outline-danger disable-edit mt-2">
                                                             Annulla
                                                         </button>
-                                                        <input type="submit" class="btn btn-outline-danger modifica-submit-button no-pointer-events float-right mt-2" disabled value="Elimina prodotto">
                                                         <input type="submit" class="btn btn-primary modifica-submit-button no-pointer-events float-right mt-2" disabled value="Modifica prodotto">
+                                                    </form>
+                                                    <form action="{{route('removeProdotto', [$prodotto->id_prodotto])}}" method="post">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button id="{{$prodotto->id_prodotto}}" name="{{$prodotto->id_prodotto}}"  class="btn btn-outline-danger" type="submit">Elimina Prodotto</button>
                                                     </form>
                                                 </div>
 
