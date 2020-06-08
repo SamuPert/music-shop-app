@@ -63,7 +63,7 @@
                                         </button>
                                         <div class="btn-group" id="editPersonal"  role="group" style="display: none;" aria-label="Basic example">
                                             <button type="button" class="btn btn-secondary" onclick="disable('personal','editPersonal')">Annulla</button>
-                                            <button type="button" class="btn btn-secondary" onclick="udateUser(){{$user->username}}">Conferma</button>
+                                            <button type="button" class="btn btn-secondary" onclick=>Conferma</button>
                                         </div>
                                     </form>
                                 </div>
