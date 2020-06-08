@@ -24,7 +24,7 @@
                                 <td>{{$utenti->first_name}}</td>
                                 <td>{{$utenti->last_name}}</td>
                                 <td>{{$utenti->username}}</td>
-                                <td><form action="{{route('gestioneStaff', [$utenti->id])}}" method="post">
+                                <td><form action="{{route('removeUser', [$utenti->id])}}" method="post">
                                         @csrf
                                         @method('delete')
                                         <button id="{{$utenti->id}}" name="{{$utenti->id}}"  class="btn btn-outline-danger" type="submit">Elimina Utente  <i class="fa fa-trash"></i></button>
