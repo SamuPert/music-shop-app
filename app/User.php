@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
@@ -72,4 +73,15 @@ class User extends Authenticatable
         ]);
     }
 
+    public static function updateUserStaff( array $data )
+    {
+        $user = User::find($data['id']);
+        if($user == null) return false;
+
+        // utente trovato
+        $user->first_name = $data['nome'];
+        $user->last_name = $data['cognome'];
+
+        return $user->save();
+    }
 }

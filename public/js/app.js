@@ -37247,7 +37247,7 @@ window.riempiSelectByCategoria = function (categoriaId, sottocategoriaId) {
 
   if (selectValue !== undefined && selectValue !== '#') {
     startLoading();
-    return axios.post(rootUrl + '/api/findByCategory', {
+    return axios.post(rootUrl + '/api/findByCategory/', {
       'id_categoria': selectValue
     }).then(function (response) {
       var data = response.data; // handle success
@@ -37361,23 +37361,7 @@ window.toggleFiltriBar = function () {
 };
 
 window.applyFilters = function () {
-  var nomeProdotto = $('#nomeProdottoInput').val();
-  var prezzoMin = $('#prezzoMinInput').val();
-  var prezzoMax = $('#prezzoMaxInput').val();
-  var curUrl = new URL(window.location.href.split(/[?#]/)[0]);
-  curUrl.searchParams.set("nomeProdotto", nomeProdotto);
-  curUrl.searchParams.set("prezzoMin", prezzoMin);
-  curUrl.searchParams.set("prezzoMax", prezzoMax);
-  window.location.href = curUrl.toString();
-};
-
-window.resetFilters = function () {
-  var curUrl = new URL(window.location.href);
-  var newUrl = new URL(window.location.href.split(/[?#]/)[0]);
-  var page = curUrl.searchParams.get("page"); // Get page parameter from old url
-
-  if (page !== null) newUrl.searchParams.set("page", page);
-  window.location.href = newUrl.toString();
+  alert(1);
 };
 
 /***/ }),
@@ -37466,7 +37450,7 @@ $('.enable-edit-staff').click(function (e) {
   e.preventDefault();
   var this_form = $(this).parent().parent();
   this_form.find('input.enable-me-on-edit').prop("disabled", false);
-  this_form.find('.modifica-staff-submit-button').removeClass("no-pointer-events");
+  this_form.find('.update-staff-submit-button').removeClass("no-pointer-events");
   this_form.find("input").prop("disabled", false);
   this_form.find('.enable-edit-staff').prop("disabled", true);
   this_form.find('.enable-edit-staff').css("display", "none");
@@ -37479,7 +37463,7 @@ $('.disable-edit-staff').click(function (e) {
   e.preventDefault();
   var this_form = $(this).parent().parent();
   this_form.find('input.enable-me-on-edit').prop("disabled", true);
-  this_form.find('.modifica-staff-submit-button').addClass("no-pointer-events");
+  this_form.find('.update-staff-submit-button').addClass("no-pointer-events");
   this_form.find("input").prop("disabled", true);
   this_form.find('.disable-edit-staff').prop("disabled", true);
   this_form.find('.disable-edit-staff').css("display", "none");
@@ -37518,9 +37502,9 @@ $('.disable-edit-staff').click(function (e) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Samuele\PhpstormProjects\Progetto-Tecnologie-web\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\Samuele\PhpstormProjects\Progetto-Tecnologie-web\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\Samuele\PhpstormProjects\Progetto-Tecnologie-web\resources\sass\footer.scss */"./resources/sass/footer.scss");
+__webpack_require__(/*! /Users/claudiosirocchi/PhpstormProjects/Progetto-Tecnologie-web/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/claudiosirocchi/PhpstormProjects/Progetto-Tecnologie-web/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /Users/claudiosirocchi/PhpstormProjects/Progetto-Tecnologie-web/resources/sass/footer.scss */"./resources/sass/footer.scss");
 
 
 /***/ })
