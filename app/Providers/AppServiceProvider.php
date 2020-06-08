@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Categoria;
 use App\Occupazione;
+use App\Prodotto;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -61,6 +62,15 @@ class AppServiceProvider extends ServiceProvider
         view()->composer($layout_catalogo, function ($view) {
             $user = \Illuminate\Support\Facades\Auth::user();
             $view->with('user', $user);
+        });
+
+        $layout_modal = [
+            'components/modalModificaProdotto'
+        ];
+
+        view()->composer($layout_modal, function ($view) {
+            $prodotti = Prodotto::paginate(5);
+            $view->with('prodotti', $prodotti);
         });
     }
 

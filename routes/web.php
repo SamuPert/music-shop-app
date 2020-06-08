@@ -61,7 +61,7 @@ Route::get('/utentiStaff/gestione', 'AdminController@gestione_staff')
 
 
 // Route: /prodotti/gestione
-Route::get('/prodotti/gestione', 'ProdottoController@gestione_prodotti')
+Route::get('/prodotti/gestione/{id_prodotto}', 'ProdottoController@gestione_prodotti')
     ->name('gestione_prodotti');
 
 
