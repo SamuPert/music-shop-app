@@ -23,7 +23,26 @@ class CategoriaController extends Controller
 
         $prodotti = DB::table('prodotto')
             ->join('sotto_categoria', 'prodotto.id_sotto_categoria', '=', 'sotto_categoria.id_sotto_categoria')
-            ->select('prodotto.*')
+            ->select('prodotto.*');
+
+        $nomeProdotto = request()->get('nomeProdotto', '');
+        $prezzoMin = request()->get('prezzoMin', '');
+        $prezzoMax = request()->get('prezzoMax', '');
+
+        if( strlen($prezzoMin) != 0 && strlen($prezzoMax) != 0 && $prezzoMax < $prezzoMin) {
+            $tmp = $prezzoMax;
+            $prezzoMax = $prezzoMin;
+            $prezzoMin = $tmp;
+        }
+
+        $prodotti->where(function ($query) use ($nomeProdotto, $prezzoMin, $prezzoMax)
+        {
+            if( strlen($nomeProdotto) != 0 ) $query->where('prodotto.nome_prodotto', 'LIKE', '%'.$nomeProdotto.'%');
+            if( strlen($prezzoMin) != 0 ) $query->where('prodotto.prezzo', '>=', $prezzoMin);
+            if( strlen($prezzoMax) != 0 ) $query->where('prodotto.prezzo', '<=', $prezzoMax);
+        });
+
+        $prodotti = $prodotti
             ->where('sotto_categoria.id_categoria', '=', $id_categoria)
             ->orderBy('prodotto.nome_prodotto')
             ->paginate(5);

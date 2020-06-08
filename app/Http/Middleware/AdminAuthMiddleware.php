@@ -27,8 +27,8 @@ class AdminAuthMiddleware
             ];
 
             return redirect()
-                ->route('catalogo')
-                ->with('messages', $messages);
+                    ->route('catalogo')
+                    ->with('messages', $messages);
 
         }
 

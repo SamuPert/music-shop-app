@@ -12,8 +12,25 @@ class CatalogoController extends Controller
     {
         // Lista categorie
         $categorie = Categoria::all();
-        $prodotti = Prodotto::paginate(5);
 
+        $nomeProdotto = request()->get('nomeProdotto', '');
+        $prezzoMin = request()->get('prezzoMin', '');
+        $prezzoMax = request()->get('prezzoMax', '');
+
+        if( strlen($prezzoMin) != 0 && strlen($prezzoMax) != 0 && $prezzoMax < $prezzoMin) {
+            $tmp = $prezzoMax;
+            $prezzoMax = $prezzoMin;
+            $prezzoMin = $tmp;
+        }
+
+        $prodotti = Prodotto::where(function ($query) use ($nomeProdotto, $prezzoMin, $prezzoMax)
+        {
+            if( strlen($nomeProdotto) != 0 ) $query->where('nome_prodotto', 'LIKE', '%'.$nomeProdotto.'%');
+            if( strlen($prezzoMin) != 0 ) $query->where('prezzo', '>=', $prezzoMin);
+            if( strlen($prezzoMax) != 0 ) $query->where('prezzo', '<=', $prezzoMax);
+        });
+
+        $prodotti = $prodotti->paginate(5);
 
         return view('homeCatalogo', compact(['categorie', 'prodotti']));
     }

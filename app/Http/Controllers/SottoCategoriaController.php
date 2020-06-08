@@ -14,8 +14,26 @@ class SottoCategoriaController extends Controller
         // Lista sotto categorie per categoria
         $sotto_categoria = Sottocategoria::findOrFail($id_sotto_categoria);
         $categoria = Categoria::findOrFail($sotto_categoria->id_categoria);
-        $prodotti = Prodotto::where('id_sotto_categoria', $id_sotto_categoria)
-        ->paginate(5);
+
+        $nomeProdotto = request()->get('nomeProdotto', '');
+        $prezzoMin = request()->get('prezzoMin', '');
+        $prezzoMax = request()->get('prezzoMax', '');
+
+        if( strlen($prezzoMin) != 0 && strlen($prezzoMax) != 0 && $prezzoMax < $prezzoMin) {
+            $tmp = $prezzoMax;
+            $prezzoMax = $prezzoMin;
+            $prezzoMin = $tmp;
+        }
+
+        $prodotti = Prodotto::where(function ($query) use ($nomeProdotto, $prezzoMin, $prezzoMax, $id_sotto_categoria)
+        {
+            $query->where('id_sotto_categoria', $id_sotto_categoria);
+            if( strlen($nomeProdotto) != 0 ) $query->where('nome_prodotto', 'LIKE', '%'.$nomeProdotto.'%');
+            if( strlen($prezzoMin) != 0 ) $query->where('prezzo', '>=', $prezzoMin);
+            if( strlen($prezzoMax) != 0 ) $query->where('prezzo', '<=', $prezzoMax);
+        });
+
+        $prodotti = $prodotti->paginate(5);
 
         return view('listaProdotti', compact(['categoria', 'sotto_categoria', 'prodotti']));
     }
