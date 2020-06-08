@@ -38,4 +38,13 @@ class ProdottoController extends Controller
         }
         return redirect()->route('staff.homepage')->with('messages',[['title'=>'Inserimento Riuscito','type'=>'success','message'=>'Il prodotto è stato inserito correttamente nel catalogo']]);
     }
+
+    public function removeProdotto(Request $request, $id_prodotto)
+    {
+        $prodotto = Prodotto::find( $id_prodotto);
+        $prodotto->delete();
+        return redirect()->action('ProdottoController@gestione_prodotti');
+
+
+    }
 }

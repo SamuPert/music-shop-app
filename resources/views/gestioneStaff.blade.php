@@ -46,18 +46,23 @@
                                         <tr>
                                             <td>{{$utenti->id}}</td>
                                             <td>
-                                                <input type="text" class="form-control" id="id_utente_{{$utenti->id}}" placeholder="Inserisci un Nome" name="nome_utente" disabled value="{{$utenti->first_name}}">
+                                                <input type="text" class="form-control" name="first_name" placeholder="Inserisci un Nome" id="id_utente_nome{{$utenti->id}}" disabled value="{{$utenti->first_name}}">
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="id_utente_{{$utenti->id}}" placeholder="Inserisci un Cognome" name="nome_utente" disabled value="{{$utenti->last_name}}">
+                                                <input type="text" class="form-control" name="last_name" placeholder="Inserisci un Cognome" id="id_utente_cognome{{$utenti->id}}" disabled value="{{$utenti->last_name}}">
                                             </td>
                                             <td>
-                                                <form action="{{'removeMember'}}" method="get">
+                                                <form action="{{route('removeUser', [$utenti->id])}}" method="post">
+                                                    @csrf
+                                                    @method('delete')
                                                     <button id="{{$utenti->id}}" name="{{$utenti->id}}"  class="btn btn-outline-danger" type="submit">Elimina Utente  <i class="fa fa-trash"></i></button>
                                                 </form>
                                                 <button id="{{$utenti->id}}"   class="btn btn-outline-info enable-edit-staff" type="submit">Abilita Modifica Utente   <i class="fa fa-user" aria-hidden="true"></i></button>
                                                 <button class="btn btn-outline-danger disable-edit-staff mt-2" hidden>Annulla</button>
-                                                <input type="submit" class="btn btn-primary modifica-staff-submit-button no-pointer-events float-right mt-2" disabled value="Modifica Utente">
+                                                <form action="{{route('updateUser')}}" method="post">
+                                                    @csrf
+                                                    <input type="submit" class="btn btn-primary update-staff-submit-button no-pointer-events float-right mt-2" id="edit_id" data-id="{{$utenti->id}}" disabled value="Modifica Utente">
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -69,8 +74,32 @@
             </div>
         </div>
     </div>
+</div>
 
 
 @endsection
 
+<script type='text/javascript'>
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $(document).on("click", ".update" , function() {
+        var edit_id = $(this).data('id');
+
+        var name = $('#id_utente_nome'+edit_id).val();
+        var cognome = $('#id_utente_cognome'+edit_id).val();
+debugger;
+        if(name != '' && cognome != ''){
+            $.ajax({
+                url: 'updateUser',
+                type: 'post',
+                data: {_token: CSRF_TOKEN,edit_id: edit_id,name: name,cognome: cognome},
+                success: function(response){
+                    alert(response);
+                }
+            });
+        }else{
+            alert('Riempi tutti i campi');
+        }
+    });
+
+</script>
 

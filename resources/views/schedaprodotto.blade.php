@@ -42,10 +42,14 @@
                                     <p>{{$prodotti->descrizione_estesa}}</p>
                                     @auth()
                                         @if($user->auth_level === 2)
+                                            @if($prodotti->sconto!=0.00)
                                             <div class="d-flex align-items-center justify-content-between mt-1">
                                                 <h6 class="font-weight-bold my-2"><s>Prezzo: {{$prodotti->prezzo}}€</s></h6>
                                                 <h6 class="font-weight-bold my-2 " style="color: #FF0000">Prezzo Scontato: <span id="price"> {{$prodotti->prezzo-($prodotti->prezzo*$prodotti->sconto)/100}}</span>€</h6>
                                             </div>
+                                            @elseif($prodotti->sconto===0.00)
+                                                <h6 class="font-weight-bold my-2">Prezzo: <span id="price">{{$prodotti->prezzo}}</span>€</h6>
+                                            @endif
                                         @elseif($user->auth_level === 3 || $user->auth_level === 4)
                                             <h6 class="font-weight-bold my-2">Prezzo: <span id="price">{{$prodotti->prezzo}}</span>€</h6>
                                         @endif

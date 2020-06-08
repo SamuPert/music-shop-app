@@ -104,14 +104,17 @@
                                                         <button class="btn btn-outline-danger disable-edit mt-2">
                                                             Annulla
                                                         </button>
-                                                        <input type="submit" class="btn btn-outline-danger modifica-submit-button no-pointer-events float-right mt-2" disabled value="Elimina prodotto">
                                                         <input type="submit" class="btn btn-primary modifica-submit-button no-pointer-events float-right mt-2" disabled value="Modifica prodotto">
                                                     </form>
                                                 </div>
 
                                                 <div class="order-1 order-lg-2 float-right">
-
                                                     <img class="image_loading" src="{{$prodotto->percorso_foto != '' ? asset( $prodotto->percorso_foto ) : 'https://via.placeholder.com/2800x2200.png' }}" alt="{{ $prodotto->nome_prodotto }}" width="200">
+                                                    <form action="{{route('removeProdotto', [$prodotto->id_prodotto])}}" method="post">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button id="{{$prodotto->id_prodotto}}" name="{{$prodotto->id_prodotto}}"  class="btn btn-outline-danger" type="submit" style="margin-top: 5%">Elimina Prodotto</button>
+                                                    </form>
                                                 </div>
                                             </div> <!-- End -->
                                         </li> <!-- End -->

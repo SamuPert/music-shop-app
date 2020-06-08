@@ -5,7 +5,7 @@ $('.enable-edit-staff').click(function (e) {
     let this_form = $(this).parent().parent();
 
     this_form.find('input.enable-me-on-edit').prop("disabled", false);
-    this_form.find('.modifica-staff-submit-button').removeClass("no-pointer-events");
+    this_form.find('.update-staff-submit-button').removeClass("no-pointer-events");
 
     this_form.find( "input" ).prop("disabled", false);
 
@@ -22,7 +22,7 @@ $('.disable-edit-staff').click(function (e) {
     let this_form = $(this).parent().parent();
 
     this_form.find('input.enable-me-on-edit').prop("disabled", true);
-    this_form.find('.modifica-staff-submit-button').addClass("no-pointer-events");
+    this_form.find('.update-staff-submit-button').addClass("no-pointer-events");
 
     this_form.find( "input" ).prop("disabled", true);
 

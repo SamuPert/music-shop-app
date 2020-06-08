@@ -16,7 +16,7 @@
                 <div class="box">
                     <a href="{{ route('gestione_staff') }}"><h3 class="name"><i class="fa fa-gear icon"></i> Gestisci Utenti Staff </h3></a>
                     <p class="description">Puoi gestire gli utenti Staff cliccando nel link.&nbsp;</p>
-                    <a class="learn-more" href="{{ route('gestione_staff') }}">Apri gestione Staffi</a>
+                    <a class="learn-more" href="{{ route('gestione_staff') }}">Apri gestione Staff</a>
                 </div>
             </div>
             <div class="col-md-6 col-lg-6">
