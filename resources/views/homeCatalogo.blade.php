@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <div class="pl-5 pr-5">
+    <div class="pl-5 pr-5" style="padding-top: 30px">
         <div class="row justify-content-center">
             <div class="col-md-12">
 
@@ -23,7 +23,7 @@
                         </h5>
 
                         <div class="row p-3">
-                            @foreach($categorie as $categoria)
+                            @foreach($categorie->sortBy('nome_categoria') as $categoria)
                                 <div class="col-md-4">
                                     <div class="card m-3">
                                         <img
@@ -46,6 +46,15 @@
                         <h5 class="card-title">
                             I nostri prodotti
                         </h5>
+                        @if( count($prodotti) == 0 )
+                            Nessun prodotto trovato...
+                        @endif
+                        @if( request()->has('nomeProdotto') || request()->has('prezzoMin') || request()->has('prezzoMax') )
+                            <button
+                                    onclick="resetFilters();"
+                                    class="btn btn-danger mt-2 mb-2"
+                            > Resetta filtri <i class="fa fa-ban"></i></button>
+                        @endif
                         {{ $prodotti->appends(request()->except('page'))->links() }}
                         <div class="row" style="margin-bottom: 20px;">
                             <div class="col-lg-8 mx-auto">

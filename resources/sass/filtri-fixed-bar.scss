@@ -1,4 +1,5 @@
 
+
 #filtriFixedBar
 {
   position: fixed;
@@ -6,7 +7,6 @@
   width: 100%;
   top: $header-height-mobile;
   z-index: $z-index-fixed-bar;
-  margin-top: 1px;
 }
 
 #filtriInnerBar
@@ -39,13 +39,13 @@
   #filtriInnerBar > *
   {
     float: left;
-    width: (100% / 5);
+    width: (100% / $numero_elementi);
     height: 80px;
   }
 
   .search-button-filtri
   {
-    width: (100% / 5) !important;
+    width: (100% / $numero_elementi) !important;
   }
 }
 

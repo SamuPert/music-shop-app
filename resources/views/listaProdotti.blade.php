@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="pl-5 pr-5">
+<div class="pl-5 pr-5" style="padding-top: 30px">
     <div class="row justify-content-center">
         <div class="col-md-12">
 
@@ -29,6 +29,12 @@
                             Ci sono <i>{{ count($prodotti) }} prodotti</i>
                         @endif
                     </h5>
+                    @if( request()->has('nomeProdotto') || request()->has('prezzoMin') || request()->has('prezzoMax') )
+                    <button
+                            onclick="resetFilters();"
+                            class="btn btn-danger mt-2 mb-2"
+                    > Resetta filtri <i class="fa fa-ban"></i></button>
+                    @endif
                     {{ $prodotti->appends(request()->except('page'))->links() }}
                     <div class="row">
                         <div class="col-lg-8 mx-auto">

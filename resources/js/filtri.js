@@ -18,5 +18,29 @@ window.toggleFiltriBar = () =>
 
 window.applyFilters = () =>
 {
-    alert(1);
+    let nomeProdotto = $('#nomeProdottoInput').val();
+    let prezzoMin = $('#prezzoMinInput').val();
+    let prezzoMax = $('#prezzoMaxInput').val();
+
+    let curUrl = new URL(window.location.href.split(/[?#]/)[0]);
+
+    curUrl.searchParams.set("nomeProdotto", nomeProdotto);
+    curUrl.searchParams.set("prezzoMin", prezzoMin);
+    curUrl.searchParams.set("prezzoMax", prezzoMax);
+
+    window.location.href = curUrl.toString();
+}
+
+window.resetFilters = () => {
+    let curUrl = new URL( window.location.href );
+    let newUrl = new URL( window.location.href.split(/[?#]/)[0] );
+
+    let page = curUrl.searchParams.get("page");
+
+    // Get page parameter from old url
+    if( page !== null )
+        newUrl.searchParams.set("page", page );
+
+
+    window.location.href = newUrl.toString();
 }
