@@ -82,9 +82,7 @@ Route::prefix('admin')->group(function () {
 
 });
 
-Route::get('/modificaProfilo',function (){
-    return view('showUser');
-})->name('modificaProfilo');
+Route::get('/modificaprofilo', 'UserController@editprofile')->name('modificaprofilo');
 
 
 Route::get('/onlineshop',function (){
@@ -95,9 +93,10 @@ Route::get('/privacypolicy', function () {
     return view('privacypolicy');
 })->name('privacypolicy');
 
-
-
 Auth::routes();
+
+//modifica dell'utente
+Route::post('/applicamodifiche', 'UserController@applyedit')->name('applicamodifiche');
 
 Route::post('/registrazione', 'Auth\\RegisterController@registerUser')->name('registrazione');
 Route::post('/registrazioneStaff', 'Auth\\RegisterStaffController@registerStaff')->name('registrazioneStaff');

@@ -35,27 +35,27 @@
                             <div class="row">
                                 <div class="col">
                                     <h1>Dati personali:</h1>
-                                    <form>
+                                    <form  action="{{route('applicamodifiche')}}" method="post">
                                         <div class="edituserdata">
                                             <div class="form-group">
                                                 <label for="nome">Nome:</label>
-                                                <input type="text" class="form-control personal"  disabled value="{{$user->first_name}}"/>
+                                                <input type="text" class="form-control personal"  name="first_name "disabled value="{{$user->first_name}}"/>
                                             </div>
                                             <div class="form-group">
                                                 <label>Cognome:</label>
-                                                <input type="text" class="form-control personal" disabled value="{{$user->last_name}}"/>
+                                                <input type="text" class="form-control personal" name="last_name" disabled value="{{$user->last_name}}"/>
                                             </div>
                                             <div class="form-group">
                                                 <label>Luogo di Residenza</label>
-                                                <input type="text" class="form-control personal" disabled value="{{$user->location}}"/>
+                                                <input type="text" class="form-control personal" name="location" disabled value="{{$user->location}}"/>
                                             </div>
                                             <div class="form-group">
                                                 <label>Data di Nascita: </label>
-                                                <input type="date" class="form-control personal" disabled value="{{$user->birth_date}}"/>
+                                                <input type="date" class="form-control personal" disabled name="birth_date" value="{{$user->birth_date}}"/>
                                             </div>
                                             <div class="form-group">
                                                 <label>Occupazione: </label>
-                                                <input type="text" class="form-control personal" disabled  value="{{$user->occupation}}"/>
+                                                <input type="text" class="form-control personal" disabled name="occupation" value="{{$user->occupation}}"/>
                                             </div>
                                         </div>
                                         <button class="btn btn-primary" id="personal" style="display: block;" type="button" onclick="enable('personal','editPersonal')">Modifica i
@@ -63,7 +63,7 @@
                                         </button>
                                         <div class="btn-group" id="editPersonal"  role="group" style="display: none;" aria-label="Basic example">
                                             <button type="button" class="btn btn-secondary" onclick="disable('personal','editPersonal')">Annulla</button>
-                                            <button type="button" class="btn btn-secondary">Conferma</button>
+                                            <button type="button" class="btn btn-secondary" onclick="udateUser(){{$user->username}}">Conferma</button>
                                         </div>
                                     </form>
                                 </div>
@@ -100,3 +100,9 @@
         </div>
     </div>
 @endsection
+
+<script type="text/javascript">
+    function updateuser(id) {
+        window.location.href="{{url('applicamodifiche')}}/"+id;
+    }
+</script>
