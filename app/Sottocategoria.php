@@ -15,5 +15,9 @@ class Sottocategoria extends Model
         return $this->hasOne('App\Categoria', 'id_categoria', 'id_categoria');
     }
 
+    public function prodotti()
+    {
+        return $this->hasMany('App\Prodotto', 'id_sotto_categoria', 'id_sotto_categoria');
+    }
 
 }

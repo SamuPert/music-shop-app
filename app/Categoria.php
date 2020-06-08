@@ -11,9 +11,10 @@ class Categoria extends Model
     protected $table = "categoria";
 
     protected $fillable = ['id_categoria', 'nome_categoria', 'descrizione_categoria', 'percorso_foto'];
+
     public function sotto_categorie()
     {
-        return $this->hasMany('App\Sottocategoria', 'id_sotto_categoria', 'id_sotto_categoria');
+        return $this->hasMany('App\Sottocategoria', 'id_categoria', 'id_categoria');
     }
 
     public static function createCat(array $data)
@@ -21,7 +22,6 @@ class Categoria extends Model
         return Categoria::create([
             'nome_categoria' => $data['nome_categoria'],
             'descrizione_categoria' => $data['descrizione_categoria'],
-
         ]);
     }
 }
