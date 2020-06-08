@@ -8,7 +8,13 @@
         <div class="card">
             <div style="padding: 0.5rem">
                 Prezzo Minimo: <span id="prezzoMinValue">50</span> €
-                <input type="range" class="custom-range" min="0" max="2000" step="1" id="prezzoMinInput" value="300" style="margin-top: 10px">
+                <input type="range" class="custom-range" min="0" max="2000" step="1" id="prezzoMinInput"
+                       @if( request()->has('prezzoMin') )
+                        value="{{ request()->input('prezzoMin', '300') }}"
+                       @else
+                        value="300"
+                       @endif
+                       style="margin-top: 10px">
             </div>
         </div>
 
@@ -16,20 +22,13 @@
         <div class="card">
             <div style="padding: 0.5rem">
                 Prezzo Massimo: <span id="prezzoMaxValue">50</span> €
-                <input type="range" class="custom-range" min="5" max="2000" step="1" id="prezzoMaxInput" value="1700" style="margin-top: 10px">
-            </div>
-        </div>
-
-        <!-- Categoria -->
-        <div class="card">
-            <div style="padding: 0.5rem">
-                    <span>
-                        Categoria:
-                    </span>
-                <select class="custom-select" id="categoriaInput" >
-                    <option value="*" selected> Tutte le categorie. </option>
-                    <option value="1">1</option>
-                </select>
+                <input type="range" class="custom-range" min="5" max="2000" step="1" id="prezzoMaxInput"
+                       @if( request()->has('prezzoMax') )
+                       value="{{ request()->input('prezzoMax', '1700') }}"
+                       @else
+                       value="1700"
+                       @endif
+                   style="margin-top: 10px">
             </div>
         </div>
 
@@ -39,17 +38,35 @@
                     <span>
                         Nome Prodotto:
                     </span>
-                <input type="text" id="nomeProdottoInput" class="form-control" >
+                <input type="text" id="nomeProdottoInput" class="form-control"
+                   @if( request()->has('nomeProdotto') )
+                       value="{{ request()->input('nomeProdotto','') }}"
+                    @endif
+                >
             </div>
         </div>
 
         <div class="card search-button-filtri">
-            <div style="padding: 0.5rem">
-                <button
-                        onclick="applyFilters();"
-                        class="btn btn-light w-100"
-                        style="height: 60px"
-                > Applica filtri <i class="fa fa-search"></i></button>
+            <div class="row" style="padding: 0.5rem" >
+                <div class="col-md-6">
+                    <div  class="float-left w-100">
+                        <button
+                                onclick="applyFilters();"
+                                class="btn btn-light float-left"
+                                style="height: 60px;"
+                        > Applica filtri <i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="float-left w-100">
+                        <button
+                                onclick="resetFilters();"
+                                class="btn btn-danger"
+                                style="height: 60px;"
+                        > Resetta filtri <i class="fa fa-ban"></i></button>
+                    </div>
+                </div>
             </div>
         </div>
 

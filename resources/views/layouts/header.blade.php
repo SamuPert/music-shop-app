@@ -13,22 +13,28 @@
                 <div class="col d-none d-md-block col-md-8 col-sm-12 ml-0 mr-0">
                     <div class="row">
                         <div class="col">
-                            <div class="input-group mt-2 mb-2">
-                                <div class="input-group-prepend">
-                                    <select class="custom-select" style="border-radius: .25rem 0 0 .25rem;">
-                                        <option value="*" selected>Tutte le categorie</option>
-                                        @foreach( $listaCategorie as $categoria )
-                                            <option
-                                                value="{{$categoria->id_categoria}}">{{$categoria->nome_categoria}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                            <form action="{{ route('cerca') }}" method="GET">
+                                <div class="input-group mt-2 mb-2">
+                                    <div class="input-group-prepend">
+                                        <select class="custom-select" style="border-radius: .25rem 0 0 .25rem;"
+                                                name="categoria"
+                                        >
+                                            <option value="*" selected>Tutte le categorie</option>
+                                            @foreach( $listaCategorie as $categoria )
+                                                <option
+                                                        value="{{$categoria->id_categoria}}">{{$categoria->nome_categoria}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                     <input type="text"
-                                           class="form-control"/>
+                                           class="form-control"
+                                           name="nomeProdotto"
+                                    />
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" type="submit">Cerca</button>
                                     </div>
-                            </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -37,11 +43,11 @@
 
                 <div class="col d-none d-md-block mt-2 mr-2" >
 
-                    <div class="float-right mt-1 ml-1">
                     @auth
+                    <div class="float-right mt-1 ml-1">
                         @include('components.loggedInUser')
-                    @endauth
                     </div>
+                    @endauth
 
 
                     @guest
@@ -91,39 +97,22 @@
                                         </div>
                                     </li>
 
+                                    @foreach($listaCategorie as $categoria)
+
                                     <div class="dropdown">
-                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                                            Dropdown
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdown{{ strtoupper($categoria->nome_categoria) }}" data-toggle="dropdown">
+                                            {{ $categoria->nome_categoria }}
                                             <span class="caret"></span>
                                         </button>
-                                        <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Action</a>
+                                        <div class="dropdown-menu" role="menu" aria-labelledby="dropdown{{ strtoupper($categoria->nome_categoria) }}">
+                                            @foreach( $categoria->sotto_categorie->sortBy('nome_sotto_categoria') as $sotto_categoria )
+                                                <a class="dropdown-item"
+                                                   href="{{ route('lista_prodotti', ['id_sotto_categoria' => $sotto_categoria->id_sotto_categoria]) }}"
+                                                >{{ $sotto_categoria->nome_sotto_categoria }}</a>
+                                            @endforeach
                                         </div>
                                     </div>
-                                    <div class="dropdown">
-                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                                            Dropdown
-                                            <span class="caret"></span>
-                                        </button>
-                                        <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown">
-                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                                            Dropdown
-                                            <span class="caret"></span>
-                                        </button>
-                                        <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -133,4 +122,5 @@
             </div>
         </section>
     </div>
+    @includeWhen(  request()->route()->getName() == 'catalogo' || request()->route()->getName() == 'lista_sotto_categorie' || request()->route()->getName() == 'lista_prodotti', 'layouts.filtri-bar')
 </div>

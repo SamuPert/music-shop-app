@@ -24,8 +24,6 @@
 @endif
 
 
-@includeWhen(  request()->route()->getName() == 'catalogo' || request()->route()->getName() == 'lista_sotto_categorie' || request()->route()->getName() == 'lista_prodotti', 'layouts.filtri-bar')
-
 <div class="main-content">
     @yield('content')
 </div>
