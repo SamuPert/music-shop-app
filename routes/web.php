@@ -73,6 +73,29 @@ Route::prefix('staff')->group(function () {
 
 });
 
+Route::get('cerca', function (Illuminate\Http\Request $request){
+    $id_categoria = $request->input('categoria', '*');
+    $params = [ ];
+
+    // Cerca su una categoria specifica
+    $nomeProdotto = $request->input('nomeProdotto', '');
+    if( $nomeProdotto !== '')
+        $params['nomeProdotto'] = $nomeProdotto;
+
+    if( $id_categoria === '*' )
+    {
+        // Cerca su tutto il catalogo
+        return redirect()
+            ->route('catalogo', $params);
+
+    }else{
+        $params['id_categoria'] = $id_categoria;
+        return redirect()
+            ->route('lista_sotto_categorie', $params);
+    }
+
+
+})->name('cerca');
 
 // Route for /admin
 Route::prefix('admin')->group(function () {
