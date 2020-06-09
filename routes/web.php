@@ -120,8 +120,7 @@ Route::get('/privacy-policy', function () {
 
 Auth::routes();
 
-//modifica dell'utente
-Route::post('/applicamodifiche', 'UserController@applyedit')->name('applicamodifiche');
+
 
 Route::post('/utente/registrazione', 'Auth\\RegisterController@registerUser')->name('registrazione');
 Route::post('/staff/registrazione', 'Auth\\RegisterStaffController@registerStaff')->name('registrazioneStaff');
@@ -131,4 +130,5 @@ Route::post('/prodotto/new', 'ProdottoController@insertNewProduct')->name('inser
 Route::delete('/staff/delete/{id}', 'AdminController@removeUser')->name('removeStaff');
 Route::delete('/utente/delete/{id}', 'AdminController@removeUser')->name('removeUser');
 Route::delete('/prodotto/delete/{id_prodotto}', 'ProdottoController@removeProdotto')->name('removeProdotto');
+Route::delete('/my-account/delete', 'UserController@deletemyaccount')->name('deletemyaccount');
 // Route::get('/home', 'HomeController@index')->name('homeCata');

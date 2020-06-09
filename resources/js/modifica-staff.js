@@ -44,6 +44,7 @@ window.modificaUtente = (e, id) => {
     if( nome === undefined || cognome === undefined || nome === '' || cognome === '')
     {
         alert('Riempi tutti i campi');
+        return;
     }
 
     let inputData = {

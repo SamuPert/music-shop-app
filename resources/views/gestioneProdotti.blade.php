@@ -101,7 +101,7 @@
                                                     <form action="{{route('removeProdotto', [$prodotti->id_prodotto])}}" method="post">
                                                         @csrf
                                                         @method('delete')
-                                                        <button id="{{$prodotti->id_prodotto}}" name="{{$prodotti->id_prodotto}}"  class="btn btn-outline-danger" type="submit" style="margin-top: 5%">Elimina Prodotto</button>
+                                                        <button id="{{$prodotti->id_prodotto}}" name="{{$prodotti->id_prodotto}}"  class="btn btn-outline-danger"  onclick="return confirm('Sei Sicuro di voler procedere?')" type="submit" style="margin-top: 5%">Elimina Prodotto</button>
                                                     </form>
                                                 </div>
                                             </div> <!-- End -->

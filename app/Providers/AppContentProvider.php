@@ -50,7 +50,8 @@ class AppContentProvider extends ServiceProvider
     private static function injectDatiOccupazione()
     {
         $layouts_dati_occupazione = [
-            'components/modalRegistra'
+            'components/modalRegistra',
+            'showUser'
         ];
         // Inject in every request to "views/layouts/app.blade.php" the category data.
         view()->composer($layouts_dati_occupazione, function ($view) {

@@ -31,7 +31,7 @@
                     </table>
                     <br>
                     <div class="form-group">
-                        <button class="btn btn-primary btn-block" type="submit">Elimina Utente <i class="fa fa-chevron-circle-right"></i></button>
+                        <button class="btn btn-primary btn-block"  onclick="return confirm('Sei Sicuro di voler procedere?')" type="submit">Elimina Utente <i class="fa fa-chevron-circle-right"></i></button>
                     </div>
                 </div>
             </form>

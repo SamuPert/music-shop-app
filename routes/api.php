@@ -31,4 +31,5 @@ Route::post('/findByCategory/', function (Request $request) {
 
 Route::post('/staff/update', 'UserController@updateUserStaff')->name('updateUserStaff');
 Route::post('/prodotto/update', 'ProdottoController@updateProdotto')->name('updateProdotto');
-
+Route::post('/utente/update', 'UserController@applyedit')->name('applicamodifiche');
+Route::post('/utente/updateAccess', 'UserController@applyaccessedit')->name('applicamodificheaccesso');

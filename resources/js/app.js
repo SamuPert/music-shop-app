@@ -1,6 +1,7 @@
 require('./bootstrap');
 require('./modifica-prodotto');
 require('./modifica-staff');
+require('./modifica-utente');
 require('./filtri');
 require('./loading-bar');
 

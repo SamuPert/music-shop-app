@@ -27,7 +27,7 @@
                                 <td><form action="{{route('removeUser', [$utenti->id])}}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button id="{{$utenti->id}}" name="{{$utenti->id}}"  class="btn btn-outline-danger" type="submit">Elimina Utente  <i class="fa fa-trash"></i></button>
+                                        <button id="{{$utenti->id}}" name="{{$utenti->id}}"  class="btn btn-outline-danger" onclick="return confirm('Sei Sicuro di voler procedere?')" type="submit">Elimina Utente  <i class="fa fa-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>

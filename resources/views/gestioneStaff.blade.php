@@ -55,7 +55,7 @@
                                             <form action="{{route('removeUser', [$utenti->id])}}" method="post">
                                                 @csrf
                                                 @method('delete')
-                                                <button id="buttonEliminaStaff{{$utenti->id}}"  class="btn btn-outline-danger" type="submit">Elimina Utente  <i class="fa fa-trash"></i></button>
+                                                <button id="buttonEliminaStaff{{$utenti->id}}"  class="btn btn-outline-danger"  onclick="return confirm('Sei Sicuro di voler procedere?')" type="submit">Elimina Utente  <i class="fa fa-trash"></i></button>
                                             </form>
                                             <button id="buttonModificaStaff{{$utenti->id}}"   class="btn btn-outline-info enable-edit-staff" type="submit">Abilita Modifica Utente   <i class="fa fa-user" aria-hidden="true"></i></button>
                                             <button class="btn btn-outline-danger disable-edit-staff mt-2" hidden>Annulla</button>

@@ -23,7 +23,6 @@ class User extends Authenticatable
     ];
 
 
-
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -41,10 +40,11 @@ class User extends Authenticatable
     protected $casts = [
         'birth_date' => 'date',
     ];
+
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \App\User
      */
     public static function createUser(array $data)
@@ -69,14 +69,14 @@ class User extends Authenticatable
             'last_name' => $data['last_name'],
             'username' => $data['username'],
             'password' => Hash::make($data['password']),
-            'auth_level'=>3,
+            'auth_level' => 3,
         ]);
     }
 
-    public static function updateUserStaff( array $data )
+    public static function updateUserStaff(array $data)
     {
         $user = User::find($data['id']);
-        if($user == null) return false;
+        if ($user == null) return false;
 
         // utente trovato
         $user->first_name = $data['nome'];
@@ -89,4 +89,30 @@ class User extends Authenticatable
     {
         return ucwords($this->first_name." ".$this->last_name);
     }
+
+    public static function updateCurrentUser(array $data)
+    {
+        $user = User::find(Auth::user()->id);
+        if ($user == null) return false;
+
+        // utente trovato
+        $user->first_name = $data['nome'];
+        $user->last_name = $data['cognome'];
+        $user->location = $data['residenza'];
+        $user->birth_date = $data['datanascita'];
+        $user->occupation = $data['occupazione'];
+        return $user->save();
+    }
+
+    public static function updateCurrentUserAccess(array $data)
+    {
+        $user = User::find(Auth::user()->id);
+        if ($user == null) return false;
+
+        // utente trovato
+        $user->email = $data['email'];
+        $user->password =  Hash::make($data['password']);
+        return $user->save();
+    }
+
 }
