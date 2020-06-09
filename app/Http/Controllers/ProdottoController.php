@@ -21,12 +21,14 @@ class ProdottoController extends Controller
 
 
         return view('schedaprodotto', compact(['prodotti', 'sotto_categoria', 'categoria']));
-
-
     }
 
     public function gestione_prodotti($id_prodotto)
     {
+        if(Auth::guest() || !Auth::user()->isStaff() ) {
+            return redirect()->back()->with('messages',[['title'=>'Gestione prodotti fallita','type'=>'warning','message'=>'Non si dispone dei permessi per gestire i prodotti.']]);
+        }
+
         $prodotti = Prodotto::findOrFail($id_prodotto);
 
         return view('gestioneProdotti', compact('prodotti'));
@@ -45,6 +47,10 @@ class ProdottoController extends Controller
 
     public function insertNewProduct(Request $request)
     {
+        if(Auth::guest() || !( Auth::user()->isStaff() || Auth::user()->isAdmin() )) {
+            return redirect()->route('staff.homepage')->with('messages',[['title'=>'Inserimento Fallito','type'=>'warning','message'=>'Non si dispone dei permessi per inserire il prodotto.']]);
+        }
+
         $inputdata=array_merge($request->all());
         $validator=self::validator($inputdata);
         if($validator->fails()){
@@ -59,16 +65,18 @@ class ProdottoController extends Controller
 
     public function removeProdotto(Request $request, $id_prodotto)
     {
+        if(Auth::guest() || !( Auth::user()->isStaff() || Auth::user()->isAdmin() )) {
+            return redirect()->back()->with('messages',[['title'=>'Prodotto non cancellato','type'=>'warning','message'=>'Non si dispone dei permessi per cancellare il prodotto.']]);
+        }
+        
         $prodotto = Prodotto::find( $id_prodotto);
         $prodotto->delete();
-        return redirect()->route('staff.homepage');
-
-
+        return redirect()->back()->with('messages',[['title'=>'Prodotto cancellato','type'=>'success','message'=>'Prodotto cancellato con successo.']]);
     }
 
     public function updateProdotto(Request $request){
 
-        if( !Auth::check() || Auth::user()->auth_level !== 3 )
+        if( !Auth::check() || Auth::user()->isStaff() )
         {
             return response()->json([
                 "success" => false,

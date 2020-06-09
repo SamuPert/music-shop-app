@@ -130,3 +130,4 @@ Route::delete('/staff/delete/{id}', 'AdminController@removeUser')->name('removeS
 Route::delete('/utente/delete/{id}', 'AdminController@removeUser')->name('removeUser');
 Route::delete('/prodotto/delete/{id_prodotto}', 'ProdottoController@removeProdotto')->name('removeProdotto');
 // Route::get('/home', 'HomeController@index')->name('homeCata');
+

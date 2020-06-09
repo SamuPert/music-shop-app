@@ -87,6 +87,16 @@ class User extends Authenticatable
 
     public function getFullNameAttribute()
     {
+        if($this->isStaff()) return "Staff";
+        if($this->isAdmin()) return "Admin";
         return ucwords($this->first_name." ".$this->last_name);
+    }
+
+    public function isAdmin() {
+        return $this->auth_level === 4;
+    }
+
+    public function isStaff() {
+        return $this->auth_level === 3;
     }
 }
