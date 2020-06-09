@@ -52,9 +52,9 @@ class RegisterStaffController extends Controller
         }
         $user = User::createStaff($inputdata);
         if ($user === null) {
-            return redirect()->route('admin.homepage')->with('messages',[['title'=>'Registrazione fallita','type'=>'error','message'=>'Non è stato possibile registrare l\'utente']]);
+            return redirect()->route('gestione_staff')->with('messages',[['title'=>'Registrazione fallita','type'=>'error','message'=>'Non è stato possibile registrare l\'utente']]);
         }
-        return redirect()->route('admin.homepage')->with('messages',[['title'=>'Registrazione effettuata','type'=>'success','message'=>'Utente registrato correttamente']]);
+        return redirect()->route('gestione_staff')->with('messages',[['title'=>'Registrazione effettuata','type'=>'success','message'=>'Utente registrato correttamente']]);
     }
 
 }

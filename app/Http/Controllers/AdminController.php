@@ -22,6 +22,7 @@ class AdminController extends Controller
 
         return view('adminPage', compact(['utente', 'utenteRegistrato']));
     }
+    
     public function gestione_staff()
     {
         // Lista utenti con auth_level 3 (staff)
@@ -36,15 +37,10 @@ class AdminController extends Controller
     public function removeUser(Request $request, $id)
     {
         $utente = User::find( $id);
-        $utenteLevel = $utente->auth_level;
+        $full_name = $utente->full_name;
         $utente->delete();
 
-        if($utenteLevel==3){
-            return redirect()->action('AdminController@gestione_staff');
-        }else{
-            return redirect()->action('AdminController@homepage');
-        }
-
+        return redirect()->route('admin.homepage')->with('messages',[['title'=>'Utente cancellato','type'=>'success','message'=>'Utente "'.$full_name.'" cancellato correttamente.']]);;
     }
 
 }
