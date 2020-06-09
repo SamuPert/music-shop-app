@@ -48,7 +48,7 @@ class ProdottoController extends Controller
         $inputdata=array_merge($request->all());
         $validator=self::validator($inputdata);
         if($validator->fails()){
-            return redirect()->route('gestione_prodotti')->withErrors($validator);
+            return redirect()->route('staff.homepage')->withErrors($validator);
         }
         $prodotto = Prodotto::create($inputdata);
         if ($prodotto === null) {
@@ -61,9 +61,15 @@ class ProdottoController extends Controller
     {
         $prodotto = Prodotto::find( $id_prodotto);
         $prodotto->delete();
-        return redirect()->route('staff.homepage');
+        return redirect()->route('modifica_prodotti')->with('messages',[['title'=>'Prodotto cancellato','type'=>'success']]);;
+    }
+    
 
+    public function lista_prodotti()
+    {
+        $prodotti = Prodotto::paginate(10);
 
+        return view('modificaProdotti', compact('prodotti'));
     }
 
     public function updateProdotto(Request $request){

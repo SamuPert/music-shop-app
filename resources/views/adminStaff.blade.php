@@ -6,7 +6,6 @@
 @include('components.modalInsertProduct')
 @include('components.modalInsertCategory')
 @include('components.modalNewSubCategory')
-@include('components.modalModificaProdotto')
 @include('layouts.header_staff')
     <!-- Start: 2 Rows 1+3 Columns -->
     <br>
@@ -15,9 +14,9 @@
             <div class="row">
                 <div class="col-md-4 col-lg-4">
                     <div class="box">
-                        <a href="#modalModificaProdotto" onclick='$("#modalModificaProdotto").modal("show")'><h3 class="name"><i class="fa fa-gear icon"></i> Gestisci prodotti </h3></a>
+                        <a href="{{ route('modifica_prodotti') }}"><h3 class="name"><i class="fa fa-gear icon"></i> Gestisci prodotti </h3></a>
                         <p class="description">Puoi gestire i prodotti cliccando nel link.&nbsp;</p>
-                        <a class="learn-more" href="#modalModificaProdotto" onclick='$("#modalModificaProdotto").modal("show")'>Apri gestione prodotti</a>
+                        <a class="learn-more" href="{{ route('modifica_prodotti') }}">Apri gestione prodotti</a>
                     </div>
                 </div>
 

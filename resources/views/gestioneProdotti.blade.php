@@ -4,7 +4,6 @@
 
 @section('content')
 
-    @include('components.modalInsertProduct')
 
     <div class="pl-5 pr-5">
         <div class="row justify-content-center">
@@ -13,21 +12,13 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('staff.homepage') }}">Area Personale</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Gestione prodotti</li>
+                        <li class="breadcrumb-item"><a href="{{ route('modifica_prodotti') }}">Gestione Prodotti</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Modifica Prodotto</li>
                     </ol>
                 </nav>
 
                 <div class="card">
                     <div class="card-body">
-
-                        <div class="row mb-3">
-                            <div class="col">
-                                <button class="btn btn-primary" onclick='$("#modalInserisciProdotto").modal("show")'>
-                                    <i class="fa fa-plus-circle icon"></i>
-                                    Inserisci prodotto
-                                </button>
-                            </div>
-                        </div>
 
                         <div class="row" style="margin-bottom: 20px;">
                             <div class="col-lg-8 mx-auto">
