@@ -84,4 +84,9 @@ class User extends Authenticatable
 
         return $user->save();
     }
+
+    public function getFullNameAttribute()
+    {
+        return ucwords($this->first_name." ".$this->last_name);
+    }
 }
