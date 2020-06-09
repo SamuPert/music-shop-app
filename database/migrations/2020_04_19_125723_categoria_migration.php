@@ -16,7 +16,7 @@ class CategoriaMigration extends Migration
         Schema::create('categoria', function (Blueprint $table) {
             $table->increments('id_categoria');
             $table->string('nome_categoria',30);
-            $table->string('descrizione_categoria',50);
+            $table->string('descrizione_categoria',50)->nullable();
             $table->string('percorso_foto',255)->nullable(); // path_image
             $table->timestamps();
         });
