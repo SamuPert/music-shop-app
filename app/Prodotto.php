@@ -25,4 +25,21 @@ class Prodotto extends Model
     {
         return $this->hasOne('App\Sottocategoria', 'id_sotto_categoria', 'id_sotto_categoria');
     }
+
+    public static function updateProdotto( array $data )
+    {
+        $prodotto = Prodotto::find($data['id_prodotto']);
+        if($prodotto == null) return false;
+
+        // prodotto trovato
+        $prodotto->nome_prodotto = $data['nome_prodotto'];
+        $prodotto->descrizione_breve= $data['desc_breve'];
+        $prodotto->descrizione_estesa= $data['desc_estesa'];
+        $prodotto->percorso_foto= $data['percorso_foto'];
+        $prodotto->prezzo= $data['prezzo'];
+        $prodotto->sconto= $data['sconto'];
+        $prodotto->id_sotto_categoria= $data['sotto_cat'];
+
+        return $prodotto->save();
+    }
 }

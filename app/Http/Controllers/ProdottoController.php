@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Categoria;
 use App\Prodotto;
 use App\Sottocategoria;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class ProdottoController extends Controller
 {
@@ -22,16 +25,31 @@ class ProdottoController extends Controller
 
     }
 
-    public function gestione_prodotti()
+    public function gestione_prodotti($id_prodotto)
     {
-        $prodotti = Prodotto::paginate(3);
+        $prodotti = Prodotto::findOrFail($id_prodotto);
 
         return view('gestioneProdotti', compact('prodotti'));
+    }
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'nome_prodotto' => ['required', 'string', 'max:75'],
+            'descrizione_breve' => ['required', 'string', 'max:1500'],
+            'percorso_foto' => ['string', 'max:255'],
+            'prezzo' => ['required']
+
+        ]);
     }
 
     public function insertNewProduct(Request $request)
     {
         $inputdata=array_merge($request->all());
+        $validator=self::validator($inputdata);
+        if($validator->fails()){
+            return redirect()->route('gestione_prodotti')->withErrors($validator);
+        }
         $prodotto = Prodotto::create($inputdata);
         if ($prodotto === null) {
             return redirect()->route('staff.homepage')->with('messages',[['title'=>'Inserimento Fallito','type'=>'error','message'=>'Non è stato possibile inserire il prodotto']]);
@@ -43,8 +61,53 @@ class ProdottoController extends Controller
     {
         $prodotto = Prodotto::find( $id_prodotto);
         $prodotto->delete();
-        return redirect()->action('ProdottoController@gestione_prodotti');
+        return redirect()->route('staff.homepage');
 
 
+    }
+
+    public function updateProdotto(Request $request){
+
+        if( !Auth::check() || Auth::user()->auth_level !== 3 )
+        {
+            return response()->json([
+                "success" => false,
+                "error_message" => "Operazione non consentita."
+            ]);
+        }
+
+        $id_prodotto = $request->input('id_prodotto', '');
+        $nome_prodotto = $request->input('nome_prodotto', '');
+        $desc_breve = $request->input('desc_breve', '');
+        $desc_estesa = $request->input('desc_estesa', '');
+        $percorso_foto = $request->input('percorso_foto', '');
+        $prezzo = $request->input('prezzo', '');
+        $sconto = $request->input('sconto', '');
+        $sotto_cat = $request->input('sotto_cat', '');
+
+        if( $id_prodotto!== '' && $nome_prodotto !== '' && $desc_breve !== '' && $desc_estesa !== '' && $percorso_foto !== '' && $prezzo !== '' && $sconto !== '' && $sotto_cat !== ''){
+
+            $data = array('id_prodotto' => $id_prodotto, 'nome_prodotto'=>$nome_prodotto,"desc_breve"=>$desc_breve, 'desc_estesa' => $desc_estesa, 'percorso_foto' => $percorso_foto, 'prezzo' => $prezzo, 'sconto' => $sconto, 'sotto_cat' => $sotto_cat );
+            $updateOk = Prodotto::updateProdotto($data);
+
+            if( !$updateOk )
+            {
+                return response()->json([
+                    "success" => false,
+                    "error_message" => "Aggiornamento dei dati non riuscito"
+                ]);
+            }
+
+            return response()->json([
+                "success" => true,
+                "message" => "Aggiornamento dei dati effettuato"
+            ]);
+
+        }else{
+            return response()->json([
+                "success" => false,
+                "error_message" => "Riempi tutti i campi"
+            ]);
+        }
     }
 }
