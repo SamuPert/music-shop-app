@@ -5,7 +5,7 @@
         </button>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <form id="modifica_form" action="{{route('modificaprofilo')}}">
+            <form id="modifica_form_profilo" action="{{route('modificaprofilo')}}">
                 <button type="submit" class="dropdown-item" style="width: 100%; padding: 3px 20px; text-align: left;">Modifica Profilo</button>
             </form>
             @if($user->auth_level === 3)
@@ -19,7 +19,7 @@
                 </form>
             @endif
             <div class="dropdown-divider"></div>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+            <form id="logout-form-menu" action="{{ route('logout') }}" method="POST">
                 <button type="submit" class="btn btn-link btn-logout" style="width: 100%; padding: 3px 20px; text-align: left;">Logout</button>
                 {{ csrf_field() }}
             </form>
