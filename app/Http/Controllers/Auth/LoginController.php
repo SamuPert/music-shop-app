@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -50,46 +51,9 @@ class LoginController extends Controller
         return 'username';
     }
 
-//    public function handleLogin(Request $request)
-//    {
-//
-//        $rules = [
-//            'username'    => 'required',
-//            'password' => ['required', 'string', 'min:8', 'confirmed'],
-//        ];
-//
-//        $validator = Validator::make($request->all(), $rules);
-//
-//
-//        if ($validator->fails()) {
-//            return redirect()
-//                ->route('login')
-//                ->withErrors($validator)
-//                ->withInput($request->all()->except('password'));
-//        }
-//
-//        // create our user data for the authentication
-//        $user_data = [
-//            'username'      => $request->input('username'),
-//            'password'      => $request->input('password'),
-//        ];
-//
-//        // attempt to do the login
-//        if (Auth::attempt($user_data)) {
-//
-//            // validation successful!
-//            // redirect them to the secure section or whatever
-//            // return Redirect::to('secure');
-//            // for now we'll just echo success (even though echoing in a controller is bad)
-//            echo 'SUCCESS!';
-//
-//        } else {
-//
-//            // validation not successful, send back to form
-//            return redirect()
-//                ->route('login')
-//                ->withErrors(['Credenziali non valide.']);
-//        }
-//
-//    }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('catalogo')->with('messages',[['title'=>'Logout riuscito','type'=>'success','message'=>'Uscita dall\'account effettuata correttamente.']]);;
+    }
 }
