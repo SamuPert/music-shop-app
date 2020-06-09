@@ -13,7 +13,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <div class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Benvenuto, {{$user->first_name}}
+                            Benvenuto, {{$user->full_name}}
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <form id="modifica_form" action="{{route('modificaprofilo')}}">

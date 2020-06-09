@@ -21,8 +21,8 @@
             </div>
             <div class="col-md-6 col-lg-6">
                 <div class="box">
-                    <h3 class="name"><i class="fa fa-remove icon"></i> Elimina Utente Registrato </h3>
-                    <p class="description">Puoi eliminare un utente registrato.&nbsp;<br>Compila il modulo!</p><a class="learn-more" href="#modalDeleteUserRegistered" onclick='$("#modalDeleteUserRegistered").modal("show")'>Apri modulo</a>
+                    <h3 class="name"><i class="fa fa-remove icon"></i> Elimina Utenti Registrati </h3>
+                    <p class="description">Questa funzionalità ti consente di eliminare un utente registrato.</p><a class="learn-more" href="#modalDeleteUserRegistered" onclick='$("#modalDeleteUserRegistered").modal("show")'>Apri modulo</a>
                 </div>
             </div>
         </div>

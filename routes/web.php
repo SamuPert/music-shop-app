@@ -56,7 +56,7 @@ Route::prefix('catalogo')->group(function () {
         ->name('visualizza_prodotto');
 });
 
-Route::get('/utentiStaff/gestione', 'AdminController@gestione_staff')
+Route::get('/admin/gestione-staff', 'AdminController@gestione_staff')
     ->name('gestione_staff');
 
 
@@ -105,14 +105,14 @@ Route::prefix('admin')->group(function () {
 
 });
 
-Route::get('/modificaprofilo', 'UserController@editprofile')->name('modificaprofilo');
+Route::get('/profilo/modifica', 'UserController@editprofile')->name('modificaprofilo');
 
 
-Route::get('/onlineshop',function (){
+Route::get('/online-shop',function (){
     return view('buyContacts');
 });
 
-Route::get('/privacypolicy', function () {
+Route::get('/privacy-policy', function () {
     return view('privacypolicy');
 })->name('privacypolicy');
 
@@ -121,12 +121,12 @@ Auth::routes();
 //modifica dell'utente
 Route::post('/applicamodifiche', 'UserController@applyedit')->name('applicamodifiche');
 
-Route::post('/registrazione', 'Auth\\RegisterController@registerUser')->name('registrazione');
-Route::post('/registrazioneStaff', 'Auth\\RegisterStaffController@registerStaff')->name('registrazioneStaff');
-Route::post('/insertNuovaCategoria', 'CategoriaController@insertCategory')->name('insertNuovaCategoria');
-Route::post('/insertNuovaSubCategoria', 'SottoCategoriaController@insertNuovaSubCategory')->name('insertNuovaSubCategoria');
-Route::post('/insertNewProduct', 'ProdottoController@insertNewProduct')->name('insertNewProduct');
-Route::delete('/eliminaUtenteStaff/{id}', 'AdminController@removeUser')->name('removeStaff');
-Route::delete('/eliminaUtenteRegistrato/{id}', 'AdminController@removeUser')->name('removeUser');
-Route::delete('/eliminaProdotto/{id_prodotto}', 'ProdottoController@removeProdotto')->name('removeProdotto');
+Route::post('/utente/registrazione', 'Auth\\RegisterController@registerUser')->name('registrazione');
+Route::post('/staff/registrazione', 'Auth\\RegisterStaffController@registerStaff')->name('registrazioneStaff');
+Route::post('/categoria/new', 'CategoriaController@insertCategory')->name('insertNuovaCategoria');
+Route::post('/sotto-categoria/new', 'SottoCategoriaController@insertNuovaSubCategory')->name('insertNuovaSubCategoria');
+Route::post('/prodotto/new', 'ProdottoController@insertNewProduct')->name('insertNewProduct');
+Route::delete('/staff/delete/{id}', 'AdminController@removeUser')->name('removeStaff');
+Route::delete('/utente/delete/{id}', 'AdminController@removeUser')->name('removeUser');
+Route::delete('/prodotto/delete/{id_prodotto}', 'ProdottoController@removeProdotto')->name('removeProdotto');
 // Route::get('/home', 'HomeController@index')->name('homeCata');
