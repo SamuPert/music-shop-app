@@ -37247,7 +37247,7 @@ window.riempiSelectByCategoria = function (categoriaId, sottocategoriaId) {
 
   if (selectValue !== undefined && selectValue !== '#') {
     startLoading();
-    return axios.post(rootUrl + '/api/findByCategory/', {
+    return axios.post(rootUrl + '/api/findByCategory', {
       'id_categoria': selectValue
     }).then(function (response) {
       var data = response.data; // handle success
@@ -37361,7 +37361,23 @@ window.toggleFiltriBar = function () {
 };
 
 window.applyFilters = function () {
-  alert(1);
+  var nomeProdotto = $('#nomeProdottoInput').val();
+  var prezzoMin = $('#prezzoMinInput').val();
+  var prezzoMax = $('#prezzoMaxInput').val();
+  var curUrl = new URL(window.location.href.split(/[?#]/)[0]);
+  curUrl.searchParams.set("nomeProdotto", nomeProdotto);
+  curUrl.searchParams.set("prezzoMin", prezzoMin);
+  curUrl.searchParams.set("prezzoMax", prezzoMax);
+  window.location.href = curUrl.toString();
+};
+
+window.resetFilters = function () {
+  var curUrl = new URL(window.location.href);
+  var newUrl = new URL(window.location.href.split(/[?#]/)[0]);
+  var page = curUrl.searchParams.get("page"); // Get page parameter from old url
+
+  if (page !== null) newUrl.searchParams.set("page", page);
+  window.location.href = newUrl.toString();
 };
 
 /***/ }),
@@ -37436,6 +37452,47 @@ $('.sconto').on('keyup', function () {
   this_parent.find('.prezzo-scontato-div').find('.prezzo-scontato').text(Math.ceil(prezzo * (100 - sconto)) / 100);
 });
 
+window.modificaProdotto = function (e, id_prodotto) {
+  e.preventDefault();
+  var edit_id = id_prodotto;
+  var nome_prodotto = $('#nome_prodotto' + edit_id).val();
+  var desc_breve = $('#desc_breve' + edit_id).val();
+  var desc_estesa = $('#desc_estesa' + edit_id).val();
+  var prezzo = $('#prezzo' + edit_id).val();
+  var sconto = $('#sconto' + edit_id).val();
+  var sotto_cat = $('#select_sotto_categoria_' + edit_id).val();
+  var percorso_foto = $('#percorso_foto' + edit_id).val();
+
+  if (nome_prodotto === undefined || desc_breve === undefined || desc_estesa === undefined || prezzo === undefined || sconto === undefined || sotto_cat === undefined || nome_prodotto === '' || desc_breve === '' || desc_estesa === '' || prezzo === '' || sconto === '' || sotto_cat === '') {
+    alert('Riempi tutti i campi');
+  }
+
+  var inputData = {
+    id_prodotto: edit_id,
+    nome_prodotto: nome_prodotto,
+    desc_breve: desc_breve,
+    desc_estesa: desc_estesa,
+    prezzo: prezzo,
+    sconto: sconto,
+    sotto_cat: sotto_cat,
+    percorso_foto: percorso_foto
+  };
+  startLoading();
+  return axios.post(rootUrl + '/api/prodotto/update', inputData).then(function (response) {
+    var data = response.data; // handle success
+
+    if (data.success) {
+      alert(data.message);
+    } else {
+      alert(data.error_message);
+    }
+  })["catch"](function (error) {
+    alert("Errore: " + error);
+  }).then(function () {
+    endLoading();
+  });
+};
+
 /***/ }),
 
 /***/ "./resources/js/modifica-staff.js":
@@ -37471,6 +37528,37 @@ $('.disable-edit-staff').click(function (e) {
   this_form.find('.enable-edit-staff').css("display", "inline-block");
 });
 
+window.modificaUtente = function (e, id) {
+  e.preventDefault();
+  var edit_id = id;
+  var nome = $('#id_utente_nome' + edit_id).val();
+  var cognome = $('#id_utente_cognome' + edit_id).val();
+
+  if (nome === undefined || cognome === undefined || nome === '' || cognome === '') {
+    alert('Riempi tutti i campi');
+  }
+
+  var inputData = {
+    id: edit_id,
+    nome: nome,
+    cognome: cognome
+  };
+  startLoading();
+  return axios.post(rootUrl + '/api/staff/update', inputData).then(function (response) {
+    var data = response.data; // handle success
+
+    if (data.success) {
+      alert(data.message);
+    } else {
+      alert(data.error_message);
+    }
+  })["catch"](function (error) {
+    alert("Errore: " + error);
+  }).then(function () {
+    endLoading();
+  });
+};
+
 /***/ }),
 
 /***/ "./resources/sass/app.scss":
@@ -37502,9 +37590,9 @@ $('.disable-edit-staff').click(function (e) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/claudiosirocchi/PhpstormProjects/Progetto-Tecnologie-web/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/claudiosirocchi/PhpstormProjects/Progetto-Tecnologie-web/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /Users/claudiosirocchi/PhpstormProjects/Progetto-Tecnologie-web/resources/sass/footer.scss */"./resources/sass/footer.scss");
+__webpack_require__(/*! C:\Users\Samuele\PhpstormProjects\Progetto-Tecnologie-web\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\Samuele\PhpstormProjects\Progetto-Tecnologie-web\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\Samuele\PhpstormProjects\Progetto-Tecnologie-web\resources\sass\footer.scss */"./resources/sass/footer.scss");
 
 
 /***/ })
