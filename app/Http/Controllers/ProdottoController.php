@@ -54,7 +54,7 @@ class ProdottoController extends Controller
         $inputdata=array_merge($request->all());
         $validator=self::validator($inputdata);
         if($validator->fails()){
-            return redirect()->route('gestione_prodotti')->withErrors($validator);
+            return redirect()->route('staff.homepage')->withErrors($validator);
         }
         $prodotto = Prodotto::create($inputdata);
         if ($prodotto === null) {
@@ -68,10 +68,18 @@ class ProdottoController extends Controller
         if(Auth::guest() || !( Auth::user()->isStaff() || Auth::user()->isAdmin() )) {
             return redirect()->back()->with('messages',[['title'=>'Prodotto non cancellato','type'=>'warning','message'=>'Non si dispone dei permessi per cancellare il prodotto.']]);
         }
-        
+
         $prodotto = Prodotto::find( $id_prodotto);
         $prodotto->delete();
-        return redirect()->back()->with('messages',[['title'=>'Prodotto cancellato','type'=>'success','message'=>'Prodotto cancellato con successo.']]);
+        redirect()->back()->with('messages',[['title'=>'Prodotto cancellato','type'=>'success','message'=>'Prodotto cancellato con successo.']]);
+    }
+
+
+    public function lista_prodotti()
+    {
+        $prodotti = Prodotto::paginate(10);
+
+        return view('modificaProdotti', compact('prodotti'));
     }
 
     public function updateProdotto(Request $request){

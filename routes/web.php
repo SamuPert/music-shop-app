@@ -70,6 +70,8 @@ Route::prefix('staff')->group(function () {
 
     Route::get('/', 'StaffController@homepage')
         ->name('staff.homepage');
+    Route::get('/prodotti', 'ProdottoController@lista_prodotti')
+        ->name('modifica_prodotti');
 
 });
 
