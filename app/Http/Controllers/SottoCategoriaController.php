@@ -28,7 +28,14 @@ class SottoCategoriaController extends Controller
         $prodotti = Prodotto::where(function ($query) use ($nomeProdotto, $prezzoMin, $prezzoMax, $id_sotto_categoria)
         {
             $query->where('id_sotto_categoria', $id_sotto_categoria);
-            if( strlen($nomeProdotto) != 0 ) $query->where('nome_prodotto', 'LIKE', '%'.$nomeProdotto.'%');
+            if( strlen($nomeProdotto) != 0 ){
+                $query->where(function ($q) use ($nomeProdotto)
+                {
+                    $q->orWhere('nome_prodotto', 'LIKE', '%'.$nomeProdotto.'%');
+                    $q->orWhere('descrizione_breve', 'LIKE', '%'.$nomeProdotto.'%');
+                    $q->orWhere('descrizione_estesa', 'LIKE', '%'.$nomeProdotto.'%');
+                });
+            }
             if( strlen($prezzoMin) != 0 ) $query->where('prezzo', '>=', $prezzoMin);
             if( strlen($prezzoMax) != 0 ) $query->where('prezzo', '<=', $prezzoMax);
         });
@@ -39,11 +46,21 @@ class SottoCategoriaController extends Controller
     }
     public function insertNuovaSubCategory(Request $request)
     {
-        $inputdata=array_merge($request->all());
+        $image = $request->file('percorso_foto_sotto_categoria', null);
+        if( $image ) {
+            $full_path = 'storage' . ltrim( $image->store('public/img'), 'public');
+        }else{
+            $full_path = '';
+        }
+
+        $inputdata = $request->only(['nome_sotto_categoria','descrizione','id_categoria']);
+        $inputdata['percorso_foto'] = $full_path;
         $subCategoria = Sottocategoria::create($inputdata);
         if ($subCategoria === null) {
             return redirect()->route('staff.homepage')->with('messages',[['title'=>'Registrazione fallita','type'=>'error','message'=>'Non è stato possibile registrare questa categoria']]);
         }
         return redirect()->route('staff.homepage')->with('messages',[['title'=>'Registrazione effettuata','type'=>'success','message'=>'Categoria registrata correttamente']]);
     }
+
+
 }

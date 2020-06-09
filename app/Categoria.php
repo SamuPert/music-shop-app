@@ -9,6 +9,7 @@ class Categoria extends Model
 {
     protected $primaryKey = "id_categoria";
     protected $table = "categoria";
+    public $timestamps = false;
 
     protected $fillable = ['id_categoria', 'nome_categoria', 'descrizione_categoria', 'percorso_foto'];
 
@@ -17,11 +18,12 @@ class Categoria extends Model
         return $this->hasMany('App\Sottocategoria', 'id_categoria', 'id_categoria');
     }
 
-    public static function createCat(array $data)
+    public static function creaCategoria(array $data)
     {
         return Categoria::create([
             'nome_categoria' => $data['nome_categoria'],
             'descrizione_categoria' => $data['descrizione_categoria'],
+            'percorso_foto' => $data['percorso_foto'],
         ]);
     }
 }

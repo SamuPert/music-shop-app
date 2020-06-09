@@ -37,7 +37,14 @@ class CategoriaController extends Controller
 
         $prodotti->where(function ($query) use ($nomeProdotto, $prezzoMin, $prezzoMax)
         {
-            if( strlen($nomeProdotto) != 0 ) $query->where('prodotto.nome_prodotto', 'LIKE', '%'.$nomeProdotto.'%');
+            if( strlen($nomeProdotto) != 0 ) {
+                $query->where(function ($q) use ($nomeProdotto)
+                {
+                    $q->orWhere('prodotto.nome_prodotto', 'LIKE', '%'.$nomeProdotto.'%');
+                    $q->orWhere('prodotto.descrizione_breve', 'LIKE', '%'.$nomeProdotto.'%');
+                    $q->orWhere('prodotto.descrizione_estesa', 'LIKE', '%'.$nomeProdotto.'%');
+                });
+            }
             if( strlen($prezzoMin) != 0 ) $query->where('prodotto.prezzo', '>=', $prezzoMin);
             if( strlen($prezzoMax) != 0 ) $query->where('prodotto.prezzo', '<=', $prezzoMax);
         });
@@ -52,11 +59,21 @@ class CategoriaController extends Controller
 
     public function insertCategory(Request $request)
     {
-        $inputdataCategoria=array_merge($request->all());
-        $categoria = Categoria::createCat($inputdataCategoria);
+        $image = $request->file('percorso_foto_categoria', null);
+
+        if( $image ) {
+            $full_path = 'storage' . ltrim( $image->store('public/img'), 'public');
+        }else{
+            $full_path = '';
+        }
+
+        $inputdataCategoria = $request->only(['nome_categoria','descrizione_categoria']);
+        $inputdataCategoria['percorso_foto'] = $full_path;
+
+        $categoria = Categoria::creaCategoria($inputdataCategoria);
         if ($categoria === null) {
             return redirect()->route('staff.homepage')->with('messages',[['title'=>'Aggiunta della Categoria fallita','type'=>'error','message'=>'Non è stato possibile registrare questa categoria']]);
         }
-        return redirect()->route('staff.homepage')->with('messages',[['title'=>'Aggiunta Categoria','type'=>'success','message'=>'Categoria registrato correttamente'],['title'=>'Log-in Effettuato','type'=>'success','message'=>'Log-in effettuato correttamente']]);
+        return redirect()->route('staff.homepage')->with('messages',[['title'=>'Aggiunta Categoria','type'=>'success','message'=>'Categoria inserita correttamente']]);
     }
 }

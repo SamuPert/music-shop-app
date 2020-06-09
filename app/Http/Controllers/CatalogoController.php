@@ -25,7 +25,15 @@ class CatalogoController extends Controller
 
         $prodotti = Prodotto::where(function ($query) use ($nomeProdotto, $prezzoMin, $prezzoMax)
         {
-            if( strlen($nomeProdotto) != 0 ) $query->where('nome_prodotto', 'LIKE', '%'.$nomeProdotto.'%');
+            if( strlen($nomeProdotto) != 0 ) {
+                $query->where(function ($q) use ($nomeProdotto)
+                {
+                    $q->orWhere('nome_prodotto', 'LIKE', '%'.$nomeProdotto.'%');
+                    $q->orWhere('descrizione_breve', 'LIKE', '%'.$nomeProdotto.'%');
+                    $q->orWhere('descrizione_estesa', 'LIKE', '%'.$nomeProdotto.'%');
+                });
+            }
+
             if( strlen($prezzoMin) != 0 ) $query->where('prezzo', '>=', $prezzoMin);
             if( strlen($prezzoMax) != 0 ) $query->where('prezzo', '<=', $prezzoMax);
         });

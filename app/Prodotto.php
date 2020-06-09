@@ -8,6 +8,7 @@ class Prodotto extends Model
 {
     protected $primaryKey = "id_prodotto";
     protected $table = "prodotto";
+    public $timestamps = false;
 
     protected $fillable = ['id_prodotto', 'nome_prodotto', 'descrizione_breve', 'descrizione_estesa', 'percorso_foto', 'prezzo', 'sconto', 'id_sotto_categoria'];
 
@@ -33,12 +34,12 @@ class Prodotto extends Model
 
         // prodotto trovato
         $prodotto->nome_prodotto = $data['nome_prodotto'];
-        $prodotto->descrizione_breve= $data['desc_breve'];
-        $prodotto->descrizione_estesa= $data['desc_estesa'];
+        $prodotto->descrizione_breve= $data['descrizione_breve'];
+        $prodotto->descrizione_estesa= $data['descrizione_estesa'];
         $prodotto->percorso_foto= $data['percorso_foto'];
         $prodotto->prezzo= $data['prezzo'];
         $prodotto->sconto= $data['sconto'];
-        $prodotto->id_sotto_categoria= $data['sotto_cat'];
+        $prodotto->id_sotto_categoria= $data['id_sotto_categoria'];
 
         return $prodotto->save();
     }
