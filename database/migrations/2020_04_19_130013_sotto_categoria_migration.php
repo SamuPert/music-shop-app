@@ -20,7 +20,7 @@ class SottoCategoriaMigration extends Migration
             $table->string('percorso_foto',255)->nullable(); // path_image
             $table->unsignedBigInteger('id_categoria');
             //$table->foreign('id_categoria')->references('id_categoria')->on('categoria');
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 

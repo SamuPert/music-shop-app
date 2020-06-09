@@ -23,7 +23,7 @@ class ProdottoMigration extends Migration
             $table->float('sconto',8,2)->default(0)->nullable();
             $table->unsignedBigInteger('id_sotto_categoria');
             // $table->foreign('id_sotto_categoria')->references('id_sotto_categoria')->on('sotto_categoria');
-            $table->timestamps();
+            //$table->timestamps();
         });
     }
 
