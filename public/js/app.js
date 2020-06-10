@@ -37231,6 +37231,8 @@ __webpack_require__(/*! ./modifica-prodotto */ "./resources/js/modifica-prodotto
 
 __webpack_require__(/*! ./modifica-staff */ "./resources/js/modifica-staff.js");
 
+__webpack_require__(/*! ./modifica-utente */ "./resources/js/modifica-utente.js");
+
 __webpack_require__(/*! ./filtri */ "./resources/js/filtri.js");
 
 __webpack_require__(/*! ./loading-bar */ "./resources/js/loading-bar.js");
@@ -37536,6 +37538,7 @@ window.modificaUtente = function (e, id) {
 
   if (nome === undefined || cognome === undefined || nome === '' || cognome === '') {
     alert('Riempi tutti i campi');
+    return;
   }
 
   var inputData = {
@@ -37557,6 +37560,104 @@ window.modificaUtente = function (e, id) {
   }).then(function () {
     endLoading();
   });
+};
+
+/***/ }),
+
+/***/ "./resources/js/modifica-utente.js":
+/*!*****************************************!*\
+  !*** ./resources/js/modifica-utente.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+window.modificautenteRegistrato = function (e) {
+  e.preventDefault();
+  var nome = $('#nome').val();
+  var cognome = $('#cognome').val();
+  var residenza = $('#residenza').val();
+  var datanascita = $('#datanascita').val();
+  var occupazione = $('#occupazione').val();
+
+  if (nome === undefined || cognome === undefined || residenza === undefined || datanascita === undefined || occupazione === undefined || nome === '' || residenza === '' || cognome === '' || datanascita === '' || occupazione === '') {
+    alert('Riempi tutti i campi');
+    return;
+  }
+
+  var inputData = {
+    nome: nome,
+    cognome: cognome,
+    residenza: residenza,
+    datanascita: datanascita,
+    occupazione: occupazione
+  };
+  debugger;
+  startLoading();
+  return axios.post(rootUrl + '/api/utente/update', inputData).then(function (response) {
+    var data = response.data; // handle success
+
+    if (data.success) {
+      alert(data.message);
+    } else {
+      alert(data.error_message);
+    }
+  })["catch"](function (error) {
+    alert("Errore: " + error);
+  }).then(function () {
+    endLoading();
+  });
+};
+
+window.modificaDatiAccessoUtenteRegistrato = function (e) {
+  e.preventDefault();
+  var email = $('#email').val();
+  var password = $('#password').val();
+
+  if (email === undefined || password === undefined || email === '' || password === '') {
+    alert('Riempi tutti i campi');
+    return;
+  }
+
+  var inputData = {
+    email: email,
+    password: password
+  };
+  startLoading();
+  return axios.post(rootUrl + '/api/utente/updateAccess', inputData).then(function (response) {
+    var data = response.data; // handle success
+
+    if (data.success) {
+      alert(data.message);
+    } else {
+      alert(data.error_message);
+    }
+  })["catch"](function (error) {
+    alert("Errore: " + error);
+  }).then(function () {
+    endLoading();
+  });
+};
+
+window.disable = function (dataClass, idButton) {
+  var formelements = document.getElementsByClassName(dataClass);
+
+  for (i = 0; i < formelements.length; i++) {
+    formelements[i].disabled = true;
+  }
+
+  document.getElementById(dataClass).style.display = "block";
+  document.getElementById(idButton).style.display = "none";
+};
+
+window.enable = function (dataClass, idbutton) {
+  var formelements = document.getElementsByClassName(dataClass);
+
+  for (i = 0; i < formelements.length; i++) {
+    formelements[i].disabled = false;
+  }
+
+  document.getElementById(dataClass).style.display = "none";
+  document.getElementById(idbutton).style.display = "block";
 };
 
 /***/ }),
@@ -37590,9 +37691,9 @@ window.modificaUtente = function (e, id) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Samuele\PhpstormProjects\Progetto-Tecnologie-web\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\Samuele\PhpstormProjects\Progetto-Tecnologie-web\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\Samuele\PhpstormProjects\Progetto-Tecnologie-web\resources\sass\footer.scss */"./resources/sass/footer.scss");
+__webpack_require__(/*! /Users/claudiosirocchi/PhpstormProjects/Progetto-Tecnologie-web/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/claudiosirocchi/PhpstormProjects/Progetto-Tecnologie-web/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /Users/claudiosirocchi/PhpstormProjects/Progetto-Tecnologie-web/resources/sass/footer.scss */"./resources/sass/footer.scss");
 
 
 /***/ })

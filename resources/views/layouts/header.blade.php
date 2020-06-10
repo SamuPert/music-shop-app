@@ -37,6 +37,55 @@
                             </form>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col pr-0">
+                            <div class="w-100">
+                                <button data-toggle="collapse" data-target="#navcol-1"
+                                        class="navbar navbar-toggler navbar-light navbar-collapse navbar-toggler-right float-right menu-toggle">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <nav class="navbar navbar-expand-md float-right float-md-left w-100 shadow-on-mobile rounded" style="padding: 0px; background-color: white;" >
+                                    <div class="container-fluid ">
+                                        <div class="collapse navbar-collapse" style="margin: .5rem 1rem;" id="navcol-1">
+
+                                            <div class="nav navbar-nav">
+                                                <li class="nav-item">
+                                                    <div class="row d-sm-block d-md-none mr-0 ml-0 w-100">
+                                                        <div class="input-group mt-2 mb-2">
+                                                            <input
+                                                                type="text" class="form-control"/>
+                                                            <div class="input-group-append">
+                                                                <button class="btn btn-primary" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                @foreach($listaCategorie as $categoria)
+
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdown{{ strtoupper($categoria->nome_categoria) }}" data-toggle="dropdown">
+                                                            {{ $categoria->nome_categoria }}
+                                                            <span class="caret"></span>
+                                                        </button>
+                                                        <div class="dropdown-menu" role="menu" aria-labelledby="dropdown{{ strtoupper($categoria->nome_categoria) }}">
+                                                            @foreach( $categoria->sotto_categorie->sortBy('nome_sotto_categoria') as $sotto_categoria )
+                                                                <a class="dropdown-item"
+                                                                   href="{{ route('lista_prodotti', ['id_sotto_categoria' => $sotto_categoria->id_sotto_categoria]) }}"
+                                                                >{{ $sotto_categoria->nome_sotto_categoria }}</a>
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- Third column -->
@@ -71,54 +120,6 @@
                 </div>
 
 
-            </div>
-            <div class="row">
-                <div class="col pr-0">
-                    <div class="w-100">
-                        <button data-toggle="collapse" data-target="#navcol-1"
-                            class="navbar navbar-toggler navbar-light navbar-collapse navbar-toggler-right float-right menu-toggle">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <nav class="navbar navbar-expand-md float-right float-md-left w-100 shadow-on-mobile rounded" style="padding: 0px; background-color: white;" >
-                        <div class="container-fluid ">
-                            <div class="collapse navbar-collapse" style="margin: .5rem 1rem;" id="navcol-1">
-
-                                <div class="nav navbar-nav">
-                                    <li class="nav-item">
-                                        <div class="row d-sm-block d-md-none mr-0 ml-0 w-100">
-                                            <div class="input-group mt-2 mb-2">
-                                                <input
-                                                    type="text" class="form-control"/>
-                                                <div class="input-group-append">
-                                                    <button class="btn btn-primary" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    @foreach($listaCategorie as $categoria)
-
-                                    <div class="dropdown">
-                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdown{{ strtoupper($categoria->nome_categoria) }}" data-toggle="dropdown">
-                                            {{ $categoria->nome_categoria }}
-                                            <span class="caret"></span>
-                                        </button>
-                                        <div class="dropdown-menu" role="menu" aria-labelledby="dropdown{{ strtoupper($categoria->nome_categoria) }}">
-                                            @foreach( $categoria->sotto_categorie->sortBy('nome_sotto_categoria') as $sotto_categoria )
-                                                <a class="dropdown-item"
-                                                   href="{{ route('lista_prodotti', ['id_sotto_categoria' => $sotto_categoria->id_sotto_categoria]) }}"
-                                                >{{ $sotto_categoria->nome_sotto_categoria }}</a>
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-                    </div>
-                </div>
             </div>
         </section>
     </div>

@@ -110,10 +110,6 @@ Route::prefix('admin')->group(function () {
 Route::get('/profilo/modifica', 'UserController@editprofile')->name('modificaprofilo');
 
 
-Route::get('/online-shop',function (){
-    return view('buyContacts');
-});
-
 Route::get('/privacy-policy', function () {
     return view('privacypolicy');
 })->name('privacypolicy');

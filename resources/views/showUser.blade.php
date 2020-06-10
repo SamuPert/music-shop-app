@@ -65,17 +65,17 @@
                                             <label>E-mail:</label>
                                             <input type="email" class="form-control dataAccess"  id="email" disabled  value="{{$user->email}}"/>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Password:</label>
-                                            <input type="password" class="form-control dataAccess" id="password" disabled value="{{$user->password}}"/>
-                                        </div>
 
                                         <button class="btn btn-primary" id="dataAccess" style="display: block;" type="button" onclick="enable('dataAccess','editDataAccess')">Modifica i
                                             dati di accesso
                                         </button>
                                         <div class="btn-group" id="editDataAccess"  role="group" style="display: none;" aria-label="Basic example">
+                                            <div class="form-group">
+                                                <label>Nuova Password:</label>
+                                                <input type="password" class="form-control dataAccess" id="password" required/>
+                                            </div>
                                             <button type="button" class="btn btn-secondary" onclick="disable('dataAccess','editDataAccess')">Annulla</button>
-                                            <button type="button" class="btn btn-secondary" onclick="modificaDatiAccessoUtenteRegistrato(event)">Conferma</button>
+                                            <button class="btn btn-secondary" onclick="modificaDatiAccessoUtenteRegistrato(event)">Conferma</button>
                                             <form action="{{route('deletemyaccount', $user->id)}}" class="mt-2" method="post">
                                                 @csrf
                                                 @method('delete')
