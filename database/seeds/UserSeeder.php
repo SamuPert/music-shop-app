@@ -50,7 +50,7 @@ class UserSeeder extends Seeder
             'email' => $faker->email,
 
             'username' => 'adminadmin',
-            'password' => Hash::make( 'adminadmin' ),
+            'password' => Hash::make( 'qbCltB0u' ),
         ]);
 
         // STAFF
@@ -66,7 +66,7 @@ class UserSeeder extends Seeder
             'email' => $faker->email,
 
             'username' => 'staffstaff',
-            'password' => Hash::make( 'staffstaff' ),
+            'password' => Hash::make( 'qbCltB0u' ),
         ]);
         for ($j = 0; $j < 2; $j++) {
             $first_name = $faker->firstName;
@@ -99,7 +99,7 @@ class UserSeeder extends Seeder
             'email' => $faker->email,
 
             'username' => "useruser",
-            'password' => Hash::make( "useruser" )
+            'password' => Hash::make( "qbCltB0u" )
         ]);
 
         // Utenti generici
@@ -122,7 +122,6 @@ class UserSeeder extends Seeder
             ]);
         }
 
-//        dd( $utenti );
 
         foreach ($utenti as $utente)
             DB::table('users')->insert($utente);
