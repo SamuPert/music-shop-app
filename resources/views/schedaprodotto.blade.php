@@ -45,8 +45,9 @@
                                             @if($prodotti->sconto!=0.00)
                                             <div class="d-flex align-items-center justify-content-between mt-1">
                                                 <h6 class="font-weight-bold my-2"><s>Prezzo: {{$prodotti->prezzo}}€</s></h6>
-                                                <h6 class="font-weight-bold my-2 " style="color: #FF0000">Prezzo Scontato: <span id="price"> {{$prodotti->prezzo-($prodotti->prezzo*$prodotti->sconto)/100}}</span>€</h6>
+                                                <h6 class="font-weight-bold my-2">- Sconto: {{$prodotti->sconto}}%</h6>
                                             </div>
+                                                <h6 class="font-weight-bold my-2 " style="color: #FF0000">Prezzo Scontato: <span id="price"> {{$prodotti->prezzo-($prodotti->prezzo*$prodotti->sconto)/100}}</span>€</h6>
                                             @elseif($prodotti->sconto===0.00)
                                                 <h6 class="font-weight-bold my-2">Prezzo: <span id="price">{{$prodotti->prezzo}}</span>€</h6>
                                             @endif

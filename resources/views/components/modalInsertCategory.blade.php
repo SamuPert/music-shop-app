@@ -7,18 +7,18 @@
                     <b>Inserisci la nuova categoria</b>
 
                 </div>
-                <form action="{{route('insertNuovaCategoria')}}" method="post">
+                <form action="{{route('insertNuovaCategoria')}}" method="post" enctype="multipart/form-data">
                     @csrf
                 <div class="form-group has-feedback" id="nomeCategoria">
                     <label for="for_nomecategoria">Nome Categoria</label>
                     <input type="text" class="form-control" id="from_nome" name="nome_categoria" required placeholder="Ex. Chitarre" />
                 </div>
                 <div class="form-group" id="immagineProdotto">
-                    <label for="inputFileImmagine">Immagine della categoria</label>
+                    <label for="inputFileImmagineCategoria">Immagine della categoria</label>
                     <div class="input-group mb-3">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputFileImmagine" name="percorso_foto">
-                            <label class="custom-file-label" for="inputFileImmagine">Scegli l&#39;immagine della categoria</label>
+                            <input type="file" class="custom-file-input" id="inputFileImmagineCategoria" name="percorso_foto_categoria">
+                            <label class="custom-file-label" for="inputFileImmagineCategoria">Scegli l&#39;immagine della categoria</label>
                         </div>
                     </div>
                 </div>

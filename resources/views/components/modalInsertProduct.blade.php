@@ -17,11 +17,11 @@
                         <input type="text" class="form-control" id="form_descrizione" name="descrizione_breve" required placeholder="Ex. Archetto a 6 archi" />
                     </div>
                     <div class="form-group" id="immagineProdotto">
-                        <label for="inputFileImmagine">Immagine del prodotto</label>
+                        <label for="inputFileImmagineProdotto">Immagine del prodotto</label>
                         <div class="input-group mb-3">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="inputFileImmagine" name="percorso_foto">
-                                <label class="custom-file-label" for="inputFileImmagine">Scegli l&#39;immagine del prodotto</label>
+                                <input type="file" class="custom-file-input" id="inputFileImmagineProdotto" name="percorso_foto">
+                                <label class="custom-file-label" for="inputFileImmagineProdotto">Scegli l&#39;immagine del prodotto</label>
                             </div>
                         </div>
                     </div>

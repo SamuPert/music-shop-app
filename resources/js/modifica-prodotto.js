@@ -54,7 +54,7 @@ window.modificaProdotto = (e, id_prodotto) => {
     var prezzo = $('#prezzo'+edit_id).val();
     var sconto = $('#sconto'+edit_id).val();
     var sotto_cat = $('#select_sotto_categoria_'+edit_id).val();
-    var percorso_foto = $('#percorso_foto'+edit_id).val();
+    var foto = $('#percorso_foto'+edit_id);
 
 
     if( nome_prodotto === undefined || desc_breve === undefined || desc_estesa === undefined || prezzo === undefined || sconto === undefined || sotto_cat === undefined ||nome_prodotto === '' || desc_breve === '' || desc_estesa === '' || prezzo === '' || sconto === '' || sotto_cat === '')
@@ -62,19 +62,25 @@ window.modificaProdotto = (e, id_prodotto) => {
         alert('Riempi tutti i campi');
     }
 
-    let inputData = {
-        id_prodotto: edit_id,
-        nome_prodotto : nome_prodotto,
-        desc_breve : desc_breve,
-        desc_estesa : desc_estesa,
-        prezzo : prezzo,
-        sconto : sconto,
-        sotto_cat : sotto_cat,
-        percorso_foto : percorso_foto
-    };
+
+    var formData = new FormData();
+    var imagefile = foto[0];
+
+    formData.append("id_prodotto", edit_id);
+    formData.append("nome_prodotto", nome_prodotto);
+    formData.append("descrizione_breve", desc_breve);
+    formData.append("descrizione_estesa", desc_estesa);
+    formData.append("id_sotto_categoria", sotto_cat);
+    formData.append("prezzo", prezzo);
+    formData.append("sconto",sconto);
+    formData.append("percorso_foto", imagefile.files[0]);
 
     startLoading();
-    return axios.post(rootUrl + '/api/prodotto/update', inputData)
+    return axios.post(rootUrl + '/api/prodotto/update', formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    })
         .then(function (response) {
             let data = response.data;
             // handle success

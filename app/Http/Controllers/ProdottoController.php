@@ -41,7 +41,6 @@ class ProdottoController extends Controller
             'descrizione_breve' => ['required', 'string', 'max:1500'],
             'percorso_foto' => ['string', 'max:255'],
             'prezzo' => ['required']
-
         ]);
     }
 
@@ -51,7 +50,16 @@ class ProdottoController extends Controller
             return redirect()->route('staff.homepage')->with('messages',[['title'=>'Inserimento Fallito','type'=>'warning','message'=>'Non si dispone dei permessi per inserire il prodotto.']]);
         }
 
-        $inputdata=array_merge($request->all());
+        $image = $request->file('percorso_foto', null);
+        if( $image ) {
+            $full_path = 'storage' . ltrim( $image->store('public/img'), 'public');
+        }else{
+            $full_path = '';
+        }
+
+        $inputdata = $request->only(['nome_prodotto','descrizione_breve','descrizione_estesa','prezzo','sconto','id_categoria','id_sotto_categoria']);
+        $inputdata['percorso_foto'] = $full_path;
+
         $validator=self::validator($inputdata);
         if($validator->fails()){
             return redirect()->route('staff.homepage')->withErrors($validator);
@@ -83,8 +91,7 @@ class ProdottoController extends Controller
     }
 
     public function updateProdotto(Request $request){
-
-        if( !Auth::check() || Auth::user()->isStaff() )
+        if( !Auth::check() || !Auth::user()->isStaff() )
         {
             return response()->json([
                 "success" => false,
@@ -92,38 +99,39 @@ class ProdottoController extends Controller
             ]);
         }
 
-        $id_prodotto = $request->input('id_prodotto', '');
-        $nome_prodotto = $request->input('nome_prodotto', '');
-        $desc_breve = $request->input('desc_breve', '');
-        $desc_estesa = $request->input('desc_estesa', '');
-        $percorso_foto = $request->input('percorso_foto', '');
-        $prezzo = $request->input('prezzo', '');
-        $sconto = $request->input('sconto', '');
-        $sotto_cat = $request->input('sotto_cat', '');
-
-        if( $id_prodotto!== '' && $nome_prodotto !== '' && $desc_breve !== '' && $desc_estesa !== '' && $percorso_foto !== '' && $prezzo !== '' && $sconto !== '' && $sotto_cat !== ''){
-
-            $data = array('id_prodotto' => $id_prodotto, 'nome_prodotto'=>$nome_prodotto,"desc_breve"=>$desc_breve, 'desc_estesa' => $desc_estesa, 'percorso_foto' => $percorso_foto, 'prezzo' => $prezzo, 'sconto' => $sconto, 'sotto_cat' => $sotto_cat );
-            $updateOk = Prodotto::updateProdotto($data);
-
-            if( !$updateOk )
-            {
-                return response()->json([
-                    "success" => false,
-                    "error_message" => "Aggiornamento dei dati non riuscito"
-                ]);
-            }
-
-            return response()->json([
-                "success" => true,
-                "message" => "Aggiornamento dei dati effettuato"
-            ]);
-
+        $image = $request->file('percorso_foto', null);
+        if( $image ) {
+            $full_path = 'storage' . ltrim( $image->store('public/img'), 'public');
         }else{
+            $full_path = '';
+        }
+
+        $inputdata = $request->only(['id_prodotto','nome_prodotto','descrizione_breve','descrizione_estesa','prezzo','sconto','id_categoria','id_sotto_categoria']);
+        $inputdata['percorso_foto'] = $full_path;
+
+
+        $validator=self::validator($inputdata);
+        if($validator->fails()){
             return response()->json([
                 "success" => false,
-                "error_message" => "Riempi tutti i campi"
+                "error_message" => "Inserire tutti i dati per modificare l'elemento."
             ]);
         }
+
+        $updateOk = Prodotto::updateProdotto($inputdata);
+
+        if( !$updateOk )
+        {
+            return response()->json([
+                "success" => false,
+                "error_message" => "Aggiornamento dei dati non riuscito"
+            ]);
+        }
+
+        return response()->json([
+            "success" => true,
+            "message" => "Aggiornamento dei dati effettuato"
+        ]);
+
     }
 }

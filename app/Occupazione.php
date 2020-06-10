@@ -8,5 +8,6 @@ class Occupazione extends Model
 {
     protected $primaryKey = "id";
     protected $table = "occupazioni";
+    public $timestamps = false;
 
 }

@@ -17,7 +17,7 @@ class OccupazioniMigration extends Migration
             $table->increments('id');
             $table->string('occupazione')->unique();
 
-            $table->timestamps();
+            //$table->timestamps();
         });
     }
 

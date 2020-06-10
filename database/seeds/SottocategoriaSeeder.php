@@ -17,117 +17,117 @@ class SottocategoriaSeeder extends Seeder
                 [
                     'nome_sotto_categoria'        => 'Elettriche',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/Elettrica.jpg'
+                    'percorso_foto'               => '/img/Sottocategorie/Elettrica.jpg'
                 ],
                 [
                     'nome_sotto_categoria'        => 'Classiche',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/Classica.jpg'
+                    'percorso_foto'               => '/img/Sottocategorie/Classica.jpg'
                 ],
                 [
                     'nome_sotto_categoria'        => 'Acustiche',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/Acustica.jpg'
+                    'percorso_foto'               => '/img/Sottocategorie/Acustica.jpg'
                 ],
                 [
                     'nome_sotto_categoria'        => 'Semiacustiche',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/Semiacustica.jpg'
+                    'percorso_foto'               => '/img/Sottocategorie/Semiacustica.jpg'
                 ],
             ],
             'Bassi' => [
                 [
                     'nome_sotto_categoria'        => 'Elettrici',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/BassoElettrico.jpg'
+                    'percorso_foto'               => '/img/Sottocategorie/BassoElettrico.jpg'
                 ],
                 [
                     'nome_sotto_categoria'        => 'Acustici',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/BassoAcustico.jpg'
+                    'percorso_foto'               => '/img/Sottocategorie/BassoAcustico.jpg'
                 ],
                 [
                     'nome_sotto_categoria'        => 'Contrabbassi',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/contrabbasso.JPG'
+                    'percorso_foto'               => '/img/Sottocategorie/contrabbasso.JPG'
                 ],
             ],
             'Tastiere' => [
                 [
                     'nome_sotto_categoria'        => 'Workstation',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/Tastiera.jpg'
+                    'percorso_foto'               => '/img/Sottocategorie/Tastiera.jpg'
                 ],
                 [
                     'nome_sotto_categoria'        => 'Fisarmoniche',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/Fisarmonica.jpg'
+                    'percorso_foto'               => '/img/Sottocategorie/Fisarmonica.jpg'
                 ],
                 [
                     'nome_sotto_categoria'        => 'Pianoforti digitali',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/Pianoforte.jpg'
+                    'percorso_foto'               => '/img/Sottocategorie/Pianoforte.jpg'
                 ],
             ],
             'Batterie' => [
                 [
                     'nome_sotto_categoria'        => 'Acustiche',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/BatteriaAcustica.jpg'
+                    'percorso_foto'               => '/img/Sottocategorie/BatteriaAcustica.jpg'
                 ],
                 [
                     'nome_sotto_categoria'        => 'Elettroniche',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/BatteriaElettronica.jpg'
+                    'percorso_foto'               => '/img/Sottocategorie/BatteriaElettronica.jpg'
                 ],
                 [
                     'nome_sotto_categoria'        => 'Percussioni',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/Percussioni.jpg'
+                    'percorso_foto'               => '/img/Sottocategorie/Percussioni.jpg'
                 ],
             ],
             'Fiati' => [
                 [
                     'nome_sotto_categoria'        => 'Sax',
                     'descrizione'                 => '',
-                    'percorso_foto'               => 'img/Sassofono.jpg'
+                    'percorso_foto'               => 'img/Sottocategorie/Sassofono.jpg'
                 ],
                 [
                     'nome_sotto_categoria'        => 'Trombe',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/Trombe.jpg'
+                    'percorso_foto'               => '/img/Sottocategorie/Trombe.jpg'
                 ],
                 [
                     'nome_sotto_categoria'        => 'Flauti',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/Flauti.jpg'
+                    'percorso_foto'               => '/img/Sottocategorie/Flauti.jpg'
                 ],
                 [
                     'nome_sotto_categoria'        => 'Clarinetti',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/Clarinetto.jpg'
+                    'percorso_foto'               => '/img/Sottocategorie/Clarinetto.jpg'
                 ],
                 [
                     'nome_sotto_categoria'        => 'Altri strumenti a fiato',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/AltriFiati.jpg'
+                    'percorso_foto'               => '/img/Sottocategorie/AltriFiati.jpg'
                 ],
             ],
             'Attrezzature' => [
                 [
                     'nome_sotto_categoria'        => 'Amplificatori',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/Amplificatori.jpg'
+                    'percorso_foto'               => '/img/Sottocategorie/Amplificatori.jpg'
                 ],
                 [
                     'nome_sotto_categoria'        => 'Cavi e connettori',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/Connettori.jpg'
+                    'percorso_foto'               => '/img/Sottocategorie/Connettori.jpg'
                 ],
                 [
                     'nome_sotto_categoria'        => 'Supporti',
                     'descrizione'                 => '',
-                    'percorso_foto'               => '/img/Supporti.jpg'
+                    'percorso_foto'               => '/img/Sottocategorie/Supporti.jpg'
                 ],
             ]
         ];
