@@ -233,13 +233,13 @@ class ProdottoSeeder extends Seeder
                 ],
                 'Percussioni' => [
                     'Triangolo 10 cm. con battente' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Materiale durevole: questo strumento a percussione triangolare è realizzato in acciaio di qualità, gancio in gomma a 12 colori, resistente e robusto, quantità sufficiente di impugnatura in gomma sull\'attaccante per soddisfare le tue esigenze',
+                        'descrizione_estesa' => 'Strumenti a percussione a mano: il triangolo musicale può creare un suono chiaro, dolce e vibrante, che può essere applicato in classe musicale per sviluppare il talento musicale dei bambini e il loro senso del ritmo, anche un modo semplice per attirare l\'attenzione di un gruppo che ritorna dalla pausa',
                         'percorso_foto' => 'img/Prodotti/Percussione1.jpg',
                     ],
                     'MEINL SH51 Mini Cajon Shaker' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Piena e intensa grancassa, rullante ricco e pieno di ritmo',
+                        'descrizione_estesa' => 'Cajon con un moderno suono da rullante per rock/pop inclusivo di un breve corso introduttivo “Imparare a suonare il cajon giocando”',
                         'percorso_foto' => 'img/Prodotti/Percussione2.jpg',
                     ],
                 ],
@@ -247,71 +247,71 @@ class ProdottoSeeder extends Seeder
             'Fiati' => [
                 'Sax' => [
                     'YAMAHA Venova YVS120' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Sassofono contralto pregiato di alta qualità per appassionati di sax e principianti',
+                        'descrizione_estesa' => 'Sassofono contralto pregiato di alta qualità per appassionati di sax e principianti. 802 tipo di chiave, cuscinetti in pelle di alta qualità, foro sonoro preciso, costruzione robusta. Uno strumento ideale per suonare da solo o accompagnamento nel jazz e nella musica classica.',
                         'percorso_foto' => 'img/Prodotti/Sax1.jpg',
                     ],
                     'GRASSI BS210' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Realizzato in ottone di alta qualità con la superficie nichelatura nera',
+                        'descrizione_estesa' => 'Il disegno speciale e bellissimo disegno scolpire.Pad in pelle idrorepellente e ago in acciaio brunitura. Intarsi chiave conchiglia abalone confortevole. Uno strumento a fiato ideale per i principianti e gli amanti sassofono.',
                         'percorso_foto' => 'img/Prodotti/Sax2.jpg',
                     ],
                 ],
                 'Trombe' => [
                     'PTRUMPET Red' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Realizzato in ottone di alta qualità, piatto B.',
+                        'descrizione_estesa' => 'Ottone di alta qualità, piano B. Design durevole e squisita per soddisfare il vostro gusto. Fornito con un boccaglio argentato e un paio di gloves. Come con una scatola imbottita e un pezzo di cinghia per la protezione dello strumento e facile memorizzazione, comodo da portare con sé.',
                         'percorso_foto' => 'img/Prodotti/Tromba1.jpg',
                     ],
                     'YAMAHA YTR2330' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Design resistente e raffinato per soddisfare i tuoi gusti.',
+                        'descrizione_estesa' => 'Ottone di alta qualità, piano B. Design durevole e squisita per soddisfare il vostro gusto. Fornito con un boccaglio argentato e un paio di gloves. Come con una scatola imbottita e un pezzo di cinghia per la protezione dello strumento e facile memorizzazione, comodo da portare con sé.',
                         'percorso_foto' => 'img/Prodotti/Tromba2.jpg',
                     ],
                 ],
                 'Flauti' => [
                     'AULOS G302A' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'È più facile imparare e praticare perché lo stile di diteggiatura tedesco non cambia diteggiatura di F.',
+                        'descrizione_estesa' => 'Flauto Dolce Soprano ha un suono melodioso, le sue prestazioni dei toni alti / bassi sono molto brillanti e non c’è l’impurità nel suo suono. È più facile imparare e praticare perché lo stile di diteggiatura tedesco non cambia diteggiatura di F.',
                         'percorso_foto' => 'img/Prodotti/Flauto1.jpg',
                     ],
                     'GRASSI 720MKII' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Flauto Dolce Soprano a 8 fori, una tabella di diteggiatura, un’asta di pulizia, un appoggio per il pollice, busta di cotone.',
+                        'descrizione_estesa' => 'Questo flauto a 8 fori è realizzato in materiale ABS , resistente all\'acqua, all\'umidità, all\'usura e alla caduta, ha una grande durezza, una prestazione di risonanza eccellente e un suono chiaro.',
                         'percorso_foto' => 'img/Prodotti/Flauto2.jpg',
                     ],
                     'HOHNER 9556' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Aumenta il flusso d\'aria, aiuta i principianti o i giocatori intermedi a controllare meglio il respiro, a ridurre il rumore del fischio. ',
+                        'descrizione_estesa' => 'Costruzione di tre pezzi: è vantaggioso regolare la posizione del foro C in base alle dimensioni della mano. Bocca integrata, bocchino indipendente: il bocchino è progettato e è fatto in modo indipendente, ciò rende il flusso d\'aria più stabile, tono più brillante.',
                         'percorso_foto' => 'img/Prodotti/Flauto3.jpg',
                     ],
                 ],
                 'Clarinetti' => [
                     'GRASSI SCL390' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Realizzato in ABS, clarinetto piatto B con chiave 17.',
+                        'descrizione_estesa' => 'Realizzato in ABS, clarinetto piatto B con chiave 17. Design raffinato ed elegante per soddisfare i tuoi gusti. I tasti sono realizzati in nichel placcato cupronichel, delicati e belli. Vieni con una scatola imbottita e un pezzo di cinghia per proteggere lo strumento e riporlo facilmente, comodo da trasportare. Fornito 10 pezzi di canna, una custodia per canna, un paio di guanti bianchi, due pezzi di panno per la pulizia e un cacciavite.',
                         'percorso_foto' => 'img/Prodotti/Clarinetto1.jpg',
                     ],
                     'YAMAHA YCL450E' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Design raffinato ed elegante per soddisfare i tuoi gusti.',
+                        'descrizione_estesa' => 'Realizzato in ABS, clarinetto piatto B con chiave 17. Design raffinato ed elegante per soddisfare i tuoi gusti. I tasti sono realizzati in nichel placcato cupronichel, delicati e belli. Vieni con una scatola imbottita e un pezzo di cinghia per proteggere lo strumento e riporlo facilmente, comodo da trasportare. Fornito 10 pezzi di canna, una custodia per canna, un paio di guanti bianchi, due pezzi di panno per la pulizia e un cacciavite.',
                         'percorso_foto' => 'img/Prodotti/Clarinetto2.jpg',
                     ],
                 ],
                 'Altri strumenti a fiato' => [
                     'Kazoo in Metallo' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Grazie alla sua struttura semplice potrai imparare a suonarlo liberamente, senza dover studiare teoria musicale o fare pratica.',
+                        'descrizione_estesa' => 'Grazie alla sua struttura semplice potrai imparare a suonarlo liberamente, senza dover studiare teoria musicale o fare pratica. Facile da trasportare: si tratta di uno strumento musicale piccolo e portatile, che potrai riporre anche in tasca. Ideale come accompagnamento per chitarra, ukulele, violino, pianoforte e molti altri strumenti musicali.',
                         'percorso_foto' => 'img/Prodotti/kazoo.jpg',
                     ],
-                    'Flauto di Pan 8 Toni DO-DO' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                    'Armonica Big Valley' => [
+                        'descrizione_breve' => 'L’armonica Costruita con sistema richeter adatta per Blues, Folk e Pop. Ideale per la pratica o chi comincia a imparare da capo, insieme al manuale di istruzioni di base.',
+                        'descrizione_estesa' => 'L’armonica Costruita con sistema richeter adatta per Blues, Folk e Pop. Ideale per la pratica o chi comincia a imparare da capo, insieme al manuale di istruzioni di base. Il pettine di plastica è realizzato precisamente, con rame piastre morbido e facile da far scorrere attraverso su note che riduce al minimo l\'assorbimento di umidità.',
                         'percorso_foto' => 'img/Prodotti/AltroFiato.jpg',
                     ],
                     'YAMAHA YBB321 Gold Laquered' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Vernice trasparente, pistoni in nickel silver, altezza: 100 cm o 39 6/16 in. – Peso: 7 kg/7 kilogram',
+                        'descrizione_estesa' => '- Pistoni in nichel argento – Campana: 375 mm, 12 o 14/16 in. Foro: 15 mm o 10/16 in. Altezza: 100 cm o 39 6/16 in. /15.43 – Peso: 7 kg',
                         'percorso_foto' => 'img/Prodotti/AltroFiato2.jpg',
                     ],
                 ],
@@ -319,52 +319,52 @@ class ProdottoSeeder extends Seeder
             'Attrezzature' => [
                 'Amplificatori' => [
                     'FENDER Champion 40' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Grazie al connettore per cuffie permette di esercitarsi in silenzio.',
+                        'descrizione_estesa' => 'Il Fender Champion 40 è un amplificatore pratico. È dotato di una cassa da 6 pollici e un equalizzatore a 2 bande. Grazie al connettore per cuffie permette di esercitarsi in silenzio. Caratteristiche. Potenza: 10 W; amplificatore: 6 pollici, special design; ingresso: 1 jack da 6,3 mm; comandi: gain, interruttore di overdrive, volume, treble, bassi; canali: 1; ulteriori connessioni: jack da 3,5 mm audio, uscita jack da 3,5 mm per cuffia; case: compensato a 7 strati; maniglia: sì; tipo di amplificatore: solid state; colore: nero e argento; peso: 3,8 kg; dimensioni: 260 X 280 X 146 mm (larghezza x altezza x profondità).',
                         'percorso_foto' => 'img/Prodotti/Amplificatore.jpg',
                     ],
                     'VOX AC2 RhythmVOX Bass' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Potenza: 10 W; amplificatore: 6 pollici, special design',
+                        'descrizione_estesa' => 'Il VOX AC2 è un amplificatore pratico. È dotato di una cassa da 6 pollici e un equalizzatore a 2 bande. Grazie al connettore per cuffie permette di esercitarsi in silenzio. Caratteristiche. Potenza: 10 W; amplificatore: 6 pollici, special design; ingresso: 1 jack da 6,3 mm; comandi: gain, interruttore di overdrive, volume, treble, bassi; canali: 1; ulteriori connessioni: jack da 3,5 mm audio, uscita jack da 3,5 mm per cuffia; case: compensato a 7 strati; maniglia: sì; tipo di amplificatore: solid state; colore: nero e argento; peso: 3,8 kg; dimensioni: 260 X 280 X 146 mm (larghezza x altezza x profondità).',
                         'percorso_foto' => 'img/Prodotti/Amplificatore2.jpg',
                     ],
                     'BEHRINGER AMP800 MiniAmp' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Jack da 3,5 mm audio, uscita jack da 3,5 mm per cuffia',
+                        'descrizione_estesa' => 'Il BEHRINGER è un amplificatore pratico. È dotato di una cassa da 6 pollici e un equalizzatore a 2 bande. Grazie al connettore per cuffie permette di esercitarsi in silenzio. Caratteristiche. Potenza: 10 W; amplificatore: 6 pollici, special design; ingresso: 1 jack da 6,3 mm; comandi: gain, interruttore di overdrive, volume, treble, bassi; canali: 1; ulteriori connessioni: jack da 3,5 mm audio, uscita jack da 3,5 mm per cuffia; case: compensato a 7 strati; maniglia: sì; tipo di amplificatore: solid state; colore: nero e argento; peso: 3,8 kg; dimensioni: 260 X 280 X 146 mm (larghezza x altezza x profondità).',
                         'percorso_foto' => 'img/Prodotti/Amplificatore3.jpg',
                     ],
                 ],
                 'Cavi e connettori' => [
                     'Female RCA / Male Jack 6.35 Mono Adapter' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Consente di collegare semplicemente il tuo strumento ad un amplificatore.',
+                        'descrizione_estesa' => 'Il Cavo Audio per Chitarra è completamente compatibile con dispositivi dotati di porte standard da 6,35 mm (1/4 "), come basso elettrico, sintetizzatori, tastiera da tavolo elettrica,',
                         'percorso_foto' => 'img/Prodotti/Cavo.jpg',
                     ],
                     'Electraline 10839 Cavo Hi-Fi 03VH-H per Altoparlanti' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Un cavo per Strumenti da 6.35 mm, garantito per 36 mesi e il nostro servizio clienti amichevole e facile da raggiungere, senza costi aggiuntivi.',
+                        'descrizione_estesa' => 'Ricoperto con una treccia di nylon con una maglia stretta, il Cavo Jack Mono per Chitarra può resistere ad importanti e considerevoli graffi ed abrasioni, offrendo una lunga durata e una maggiore vita del prodotto. La manica in nylon flessibile impedisce un qualsiasi attorcigliamento del cavo.',
                         'percorso_foto' => 'img/Prodotti/Cavo2.jpg',
                     ],
                     'QUIKLOK G108' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Il suo colore nero lucido e la treccia in nylon dall\'aspetto attraente aggiungono un tocco più delicato alla tua performance. ',
+                        'descrizione_estesa' => 'I fili in rame smaltati di qualità premium, i connettori nichelati lucidati e la doppia schermatura con una lamina di alluminio e la treccia in rame garantiscono un suono impeccabile, privo di rumori ed ottimale.',
                         'percorso_foto' => 'img/Prodotti/Cavo3.jpg',
                     ],
                 ],
                 'Supporti' => [
                     'Supporto Ripiegabile per 5 Chitarre' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Supporto per chitarra, design in tubo di metallo spesso e spesso, senza ruggine, anticorrosione, rimovibile, per risparmiare spazio',
+                        'descrizione_estesa' => 'Dimensioni: 57 * 30 * 70 cm, 77 * 30 * 70 cm, 97 * 30 * 70 cm. Caratteristiche: supporto per chitarra, design in tubo di metallo spesso e spesso, senza ruggine, anticorrosione, rimovibile, per risparmiare spazio.',
                         'percorso_foto' => 'img/Prodotti/Supporto1.jpg',
                     ],
                     'KONIG & MEYER 15240 Flugelhorn Stand Black' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Supporto universale doppio per basso/chitarra elettrica e chitarra classica/acustica.',
+                        'descrizione_estesa' => 'Braccia universali collare di protezione per il manico. Tutte le estremità sono ricoperte in gomma per la protezione degli strumenti. Disponibile in Grigio antracite. Altezza: 500 / 800 mm / Larghezza base 320 mm / Profondità base: 400 mm / Peso: 2,20 kg / Portata: 20,00 kg',
                         'percorso_foto' => 'img/Prodotti/Supporto2.jpg',
                     ],
                     'YAMAHA Supporto per Stagepas' => [
-                        'descrizione_breve' => '',
-                        'descrizione_estesa' => '',
+                        'descrizione_breve' => 'Pieghevole per un facile trasporto',
+                        'descrizione_estesa' => 'La cinghia di sicurezza per fissare la tastiera alla tastiera (verificare la compatibilità) deve avere dei fori al di sotto per consentire l\'inserimento delle viti.',
                         'percorso_foto' => 'img/Prodotti/Supporto3.jpg',
                     ],
                 ],

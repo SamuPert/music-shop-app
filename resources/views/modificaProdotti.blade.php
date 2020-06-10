@@ -48,8 +48,8 @@
                                         <td>{{$prodotto->nome_prodotto}}</td>
                                         <td>{{$prodotto->descrizione_breve}}</td>
                                         <td style="font-size: small">{{$prodotto->descrizione_estesa}}</td>
-                                        <td>{{$prodotto->prezzo}}</td>
-                                        <td>{{$prodotto->sconto}}</td>
+                                        <td>{{$prodotto->prezzo}}€</td>
+                                        <td>{{$prodotto->sconto}}%</td>
                                         <td>
                                             <a class="btn btn-primary btn-block"  href="{{  route('gestione_prodotti', ['id_prodotto' => $prodotto->id_prodotto])  }}"><h6 class="name"> Modifica prodotto </h6></a>
                                             <form action="{{route('removeProdotto', [$prodotto->id_prodotto])}}" method="post">
