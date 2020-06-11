@@ -5,9 +5,11 @@
         </button>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            @if($user->auth_level===2)
             <form id="modifica_form_profilo" action="{{route('modificaprofilo')}}">
                 <button type="submit" class="dropdown-item" style="width: 100%; padding: 3px 20px; text-align: left;">Modifica Profilo</button>
             </form>
+            @endif
             @if($user->auth_level === 3)
             <form id="area_personale" action="{{ route('staff.homepage') }}"  >
                 <button type="submit" class="dropdown-item" style="width: 100%; padding: 3px 20px; text-align: left;">Area Personale</button>

@@ -14,33 +14,27 @@ class CategoriaSeeder extends Seeder
         $categorie = [
             [
                 'nome_categoria'        => 'Chitarre',
-                'percorso_foto'         => '/img/Categorie/Chitarre.jpg',
-                'descrizione_categoria' => ''
+                'percorso_foto'         => '/img/Categorie/Chitarre.jpg'
             ],
             [
                 'nome_categoria'        => 'Bassi',
-                'percorso_foto'         => '/img/Categorie/Bassi.jpg',
-                'descrizione_categoria' => ''
+                'percorso_foto'         => '/img/Categorie/Bassi.jpg'
             ],
             [
                 'nome_categoria'        => 'Tastiere',
-                'percorso_foto'         => '/img/Categorie/Tastiere.jpg',
-                'descrizione_categoria' => ''
+                'percorso_foto'         => '/img/Categorie/Tastiere.jpg'
             ],
             [
                 'nome_categoria'        => 'Batterie',
-                'percorso_foto'         => '/img/Categorie/Batterie.jpg',
-                'descrizione_categoria' => ''
+                'percorso_foto'         => '/img/Categorie/Batterie.jpg'
             ],
             [
                 'nome_categoria'        => 'Fiati',
-                'percorso_foto'         => '/img/Categorie/Fiati.jpg',
-                'descrizione_categoria' => ''
+                'percorso_foto'         => '/img/Categorie/Fiati.jpg'
             ],
             [
                 'nome_categoria'        => 'Attrezzature',
-                'percorso_foto'         => '/img/Categorie/Attrezzature.jpg',
-                'descrizione_categoria' => ''
+                'percorso_foto'         => '/img/Categorie/Attrezzature.jpg'
             ],
         ];
 

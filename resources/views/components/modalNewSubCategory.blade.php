@@ -22,10 +22,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group has-feedback" id="descrzioneBreveSottoCategoria">
-                    <label for="for_descrizionebreve"></label>Descrizione </label>
-                    <textarea class="form-control" id="descrizione" name="descrizione" placeholder="Digita la tua descrizione" rows="5" required placeholder="Descrivi la sotto categoria" ></textarea>
-                </div>
                 <div class="form-group has-feedback" id="selectCategoriaForSub">
                     <label for="prezzo">Selezione Categoria</label><br>
                     <select  class="custom-select mdb-select md-form" name="id_categoria" id="select_categoria_input">

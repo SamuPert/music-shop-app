@@ -22,10 +22,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group" id="descrizioneCategoria">
-                    <label for="comments">Descrizione Categoria</label>
-                    <textarea class="form-control" id="descrizione_categoria" name="descrizione_categoria" placeholder="Digita la tua descrizione" rows="5"></textarea>
-                </div>
                 <br>
                 <div class="form-group">
                     <button class="btn btn-primary btn-block" type="submit">Salva la categoria <i class="fa fa-chevron-circle-right"></i></button>

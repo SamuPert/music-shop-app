@@ -16,10 +16,6 @@
                             Benvenuto, {{$user->full_name}}
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <form id="modifica_form" action="{{route('modificaprofilo')}}">
-                                <button type="submit" class="dropdown-item" style="width: 100%; padding: 3px 20px; text-align: left;">Modifica Profilo</button>
-                            </form>
-
                             <form id="back_form" action="{{ route('catalogo') }}"  >
                                 <button type="submit" class="dropdown-item" style="width: 100%; padding: 3px 20px; text-align: left;">Torna al Catalogo</button>
                             </form>

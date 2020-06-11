@@ -10,7 +10,7 @@ class Sottocategoria extends Model
     protected $table = "sotto_categoria";
     public $timestamps = false;
 
-    protected $fillable = ['id_categoria', 'nome_sotto_categoria', 'descrizione', 'percorso_foto', 'id_categoria'];
+    protected $fillable = ['id_categoria', 'nome_sotto_categoria', 'percorso_foto', 'id_categoria'];
 
     public function categoria()
     {

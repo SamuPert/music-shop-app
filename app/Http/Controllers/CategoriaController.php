@@ -67,7 +67,7 @@ class CategoriaController extends Controller
             $full_path = '';
         }
 
-        $inputdataCategoria = $request->only(['nome_categoria','descrizione_categoria']);
+        $inputdataCategoria = $request->only(['nome_categoria']);
         $inputdataCategoria['percorso_foto'] = $full_path;
 
         $categoria = Categoria::creaCategoria($inputdataCategoria);

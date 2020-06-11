@@ -53,7 +53,7 @@ class SottoCategoriaController extends Controller
             $full_path = '';
         }
 
-        $inputdata = $request->only(['nome_sotto_categoria','descrizione','id_categoria']);
+        $inputdata = $request->only(['nome_sotto_categoria','id_categoria']);
         $inputdata['percorso_foto'] = $full_path;
         $subCategoria = Sottocategoria::create($inputdata);
         if ($subCategoria === null) {

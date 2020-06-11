@@ -11,7 +11,7 @@ class Categoria extends Model
     protected $table = "categoria";
     public $timestamps = false;
 
-    protected $fillable = ['id_categoria', 'nome_categoria', 'descrizione_categoria', 'percorso_foto'];
+    protected $fillable = ['id_categoria', 'nome_categoria', 'percorso_foto'];
 
     public function sotto_categorie()
     {
@@ -22,7 +22,6 @@ class Categoria extends Model
     {
         return Categoria::create([
             'nome_categoria' => $data['nome_categoria'],
-            'descrizione_categoria' => $data['descrizione_categoria'],
             'percorso_foto' => $data['percorso_foto'],
         ]);
     }
