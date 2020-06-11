@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:javascript="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="utf-8">
@@ -29,16 +29,23 @@
         </div>
     </div>
 </nav>
-<main id="chisiamo" class="landing-page mt-5 body-page">
-    <section class="clean-block clean-hero anchorable"
-             style="background-image:url(&quot;/img/background-information-page.jpg&quot;);color:rgba(0, 0, 0, 0.70);">
-        <div class="text">
-            <h2>CHI SIAMO</h2>
-            <p>Music Shop è un'azienda leader a livello nazionale in ambito musicale attiva dal 1970. Presenti in tutta
-                italia con 20 negozi fisici offriamo i migiori esperti in grado di accogliere ogni esigenza sia di
-                supporto all'acquisto che di assistenza.</p>
+<main >
+    <header id="chisiamo" style="height: 800px">
+        <div class="overlay" ></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="/img/Videohome.mp4" type="video/mp4">
+        </video>
+        <div class="container " style="height: 1000px">
+            <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white">
+                    <h2 class="display-3">CHI SIAMO</h2>
+                    <p class="lead mb-0">Music Shop è un'azienda leader a livello nazionale in ambito musicale attiva dal 1970. Presenti in tutta
+                        italia con 20 negozi fisici offriamo i migiori esperti in grado di accogliere ogni esigenza sia di
+                        supporto all'acquisto che di assistenza.</p>
+                </div>
+            </div>
         </div>
-    </section>
+    </header>
     <section class="clean-block features anchorable">
         <a id="cosafacciamo" class="anchor"></a>
         <div class="container">
@@ -48,23 +55,19 @@
             <div class="row justify-content-center">
                 <div class="col-md-5 feature-box"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
                     <h4>Vendita</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
-                        mattis vitae leo.</p>
+                    <p>Abbiamo più di 2000 punti vendita in tutta Italia. Nei nostri negozi offriamo una vasta possibilità di scelta per tutti i gusti.</p>
                 </div>
                 <div class="col-md-5 feature-box"><i class="fa fa-cogs" aria-hidden="true"></i>
                     <h4>Assistenza Tecnica</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
-                        mattis vitae leo.</p>
+                    <p>In ogni momento, 7 giorni su 7, i nostri migliori tecnici offrono assistenza compresa nel prezzo di acquisto del prodotto.</p>
                 </div>
                 <div class="col-md-5 feature-box"><i class="fa fa-comments-o" aria-hidden="true"></i>
                     <h4>Consulenza Tecnica&nbsp;&nbsp;</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
-                        mattis vitae leo.</p>
+                    <p>Mettiamo a disposizione i nostri migliori esperti per qualunque consulenza grazie alle loro spiccate conoscenze in ambito musicale.</p>
                 </div>
                 <div class="col-md-5 feature-box"><i class="fa fa-wrench" aria-hidden="true"></i>
                     <h4>Installazione</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
-                        mattis vitae leo.</p>
+                    <p>Consegna e installazione dello strumento e dell'attrezzatura a domicilio, gratis per un acquisto superiore ai 200 euro.</p>
                 </div>
             </div>
         </div>
@@ -103,7 +106,7 @@
     <section class="clean-block clean-info dark about-us anchorable">
         <a id="contatti" class="anchor"></a>
         <div class="container mt-3">
-            <form name="contact-us" id="contactForm" style="padding:15px;" action="javascript:void();" method="post">
+            <form name="contact-us" id="contactForm" style="padding:15px;" action="javascript:alert('Mail inviata.')" method="post">
                 <div class="form-row" style="margin-left:0px;margin-right:0px;padding:10px;">
                     <div class="col-12" id="message" style="padding-right:20px;padding-left:20px;">
                         <fieldset>
