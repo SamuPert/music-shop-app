@@ -58,7 +58,8 @@ class ProdottoController extends Controller
         }
 
         $inputdata = $request->only(['nome_prodotto','descrizione_breve','descrizione_estesa','prezzo','sconto','id_categoria','id_sotto_categoria']);
-        $inputdata['percorso_foto'] = $full_path;
+		if( $full_path !== '' )
+			$inputdata['percorso_foto'] = $full_path;
 
         $validator=self::validator($inputdata);
         if($validator->fails()){
@@ -79,7 +80,7 @@ class ProdottoController extends Controller
 
         $prodotto = Prodotto::find( $id_prodotto);
         $prodotto->delete();
-        redirect()->back()->with('messages',[['title'=>'Prodotto cancellato','type'=>'success','message'=>'Prodotto cancellato con successo.']]);
+        return redirect()->route('modifica_prodotti')->with('messages',[['title'=>'Prodotto cancellato','type'=>'success','message'=>'Prodotto cancellato con successo.']]);
     }
 
 
@@ -107,8 +108,9 @@ class ProdottoController extends Controller
         }
 
         $inputdata = $request->only(['id_prodotto','nome_prodotto','descrizione_breve','descrizione_estesa','prezzo','sconto','id_categoria','id_sotto_categoria']);
-        $inputdata['percorso_foto'] = $full_path;
-
+        if( $full_path !== '' )
+			$inputdata['percorso_foto'] = $full_path;
+			
 
         $validator=self::validator($inputdata);
         if($validator->fails()){

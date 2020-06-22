@@ -35,10 +35,10 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Occupazione: </label>
-                                                <select name="occupation" class="custom-select form-control personal" id="occupazione" disabled name="occupazione" value="{{$user->occupation}}">
+                                                <select name="occupation" class="custom-select form-control personal" id="occupazione" disabled name="occupazione">
                                                         @for($i=0; $i < count($datiOccupazione); $i++)
                                                             <option value="{{$datiOccupazione[$i]->occupazione}}"
-                                                                    @if($i === 0)
+                                                                    @if($datiOccupazione[$i]->occupazione===$user->occupation)
                                                                     selected
                                                                 @endif
                                                             >{{$datiOccupazione[$i]->occupazione}}</option>

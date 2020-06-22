@@ -40,7 +40,7 @@ class AdminController extends Controller
         $full_name = $utente->full_name;
         $utente->delete();
 
-        return redirect()->route('admin.homepage')->with('messages',[['title'=>'Utente cancellato','type'=>'success','message'=>'Utente "'.$full_name.'" cancellato correttamente.']]);;
+        return redirect()->route('gestione_staff')->with('messages',[['title'=>'Utente cancellato','type'=>'success','message'=>'Utente "'.$full_name.'" cancellato correttamente.']]);;
     }
 
 }

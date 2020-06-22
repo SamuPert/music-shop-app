@@ -54,7 +54,10 @@ class SottoCategoriaController extends Controller
         }
 
         $inputdata = $request->only(['nome_sotto_categoria','id_categoria']);
-        $inputdata['percorso_foto'] = $full_path;
+		if( $full_path !== '' )
+			$inputdata['percorso_foto'] = $full_path;
+		
+		
         $subCategoria = Sottocategoria::create($inputdata);
         if ($subCategoria === null) {
             return redirect()->route('staff.homepage')->with('messages',[['title'=>'Registrazione fallita','type'=>'error','message'=>'Non è stato possibile registrare questa categoria']]);

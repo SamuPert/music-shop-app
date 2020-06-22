@@ -12,11 +12,12 @@ use function Psy\debug;
 class UserController extends Controller
 {
     public function __construct() {
-        $this->middleware(UserMiddleware::class);
+
     }
 
 
     public function editprofile() {
+	$this->middleware(UserMiddleware::class);
         return view('showUser');
     }
 
@@ -106,8 +107,6 @@ class UserController extends Controller
 
     public function updateUserStaff(Request $request){
 
-//        dd($request->all());
-
         if( !Auth::check() || Auth::user()->auth_level !== 4 )
         {
             return response()->json([
@@ -119,10 +118,11 @@ class UserController extends Controller
         $nome = $request->input('nome', '');
         $cognome = $request->input('cognome', '');
         $id_utente = $request->input('id', '');
+        $password=$request->input('password','');
 
-        if( $nome !== '' && $cognome !== '' && $id_utente !== '' ){
-
-            $data = array('nome'=>$nome,"cognome"=>$cognome, 'id' => $id_utente);
+        if( $nome !== '' && $cognome !== '' && $id_utente !== ''){
+            //caso in cui devo modificare i campi senza modificare la password
+            $data = array('nome'=>$nome,'cognome'=>$cognome, 'id'=>$id_utente,'password'=>$password);
             $updateOk = User::updateUserStaff($data);
 
             if( !$updateOk )

@@ -44,8 +44,6 @@
                         <!--Footer-->
                         <div class="modal-footer">
                             <div class="options text-center text-md-right mt-1">
-                                <p><a href="#panelRegistrati" class="blue-text">Non hai un Account? Registrati.</a></p>
-                                <p><a href="#" class="blue-text">Dimenticato la Password? Clicca Qua.</a></p>
                             </div>
                             <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
                         </div>
@@ -115,9 +113,6 @@
                         </div>
                         <!--Footer-->
                         <div class="modal-footer">
-                            <div class="options text-right">
-                                <p class="pt-1"><a href="#panelAccedi" class="blue-text">Hai gia un account? Log In</a></p>
-                            </div>
                             <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
                         </div>
                     </div>

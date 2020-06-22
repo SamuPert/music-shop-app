@@ -33,7 +33,7 @@
             </form>
             <!--Footer-->
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Chiudi</button>
+                <button type="button" class="btn btn-outline-warning waves-effect ml-auto" data-dismiss="modal">Chiudi</button>
             </div>
         </div>
     </div>

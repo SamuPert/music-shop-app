@@ -33,7 +33,7 @@
     <header id="chisiamo" style="height: 800px">
         <div class="overlay" ></div>
         <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="/img/Videohome.mp4" type="video/mp4">
+            <source src="{{asset('./img/Videohome.mp4')}}" type="video/mp4">
         </video>
         <div class="container " style="height: 1000px">
             <div class="d-flex h-100 text-center align-items-center">
@@ -154,7 +154,7 @@
             <p class="float-right">
                 <button class="btn btn-link" onclick="window.scrollTo({top: 0,behavior: 'smooth'});"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
             </p>
-            <p>Sito sviluppato da MusicShop S.P.A. tutti i diritti sono riservati. <a href="{{route('privacypolicy')}}">PRIVACY POLICY</a></p>
+            <p>Sito sviluppato da MusicShop S.P.A. tutti i diritti sono riservati. <a href="{{route('privacypolicy')}}">PRIVACY POLICY.</a>  <a href="{{ asset('Relazione_gruppo_15.pdf') }}" style="padding: 5%">Scarica il PDF della Relazione</a></p>
         </div>
     </footer>
 </main>

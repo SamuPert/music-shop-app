@@ -36,8 +36,10 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">Id</th>
+                                    <th scope="col">Username</th>
                                     <th scope="col">Nome</th>
                                     <th scope="col">Cognome</th>
+                                    <th scope="col">Nuova Password</th>
                                     <th scope="col">Azioni</th>
                                 </tr>
                                 </thead>
@@ -45,11 +47,15 @@
                                 @foreach($utente as $utenti)
                                     <tr>
                                         <td>{{$utenti->id}}</td>
+                                        <td>{{$utenti->username}}</td>
                                         <td>
                                             <input type="text" class="form-control" name="first_name" placeholder="Inserisci un Nome" id="id_utente_nome{{$utenti->id}}" disabled value="{{$utenti->first_name}}">
                                         </td>
                                         <td>
                                             <input type="text" class="form-control" name="last_name" placeholder="Inserisci un Cognome" id="id_utente_cognome{{$utenti->id}}" disabled value="{{$utenti->last_name}}">
+                                        </td>
+                                        <td>
+                                            <input type="password" class="form-control passwordcontroll" name="password" placeholder="Inserisci nuova pasword" id="id_utente_password{{$utenti->id}}" disabled>
                                         </td>
                                         <td>
                                             <form action="{{route('removeUser', [$utenti->id])}}" method="post">
@@ -59,6 +65,7 @@
                                             </form>
                                             <button id="buttonModificaStaff{{$utenti->id}}"   class="btn btn-outline-info enable-edit-staff" type="submit">Abilita Modifica Utente   <i class="fa fa-user" aria-hidden="true"></i></button>
                                             <button class="btn btn-outline-danger disable-edit-staff mt-2" hidden>Annulla</button>
+                                            <button class="btn btn-outline-danger mt-2 passwordChange" hidden>Modifica password</button>
                                             <input type="submit" class="btn btn-primary update-staff-submit-button no-pointer-events float-right mt-2" id="edit_id_{{$utenti->id}}" onclick="modificaUtente(event, {{$utenti->id}})" disabled value="Modifica Utente">
                                         </td>
                                     </tr>

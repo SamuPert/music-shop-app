@@ -15,33 +15,20 @@ class UserMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if ($request->user() == null || $request->user()->auth_level != 2 ) {
-            if($request->user()->auth_level==4) {
-                $messages = [
-                    [
-                        'type' => 'warning',
-                        'title' => 'Hai privilegi Admin',
-                        'message' => 'Gli utenti con privilegi Admin non possono modificare il profilo'
-                    ]
-                ];
-            }else{
-                $messages = [
-                    [
+        if ( Auth::check() && $request()->user()->auth_level == 2 )
+		return $next($request);
+            
+       $messages = [
+            [
                         'type' => 'warning',
                         'title' => 'Accesso non autorizzato',
                         'message' => 'Non si dispone dei privilegi adeguati per visualizzare questa pagina.'
-                    ]
-                ];
-            }
-            return redirect()
-                ->route('catalogo')
-                ->with('messages', $messages);
-
-        }
-        return $next($request);
+            ]
+       ];
+            
+       return redirect()
+          ->route('catalogo')
+          ->with('messages', $messages);
+        
     }
 }
-
-
-namespace App\Http\Middleware;
-
