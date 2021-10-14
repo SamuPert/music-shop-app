@@ -15,16 +15,19 @@ class UserSeeder extends Seeder
 
 //        ADMIN:
 //            username: adminadmin
-//            password: adminadmin
+//            password: qbCltB0u
 //
 //        STAFF:
 //            username: staffstaff
-//            password: staffstaff
+//            password: qbCltB0u
 //        oppure
 //            username: staff.nome.cognome
 //            password: staff.nome.cognome
 //
 //        UTENTI GENERICI:
+//            username: useruser
+//            password: qbCltB0u
+//        oppure
 //            username: nome.cognome
 //            password: nome.cognome
 
