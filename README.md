@@ -1,79 +1,212 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<div id="top"></div>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+[![MIT License][license-shield]][license-url]
+[![Issues][issues-shield]][issues-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/ClaudioSirocchi/Progetto-Tecnologie-web">
+    <img src="public/img/logoSito.png" alt="Logo" width="80" height="80">
+  </a>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+  <h3 align="center">Music Shop</h3>
 
-## Learning Laravel
+  <p align="center">
+    Awesome multi-user web app for managing and displaying the items of a music store.
+    <br />
+    <br />
+    <a href="https://github.com/ClaudioSirocchi/Progetto-Tecnologie-web/blob/master/TecWeb%20Mockup.pdf">View mockups</a>
+    ·
+    <a href="https://github.com/ClaudioSirocchi/Progetto-Tecnologie-web/blob/master/public/Relazione_gruppo_15.pdf">View report</a>
+    ·
+    <a href="https://github.com/ClaudioSirocchi/Progetto-Tecnologie-web/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/ClaudioSirocchi/Progetto-Tecnologie-web/issues">Request Feature</a>
+  </p>
+</div>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#introduction">Introduction</a></li>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
 
+<!-- Introduction -->
+## Introduction
+
+Since 1991 the web has been revolutionized.
+The technologies and protocols underlying the web have been updated, but the winning idea that has made it stronger over the years is that of being able to expose services on multiple platforms (without changing a line of code).
+
+In this regard we have decided to develop a project, carried out during the "Web technologies" course. 
+
+
+<!-- ABOUT THE PROJECT -->
+## About the project
+
+[![Catalog screenshot][product-screenshot]](https://github.com/ClaudioSirocchi/Progetto-Tecnologie-web)
+
+The purpose of the development of this project is to provide customers with a website that allows them to consult an online catalog of the products sold by "Music Shop" with the respective prices and characteristics of the respective products.
+
+The site provides search functions based on product categories, their respective sub-categories, price or via a keyword.
+
+You can read more about the project in the <a href="https://github.com/ClaudioSirocchi/Progetto-Tecnologie-web/blob/master/public/Relazione_gruppo_15.pdf">report</a>.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+### Built With
+
+* [Laravel](https://laravel.com/)
+* [Laravel Mix](https://laravel-mix.com/)
+* [Bootstrap](https://getbootstrap.com/docs)
+* [JQuery](https://jquery.com/)
+* [PhpStorm IDE](https://www.jetbrains.com/phpstorm/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+Software that you need to use to get the app built and running. Follow the links for the relative guide.
+
+* **npm**: <a href="https://docs.npmjs.com/cli/v7/configuring-npm/install">Install npm</a>
+* **PHP Composer**: <a href="https://getcomposer.org/">Install composer</a>
+* **Running MySql Server**: <a href="https://dev.mysql.com/downloads/installer/">Install MySql Server</a>
+
+### Installation
+
+1. Clone the repo
+   ```sh
+    git clone https://github.com/ClaudioSirocchi/Progetto-Tecnologie-web.git ProgettoTecnologieWeb
+    cd ProgettoTecnologieWeb
+   ```
+2. Copy environment file
+    ```sh
+    cp .env.example .env
+    ```
+3. Edit .env file properties:
+    - Edit *DB_DATABASE* value. It must match the database name you want to use.
+    - Edit *DB_USERNAME* value. It must match the MySql user that you want to use.
+    - Edit *DB_PASSWORD* value. It must match the MySql plaintext password that MySql user uses to connect to database.
+    - Edit *DB_HOST* value. It must match the MySql instance address.
+4. Initialize Laravel environment
+    ```sh
+    php artisan key:generate
+    php artisan migrate
+    ```
+5. Compile scss and js files.
+    ```sh
+    npm run prod
+    ```
+    
+5-bis. (Optional) Seed database with pre-defined content.
+
+```sh
+php artisan db:seed
+```
+    
+Default users credentials are:
+
+- **Super Admin**:
+    - username: **adminadmin**
+    - password: **qbCltB0u**
+- **Staff Admin**:
+    - username: **staffstaff**
+    - password: **qbCltB0u**
+- **Staff Admin**:
+    - username: **useruser**
+    - password: **qbCltB0u**
+
+6. Serve the web application
+    ```sh
+    php artisan serve
+    ```
+
+7. Browse web application:
+    ```
+    http://localhost:8000/
+    ```
+    
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- CONTRIBUTING -->
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-## Code of Conduct
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Security Vulnerabilities
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
+
+<!-- LICENSE -->
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Distributed under the MIT License. See <a href="https://github.com/ClaudioSirocchi/Progetto-Tecnologie-web/blob/master/LICENSE.md">`LICENSE.md`</a> for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Samuele Perticarari - [Telegram](https://t.me/SamuPert) - samuele.perticarari@gmail.com - [LinkedIn](https://www.linkedin.com/in/samuele-perticarari/)
+
+Project Link: [https://github.com/ClaudioSirocchi/Progetto-Tecnologie-web](https://github.com/ClaudioSirocchi/Progetto-Tecnologie-web)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://shields.io/ -->
+[issues-shield]: https://img.shields.io/github/issues/ClaudioSirocchi/Progetto-Tecnologie-web
+[issues-url]: https://github.com/ClaudioSirocchi/Progetto-Tecnologie-web/issues
+[license-shield]: https://img.shields.io/github/license/ClaudioSirocchi/Progetto-Tecnologie-web
+[license-url]: https://github.com/ClaudioSirocchi/Progetto-Tecnologie-web/blob/master/LICENSE.md
+[linkedin-shield]: https://img.shields.io/badge/LinkedIn-SamuelePerticarari-blue
+[linkedin-url]: https://www.linkedin.com/in/samuele-perticarari/
+[product-screenshot]: screenshots/catalogo.png
