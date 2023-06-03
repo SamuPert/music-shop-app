@@ -1,5 +1,7 @@
 <div id="top"></div>
 
+
+
 [![MIT License][license-shield]][license-url]
 [![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
@@ -9,7 +11,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/SamuPert/Progetto-Tecnologie-web">
+  <a href="https://github.com/SamuPert/music-shop-app">
     <img src="public/img/logoSito.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -19,13 +21,13 @@
     Awesome multi-user web app for managing and displaying the items of a music store.
     <br />
     <br />
-    <a href="https://github.com/SamuPert/Progetto-Tecnologie-web/blob/master/TecWeb%20Mockup.pdf">View mockups</a>
+    <a href="https://github.com/SamuPert/music-shop-app/blob/master/TecWeb%20Mockup.pdf">View mockups</a>
     ·
-    <a href="https://github.com/SamuPert/Progetto-Tecnologie-web/blob/master/public/Relazione_gruppo_15.pdf">View report</a>
+    <a href="https://github.com/SamuPert/music-shop-app/blob/master/public/Relazione_gruppo_15.pdf">View report</a>
     ·
-    <a href="https://github.com/SamuPert/Progetto-Tecnologie-web/issues">Report Bug</a>
+    <a href="https://github.com/SamuPert/music-shop-app/issues">Report Bug</a>
     ·
-    <a href="https://github.com/SamuPert/Progetto-Tecnologie-web/issues">Request Feature</a>
+    <a href="https://github.com/SamuPert/music-shop-app/issues">Request Feature</a>
   </p>
 </div>
 
@@ -69,13 +71,13 @@ In this regard we have decided to develop a project, carried out during the "Web
 <!-- ABOUT THE PROJECT -->
 ## About the project
 
-[![Catalog screenshot][product-screenshot]](https://github.com/SamuPert/Progetto-Tecnologie-web)
+[![Catalog screenshot][product-screenshot]](https://github.com/SamuPert/music-shop-app)
 
 The purpose of the development of this project is to provide customers with a website that allows them to consult an online catalog of the products sold by "Music Shop" with the respective prices and characteristics of the respective products.
 
 The site provides search functions based on product categories, their respective sub-categories, price or via a keyword.
 
-You can read more about the project in the <a href="https://github.com/SamuPert/Progetto-Tecnologie-web/blob/master/public/Relazione_gruppo_15.pdf">report</a>.
+You can read more about the project in the <a href="https://github.com/SamuPert/music-shop-app/blob/master/public/Relazione_gruppo_15.pdf">report</a>.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -109,7 +111,7 @@ Software that you need to use to get the app built and running. Follow the links
 
 1. Clone the repo
    ```sh
-    git clone https://github.com/SamuPert/Progetto-Tecnologie-web.git ProgettoTecnologieWeb
+    git clone https://github.com/SamuPert/music-shop-app.git ProgettoTecnologieWeb
     cd ProgettoTecnologieWeb
    ```
 2. Copy environment file
@@ -184,7 +186,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See <a href="https://github.com/SamuPert/Progetto-Tecnologie-web/blob/master/LICENSE.md">`LICENSE.md`</a> for more information.
+Distributed under the MIT License. See <a href="https://github.com/SamuPert/music-shop-app/blob/master/LICENSE.md">`LICENSE.md`</a> for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -195,7 +197,7 @@ Distributed under the MIT License. See <a href="https://github.com/SamuPert/Prog
 
 Samuele Perticarari - [Telegram](https://t.me/SamuPert) - samuele.perticarari@gmail.com - [LinkedIn](https://www.linkedin.com/in/samuele-perticarari/)
 
-Project Link: [https://github.com/SamuPert/Progetto-Tecnologie-web](https://github.com/SamuPert/Progetto-Tecnologie-web)
+Project Link: [https://github.com/SamuPert/music-shop-app](https://github.com/SamuPert/music-shop-app)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -203,10 +205,10 @@ Project Link: [https://github.com/SamuPert/Progetto-Tecnologie-web](https://gith
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://shields.io/ -->
-[issues-shield]: https://img.shields.io/github/issues/ClaudioSirocchi/Progetto-Tecnologie-web
-[issues-url]: https://github.com/SamuPert/Progetto-Tecnologie-web/issues
-[license-shield]: https://img.shields.io/github/license/ClaudioSirocchi/Progetto-Tecnologie-web
-[license-url]: https://github.com/SamuPert/Progetto-Tecnologie-web/blob/master/LICENSE.md
+[issues-shield]: https://img.shields.io/github/issues/SamuPert/music-shop-app
+[issues-url]: https://github.com/SamuPert/music-shop-app/issues
+[license-shield]: https://img.shields.io/github/license/SamuPert/music-shop-app
+[license-url]: https://github.com/SamuPert/music-shop-app/blob/master/LICENSE.md
 [linkedin-shield]: https://img.shields.io/badge/LinkedIn-SamuelePerticarari-blue
 [linkedin-url]: https://www.linkedin.com/in/samuele-perticarari/
 [product-screenshot]: screenshots/catalogo.png
